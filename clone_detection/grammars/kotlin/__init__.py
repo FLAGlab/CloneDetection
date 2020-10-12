@@ -1,0 +1,9 @@
+from .KotlinLexer import KotlinLexer
+from .KotlinParser import KotlinParser
+from .KotlinParserListener import KotlinParserListener
+from .KotlinParserVisitor import KotlinParserVisitor
+
+KotlinLexer
+KotlinParser
+KotlinParserListener
+KotlinParserVisitor
