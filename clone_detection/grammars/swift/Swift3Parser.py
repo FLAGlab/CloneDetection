@@ -6,6 +6,7 @@ from typing.io import TextIO
 import sys
 
 from clone_detection.grammars.grammars_registry import PARSERS
+from clone_detection.grammars.swift.SwiftSupport import SwiftSupport
 
 
 def serializedATN():
@@ -2593,12 +2594,12 @@ class Swift3Parser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 615
-            if not SwiftSupport.isSeparatedStatement(_input, localctx.indexBefore):
+            if not SwiftSupport.isSeparatedStatement(self._input, localctx.indexBefore):
                 from antlr4.error.Errors import FailedPredicateException
-                raise FailedPredicateException(self, "SwiftSupport.isSeparatedStatement(_input, $indexBefore)")
+                raise FailedPredicateException(self, "SwiftSupport.isSeparatedStatement(self._input, $indexBefore)")
             self.state = 616
             self.statement()
-            localctx.indexAfter =  _input.index()
+            localctx.indexAfter =  self._input.index
             self.state = 619
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
@@ -15414,9 +15415,9 @@ class Swift3Parser ( Parser ):
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 2038
-                if not SwiftSupport.isPrefixOp(_input):
+                if not SwiftSupport.isPrefixOp(self._input):
                     from antlr4.error.Errors import FailedPredicateException
-                    raise FailedPredicateException(self, "SwiftSupport.isPrefixOp(_input)")
+                    raise FailedPredicateException(self, "SwiftSupport.isPrefixOp(self._input)")
                 self.state = 2039
                 self.match(Swift3Parser.AND)
                 pass
@@ -15424,9 +15425,9 @@ class Swift3Parser ( Parser ):
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
                 self.state = 2040
-                if not SwiftSupport.isPostfixOp(_input):
+                if not SwiftSupport.isPostfixOp(self._input):
                     from antlr4.error.Errors import FailedPredicateException
-                    raise FailedPredicateException(self, "SwiftSupport.isPostfixOp(_input)")
+                    raise FailedPredicateException(self, "SwiftSupport.isPostfixOp(self._input)")
                 self.state = 2041
                 self.match(Swift3Parser.BANG)
                 pass
@@ -21279,9 +21280,9 @@ class Swift3Parser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2669
-            if not SwiftSupport.isBinaryOp(_input):
+            if not SwiftSupport.isBinaryOp(self._input):
                 from antlr4.error.Errors import FailedPredicateException
-                raise FailedPredicateException(self, "SwiftSupport.isBinaryOp(_input)")
+                raise FailedPredicateException(self, "SwiftSupport.isBinaryOp(self._input)")
             self.state = 2670
             self.match(Swift3Parser.EQUAL)
         except RecognitionException as re:
@@ -21326,9 +21327,9 @@ class Swift3Parser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2672
-            if not SwiftSupport.isPrefixOp(_input):
+            if not SwiftSupport.isPrefixOp(self._input):
                 from antlr4.error.Errors import FailedPredicateException
-                raise FailedPredicateException(self, "SwiftSupport.isPrefixOp(_input)")
+                raise FailedPredicateException(self, "SwiftSupport.isPrefixOp(self._input)")
             self.state = 2673
             self.match(Swift3Parser.SUB)
         except RecognitionException as re:
@@ -21373,9 +21374,9 @@ class Swift3Parser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2675
-            if not SwiftSupport.isOperator(_input,"&&"):
+            if not SwiftSupport.isOperator(self._input,"&&"):
                 from antlr4.error.Errors import FailedPredicateException
-                raise FailedPredicateException(self, "SwiftSupport.isOperator(_input,\"&&\")")
+                raise FailedPredicateException(self, "SwiftSupport.isOperator(self._input,\"&&\")")
             self.state = 2676
             self.match(Swift3Parser.AND)
             self.state = 2677
@@ -21422,9 +21423,9 @@ class Swift3Parser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2679
-            if not SwiftSupport.isOperator(_input,"||"):
+            if not SwiftSupport.isOperator(self._input,"||"):
                 from antlr4.error.Errors import FailedPredicateException
-                raise FailedPredicateException(self, "SwiftSupport.isOperator(_input,\"||\")")
+                raise FailedPredicateException(self, "SwiftSupport.isOperator(self._input,\"||\")")
             self.state = 2680
             self.match(Swift3Parser.OR)
             self.state = 2681
@@ -21471,9 +21472,9 @@ class Swift3Parser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2683
-            if not SwiftSupport.isOperator(_input,">="):
+            if not SwiftSupport.isOperator(self._input,">="):
                 from antlr4.error.Errors import FailedPredicateException
-                raise FailedPredicateException(self, "SwiftSupport.isOperator(_input,\">=\")")
+                raise FailedPredicateException(self, "SwiftSupport.isOperator(self._input,\">=\")")
             self.state = 2684
             self.match(Swift3Parser.GT)
             self.state = 2685
@@ -21520,9 +21521,9 @@ class Swift3Parser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2687
-            if not SwiftSupport.isOperator(_input,"->"):
+            if not SwiftSupport.isOperator(self._input,"->"):
                 from antlr4.error.Errors import FailedPredicateException
-                raise FailedPredicateException(self, "SwiftSupport.isOperator(_input,\"->\")")
+                raise FailedPredicateException(self, "SwiftSupport.isOperator(self._input,\"->\")")
             self.state = 2688
             self.match(Swift3Parser.SUB)
             self.state = 2689
@@ -21569,9 +21570,9 @@ class Swift3Parser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2691
-            if not SwiftSupport.isOperator(_input,"..."):
+            if not SwiftSupport.isOperator(self._input,"..."):
                 from antlr4.error.Errors import FailedPredicateException
-                raise FailedPredicateException(self, "SwiftSupport.isOperator(_input,\"...\")")
+                raise FailedPredicateException(self, "SwiftSupport.isOperator(self._input,\"...\")")
             self.state = 2692
             self.match(Swift3Parser.DOT)
             self.state = 2693
@@ -21620,9 +21621,9 @@ class Swift3Parser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2696
-            if not SwiftSupport.isOperator(_input,"=="):
+            if not SwiftSupport.isOperator(self._input,"=="):
                 from antlr4.error.Errors import FailedPredicateException
-                raise FailedPredicateException(self, "SwiftSupport.isOperator(_input,\"==\")")
+                raise FailedPredicateException(self, "SwiftSupport.isOperator(self._input,\"==\")")
             self.state = 2697
             self.match(Swift3Parser.EQUAL)
             self.state = 2698
@@ -21672,9 +21673,9 @@ class Swift3Parser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2700
-            if not SwiftSupport.isBinaryOp(_input):
+            if not SwiftSupport.isBinaryOp(self._input):
                 from antlr4.error.Errors import FailedPredicateException
-                raise FailedPredicateException(self, "SwiftSupport.isBinaryOp(_input)")
+                raise FailedPredicateException(self, "SwiftSupport.isBinaryOp(self._input)")
             self.state = 2701
             self.operator()
         except RecognitionException as re:
@@ -21722,9 +21723,9 @@ class Swift3Parser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2703
-            if not SwiftSupport.isPrefixOp(_input):
+            if not SwiftSupport.isPrefixOp(self._input):
                 from antlr4.error.Errors import FailedPredicateException
-                raise FailedPredicateException(self, "SwiftSupport.isPrefixOp(_input)")
+                raise FailedPredicateException(self, "SwiftSupport.isPrefixOp(self._input)")
             self.state = 2704
             self.operator()
         except RecognitionException as re:
@@ -21772,9 +21773,9 @@ class Swift3Parser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 2706
-            if not SwiftSupport.isPostfixOp(_input):
+            if not SwiftSupport.isPostfixOp(self._input):
                 from antlr4.error.Errors import FailedPredicateException
-                raise FailedPredicateException(self, "SwiftSupport.isPostfixOp(_input)")
+                raise FailedPredicateException(self, "SwiftSupport.isPostfixOp(self._input)")
             self.state = 2707
             self.operator()
         except RecognitionException as re:
@@ -21851,9 +21852,9 @@ class Swift3Parser ( Parser ):
                 while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                     if _alt==1:
                         self.state = 2710
-                        if not _input.get(_input.index()-1).getType()!=WS:
+                        if not _input.get(self._input.index()-1).getType()!=WS:
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "_input.get(_input.index()-1).getType()!=WS")
+                            raise FailedPredicateException(self, "_input.get(self._input.index()-1).getType()!=WS")
                         self.state = 2711
                         self.operator_character()
                     self.state = 2716
@@ -21871,9 +21872,9 @@ class Swift3Parser ( Parser ):
                 while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                     if _alt==1:
                         self.state = 2718
-                        if not _input.get(_input.index()-1).getType()!=WS:
+                        if not _input.get(self._input.index()-1).getType()!=WS:
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "_input.get(_input.index()-1).getType()!=WS")
+                            raise FailedPredicateException(self, "_input.get(self._input.index()-1).getType()!=WS")
                         self.state = 2719
                         self.dot_operator_character()
                     self.state = 2724
@@ -22525,7 +22526,7 @@ class Swift3Parser ( Parser ):
 
     def statements_impl_sempred(self, localctx:Statements_implContext, predIndex:int):
             if predIndex == 0:
-                return SwiftSupport.isSeparatedStatement(_input, localctx.indexBefore)
+                return SwiftSupport.isSeparatedStatement(self._input, localctx.indexBefore)
 
 
     def compilation_condition_sempred(self, localctx:Compilation_conditionContext, predIndex:int):
@@ -22544,11 +22545,11 @@ class Swift3Parser ( Parser ):
 
     def any_punctuation_for_balanced_token_sempred(self, localctx:Any_punctuation_for_balanced_tokenContext, predIndex:int):
             if predIndex == 4:
-                return SwiftSupport.isPrefixOp(_input)
+                return SwiftSupport.isPrefixOp(self._input)
 
 
             if predIndex == 5:
-                return SwiftSupport.isPostfixOp(_input)
+                return SwiftSupport.isPostfixOp(self._input)
 
 
     def postfix_expression_sempred(self, localctx:Postfix_expressionContext, predIndex:int):
@@ -22615,66 +22616,66 @@ class Swift3Parser ( Parser ):
 
     def assignment_operator_sempred(self, localctx:Assignment_operatorContext, predIndex:int):
             if predIndex == 21:
-                return SwiftSupport.isBinaryOp(_input)
+                return SwiftSupport.isBinaryOp(self._input)
 
 
     def negate_prefix_operator_sempred(self, localctx:Negate_prefix_operatorContext, predIndex:int):
             if predIndex == 22:
-                return SwiftSupport.isPrefixOp(_input)
+                return SwiftSupport.isPrefixOp(self._input)
 
 
     def compilation_condition_AND_sempred(self, localctx:Compilation_condition_ANDContext, predIndex:int):
             if predIndex == 23:
-                return SwiftSupport.isOperator(_input,"&&")
+                return SwiftSupport.isOperator(self._input,"&&")
 
 
     def compilation_condition_OR_sempred(self, localctx:Compilation_condition_ORContext, predIndex:int):
             if predIndex == 24:
-                return SwiftSupport.isOperator(_input,"||")
+                return SwiftSupport.isOperator(self._input,"||")
 
 
     def compilation_condition_GE_sempred(self, localctx:Compilation_condition_GEContext, predIndex:int):
             if predIndex == 25:
-                return SwiftSupport.isOperator(_input,">=")
+                return SwiftSupport.isOperator(self._input,">=")
 
 
     def arrow_operator_sempred(self, localctx:Arrow_operatorContext, predIndex:int):
             if predIndex == 26:
-                return SwiftSupport.isOperator(_input,"->")
+                return SwiftSupport.isOperator(self._input,"->")
 
 
     def range_operator_sempred(self, localctx:Range_operatorContext, predIndex:int):
             if predIndex == 27:
-                return SwiftSupport.isOperator(_input,"...")
+                return SwiftSupport.isOperator(self._input,"...")
 
 
     def same_type_equals_sempred(self, localctx:Same_type_equalsContext, predIndex:int):
             if predIndex == 28:
-                return SwiftSupport.isOperator(_input,"==")
+                return SwiftSupport.isOperator(self._input,"==")
 
 
     def binary_operator_sempred(self, localctx:Binary_operatorContext, predIndex:int):
             if predIndex == 29:
-                return SwiftSupport.isBinaryOp(_input)
+                return SwiftSupport.isBinaryOp(self._input)
 
 
     def prefix_operator_sempred(self, localctx:Prefix_operatorContext, predIndex:int):
             if predIndex == 30:
-                return SwiftSupport.isPrefixOp(_input)
+                return SwiftSupport.isPrefixOp(self._input)
 
 
     def postfix_operator_sempred(self, localctx:Postfix_operatorContext, predIndex:int):
             if predIndex == 31:
-                return SwiftSupport.isPostfixOp(_input)
+                return SwiftSupport.isPostfixOp(self._input)
 
 
     def operator_sempred(self, localctx:OperatorContext, predIndex:int):
             if predIndex == 32:
-                return _input.get(_input.index()-1).getType()!=WS
+                return _input.get(self._input.index()-1).getType()!=WS
 
 
             if predIndex == 33:
-                return _input.get(_input.index()-1).getType()!=WS
+                return _input.get(self._input.index()-1).getType()!=WS
 
 
 
