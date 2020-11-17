@@ -1,9 +1,7 @@
 from .KotlinLexer import KotlinLexer
 from .KotlinParser import KotlinParser
-from .KotlinParserListener import KotlinParserListener
-from .KotlinParserVisitor import KotlinParserVisitor
+from .KotlinECSTListener import KotlinECSTListener
 
 KotlinLexer
 KotlinParser
-KotlinParserListener
-KotlinParserVisitor
+KotlinECSTListener

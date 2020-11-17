@@ -2,11 +2,7 @@
 from antlr4 import *
 from .KotlinParser import KotlinParser
 
-from clone_detection.grammars.grammars_registry import LISTENERS
-
-
 # This class defines a complete listener for a parse tree produced by KotlinParser.
-@LISTENERS.register('kt')
 class KotlinParserListener(ParseTreeListener):
 
     # Enter a parse tree produced by KotlinParser#kotlinFile.
@@ -16,7 +12,6 @@ class KotlinParserListener(ParseTreeListener):
     # Exit a parse tree produced by KotlinParser#kotlinFile.
     def exitKotlinFile(self, ctx:KotlinParser.KotlinFileContext):
         pass
-
 
     # Enter a parse tree produced by KotlinParser#script.
     def enterScript(self, ctx:KotlinParser.ScriptContext):

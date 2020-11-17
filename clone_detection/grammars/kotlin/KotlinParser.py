@@ -2783,7 +2783,6 @@ class KotlinParser ( Parser ):
         def simpleIdentifier(self):
             return self.getTypedRuleContext(KotlinParser.SimpleIdentifierContext,0)
 
-
         def CLASS(self):
             return self.getToken(KotlinParser.CLASS, 0)
 

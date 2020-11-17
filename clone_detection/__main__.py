@@ -1,15 +1,16 @@
 import os
-from antlr4 import FileStream, CommonTokenStream
+
+from antlr4 import FileStream, CommonTokenStream, ParseTreeWalker
 from clone_detection.utils.arguments import get_args
 
 from clone_detection.grammars.grammars_registry import (PARSERS, LEXERS,
-                                                        LISTENERS, VISITORS)
+                                                        LISTENERS)
 
 
 START_RULE = {
     'java': 'compilationUnit',
     'swift': 'top_level_declaration',
-    'kotlin': 'kotlinFile',
+    'kt': 'kotlinFile',
     'cpp': 'translationUnit'
 }
 
@@ -25,7 +26,10 @@ def load_grammar(f):
     stream = CommonTokenStream(lexer)
     parser = PARSERS[ext](stream)
     tree = getattr(parser, START_RULE[ext])()
-    print(type(tree))
+    listener = LISTENERS[ext]()
+    walker = ParseTreeWalker()
+    walker.walk(listener, tree)
+    print(repr(listener.tree.children))
     return lexer, parser, tree
 
 
