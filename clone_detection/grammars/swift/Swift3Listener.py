@@ -2,11 +2,8 @@
 from antlr4 import *
 from .Swift3Parser import Swift3Parser
 
-from clone_detection.grammars.grammars_registry import LISTENERS
-
 
 # This class defines a complete listener for a parse tree produced by Swift3Parser.
-@LISTENERS.register('swift')
 class Swift3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Swift3Parser#top_level.

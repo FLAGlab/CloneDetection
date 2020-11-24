@@ -9,9 +9,11 @@ UNIVERSAL_NODES = {
     'CONSTRUCTOR_CALL',  # Create new object from constructor
     'CLASS_BODY',  # Defines a body for a class
     'CLASS_MEMBER',  # Define a member of a class
+    'ENUM_DECL',  # Define a enumeratio
     'ENUM_BODY',  # Defines a enumeration body
     'FUNCTION_DECL',  # Function declaration
     'FUNCTION_BODY',  # Define the body function
+    'FUNCION_CALL',  # Define a function call
     'ATTRIBUTE_DECL',  # Attribute declaration
     'VARIABLE_DECL',  # Variable declaration
     'GETTER',  # Getter declaration
