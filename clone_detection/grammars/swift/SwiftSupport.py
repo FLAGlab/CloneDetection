@@ -160,21 +160,7 @@ class SwiftSupport():
         else:
             text = token.text
             codepoint = ord(text[0])
-            if SwiftSupport.calculateCodepointLength(codepoint) != len(text):
-                # not a single character
-                return False
-            else:
-                return codepoint in charset
-
-    @staticmethod
-    def calculateCodepointLength(codepoint):
-        if codepoint > 0:
-            digits = int(math.log10(codepoint))+1
-        elif codepoint == 0:
-            digits = 1
-        else:
-            digits = int(math.log10(-codepoint))+2
-        return digits
+            return codepoint in charset
 
     @staticmethod
     def isOperatorHead(token):
@@ -186,8 +172,6 @@ class SwiftSupport():
 
     @staticmethod
     def isOpNext(tokens):
-        start = tokens.index
-        lt = tokens.get(start)
         stop = SwiftSupport.getLastOpTokenIndex(tokens)
         if stop == -1:
             return False
@@ -201,7 +185,8 @@ class SwiftSupport():
         currentTokenIndex = tokens.index
         currentToken = tokens.get(currentTokenIndex)
         # operator → dot-operator-head­ dot-operator-characters
-        if currentToken.type == DOT and tokens.get(currentTokenIndex + 1).type == DOT:
+        if (currentToken.type == DOT and
+                tokens.get(currentTokenIndex + 1).type == DOT):
             # dot-operator
             currentTokenIndex += 2  # point at token after ".."
             currentToken = tokens.get(currentTokenIndex)
@@ -215,7 +200,6 @@ class SwiftSupport():
 
         # operator → operator-head­ operator-characters­?
         if SwiftSupport.isOperatorHead(currentToken):
-            tokens.getText()
             currentToken = tokens.get(currentTokenIndex)
             while SwiftSupport.isOperatorCharacter(currentToken):
                 currentTokenIndex += 1
@@ -240,7 +224,7 @@ class SwiftSupport():
         prevIsWS = SwiftSupport.isLeftOperatorWS(prevToken)
         nextIsWS = SwiftSupport.isRightOperatorWS(nextToken)
         result = prevIsWS and nextIsWS or (not prevIsWS and not nextIsWS)
-        text = tokens.getText(start, stop)
+        # text = tokens.getText(start, stop)
         return result
 
     @staticmethod
@@ -282,8 +266,9 @@ class SwiftSupport():
         nextToken = tokens.get(stop + 1)
         prevIsWS = SwiftSupport.isLeftOperatorWS(prevToken)
         nextIsWS = SwiftSupport.isRightOperatorWS(nextToken)
-        result = not prevIsWS and nextIsWS or not prevIsWS and nextToken.type == DOT
-        text = tokens.getText(start, stop)
+        result = (not prevIsWS and nextIsWS) or (
+            not prevIsWS and nextToken.type == DOT)
+        # text = tokens.getText(start, stop)
         return result
 
     @staticmethod
