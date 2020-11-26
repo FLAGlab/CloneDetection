@@ -2922,9 +2922,12 @@ class Swift3ECSTListener(Swift3Listener):
     # Enter a parse tree produced by Swift3Parser#declaration_identifier.
     def enterDeclaration_identifier(
             self, ctx: Swift3Parser.Declaration_identifierContext):
-        token = ctx.Identifier()
-        token = token.symbol
-        act_token = ShortToken(token.text, token.line, token.column)
+        try:
+            token = ctx.Identifier()
+            token = token.symbol
+            act_token = ShortToken(token.text, token.line, token.column)
+        except AttributeError:
+            act_token = ShortToken('', 0, 0)
         class_param_node = ECSTNode(
             str(uuid.uuid4()), self.current_node, act_token,
             'IDENTIFIER')
@@ -2938,9 +2941,12 @@ class Swift3ECSTListener(Swift3Listener):
 
     # Enter a parse tree produced by Swift3Parser#label_identifier.
     def enterLabel_identifier(self, ctx: Swift3Parser.Label_identifierContext):
-        token = ctx.Identifier()
-        token = token.symbol
-        act_token = ShortToken(token.text, token.line, token.column)
+        try:
+            token = ctx.Identifier()
+            token = token.symbol
+            act_token = ShortToken(token.text, token.line, token.column)
+        except AttributeError:
+            act_token = ShortToken('', 0, 0)
         class_param_node = ECSTNode(
             str(uuid.uuid4()), self.current_node, act_token,
             'IDENTIFIER')

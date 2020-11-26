@@ -160,7 +160,21 @@ class SwiftSupport():
         else:
             text = token.text
             codepoint = ord(text[0])
-            return codepoint in charset
+            if SwiftSupport.calculateCodepointLength(codepoint) != len(text):
+                # not a single character
+                return False
+            else:
+                return codepoint in charset
+
+    @staticmethod
+    def calculateCodepointLength(codepoint):
+        if codepoint > 0:
+            digits = int(math.log10(codepoint))+1
+        elif codepoint == 0:
+            digits = 1
+        else:
+            digits = int(math.log10(-codepoint))+2
+        return digits
 
     @staticmethod
     def isOperatorHead(token):
