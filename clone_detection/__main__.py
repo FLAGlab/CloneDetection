@@ -11,7 +11,8 @@ START_RULE = {
     'java': 'compilationUnit',
     'swift': 'top_level_declaration',
     'kt': 'kotlinFile',
-    'cpp': 'translationUnit'
+    'cpp': 'translationUnit',
+    'dart': 'compilationUnit',
 }
 
 
@@ -19,7 +20,7 @@ def load_grammar(f):
     """Load grammar given the file."""
     _name, ext = os.path.splitext(f)
     ext = ext[1:]
-    if ext not in PARSERS:
+    if ext not in LISTENERS:
         raise ValueError('The program does not support the file extension')
     input_stream = FileStream(f)
     lexer = LEXERS[ext](input_stream)

@@ -1169,7 +1169,14 @@ class KotlinECSTListener(KotlinParserListener):
 
     # Enter a parse tree produced by KotlinParser#thisExpression.
     def enterThisExpression(self, ctx: KotlinParser.ThisExpressionContext):
-        pass
+        token = ctx.THIS().symbol
+        act_token = ShortToken(token.text, token.line, token.column)
+        class_param_node = ECSTNode(
+            str(uuid.uuid4()), self.current_node, act_token,
+            'THIS'
+        )
+        self.current_node.add_child(class_param_node)
+        self.current_node = class_param_node
 
     # Exit a parse tree produced by KotlinParser#thisExpression.
     def exitThisExpression(self, ctx: KotlinParser.ThisExpressionContext):

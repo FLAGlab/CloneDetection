@@ -59,4 +59,8 @@ UNIVERSAL_NODES = {
     'LITERAL',  # Defines the value of a constant, integer, boolean, etc
     'ASSIGNMENT_OPERATOR',  # Give value to a variable var x = 3
     'EXPRESSION',  # Define a expression of the language, if, for, while, condition, etc
+    'THROW',  # Define a throw exception expression
+    'THIS',  # Define a this, self expression
+    'AWAIT_EXPRESSION',  # Define an await expression
+    'ASSERT',  # Define assert expression
 }

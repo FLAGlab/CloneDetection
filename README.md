@@ -11,3 +11,7 @@ Download any grammar defined in ANTLR4 and run the following command,
 ```
 java -cp antlr-4.7.1-complete.jar org.antlr.v4.Tool -Dlanguage=Python3 -visitor ../clone_detection/grammars/XXX
 ```
+
+```
+python -m clone_detection --f examples/sort/bubble_sort.kt examples/sort/bubble_sort.dart
+```
