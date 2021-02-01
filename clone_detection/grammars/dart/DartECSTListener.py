@@ -72,17 +72,28 @@ class DartECSTListener(ParseTreeListener):
     # Enter a parse tree produced by Dart2Parser#initializedVariableDeclaration
     def enterInitializedVariableDeclaration(
             self, ctx: Dart2Parser.InitializedVariableDeclarationContext):
-        act_token = ShortToken('', 0, 0)
-        file_node = ECSTNode(
-            str(uuid.uuid4()), self.current_node, act_token,
-            'ASSIGNMENT_OPERATOR')
-        self.current_node.add_child(file_node)
-        self.current_node = file_node
+        if ctx.declaredIdentifier():
+            act_token = ShortToken('', 0, 0)
+            file_node = ECSTNode(
+                str(uuid.uuid4()), self.current_node, act_token,
+                'ATTRIBUTE_DECL')
+            self.current_node.add_child(file_node)
+            self.current_node = file_node
+        if ctx.expression() or ctx.initializedIdentifier():
+            act_token = ShortToken('', 0, 0)
+            file_node = ECSTNode(
+                str(uuid.uuid4()), self.current_node, act_token,
+                'ASSIGNMENT_OPERATOR')
+            self.current_node.add_child(file_node)
+            self.current_node = file_node
 
     # Exit a parse tree produced by Dart2Parser#initializedVariableDeclaration.
     def exitInitializedVariableDeclaration(
             self, ctx: Dart2Parser.InitializedVariableDeclarationContext):
-        self.current_node = self.current_node.parent
+        if ctx.declaredIdentifier():
+            self.current_node = self.current_node.parent
+        if ctx.expression() or ctx.initializedIdentifier():
+            self.current_node = self.current_node.parent
 
     # Enter a parse tree produced by Dart2Parser#initializedIdentifier.
     def enterInitializedIdentifier(
@@ -665,16 +676,11 @@ class DartECSTListener(ParseTreeListener):
 
     # Enter a parse tree produced by Dart2Parser#primary.
     def enterPrimary(self, ctx: Dart2Parser.PrimaryContext):
-        act_token = ShortToken('', 0, 0)
-        file_node = ECSTNode(
-            str(uuid.uuid4()), self.current_node, act_token,
-            'ACCESS_OPERATOR')
-        self.current_node.add_child(file_node)
-        self.current_node = file_node
+        pass
 
     # Exit a parse tree produced by Dart2Parser#primary.
     def exitPrimary(self, ctx: Dart2Parser.PrimaryContext):
-        self.current_node = self.current_node.parent
+        pass
 
     # Enter a parse tree produced by Dart2Parser#literal.
     def enterLiteral(self, ctx: Dart2Parser.LiteralContext):
@@ -699,7 +705,10 @@ class DartECSTListener(ParseTreeListener):
 
     # Enter a parse tree produced by Dart2Parser#numericLiteral.
     def enterNumericLiteral(self, ctx: Dart2Parser.NumericLiteralContext):
-        pass
+        token = ctx.NUMBER() or ctx.HEX_NUMBER()
+        token = token.symbol
+        act_token = ShortToken(token.text, token.line, token.column)
+        self.current_node.token = act_token
 
     # Exit a parse tree produced by Dart2Parser#numericLiteral.
     def exitNumericLiteral(self, ctx: Dart2Parser.NumericLiteralContext):
@@ -953,17 +962,19 @@ class DartECSTListener(ParseTreeListener):
     # Enter a parse tree produced by Dart2Parser#conditionalExpression.
     def enterConditionalExpression(
             self, ctx: Dart2Parser.ConditionalExpressionContext):
-        act_token = ShortToken('', 0, 0)
-        file_node = ECSTNode(
-            str(uuid.uuid4()), self.current_node, act_token,
-            'TERNARY')
-        self.current_node.add_child(file_node)
-        self.current_node = file_node
+        if len(ctx.expressionWithoutCascade()) > 0:
+            act_token = ShortToken('', 0, 0)
+            file_node = ECSTNode(
+                str(uuid.uuid4()), self.current_node, act_token,
+                'TERNARY')
+            self.current_node.add_child(file_node)
+            self.current_node = file_node
 
     # Exit a parse tree produced by Dart2Parser#conditionalExpression.
     def exitConditionalExpression(
             self, ctx: Dart2Parser.ConditionalExpressionContext):
-        self.current_node = self.current_node.parent
+        if len(ctx.expressionWithoutCascade()) > 0:
+            self.current_node = self.current_node.parent
 
     # Enter a parse tree produced by Dart2Parser#ifNullExpression.
     def enterIfNullExpression(self, ctx: Dart2Parser.IfNullExpressionContext):
@@ -976,32 +987,36 @@ class DartECSTListener(ParseTreeListener):
     # Enter a parse tree produced by Dart2Parser#logicalOrExpression.
     def enterLogicalOrExpression(
             self, ctx: Dart2Parser.LogicalOrExpressionContext):
-        act_token = ShortToken('', 0, 0)
-        file_node = ECSTNode(
-            str(uuid.uuid4()), self.current_node, act_token,
-            'OR')
-        self.current_node.add_child(file_node)
-        self.current_node = file_node
+        if ctx.logicalAndExpression(1):
+            act_token = ShortToken('', 0, 0)
+            file_node = ECSTNode(
+                str(uuid.uuid4()), self.current_node, act_token,
+                'OR')
+            self.current_node.add_child(file_node)
+            self.current_node = file_node
 
     # Exit a parse tree produced by Dart2Parser#logicalOrExpression.
     def exitLogicalOrExpression(
             self, ctx: Dart2Parser.LogicalOrExpressionContext):
-        self.current_node = self.current_node.parent
+        if ctx.logicalAndExpression(1):
+            self.current_node = self.current_node.parent
 
     # Enter a parse tree produced by Dart2Parser#logicalAndExpression.
     def enterLogicalAndExpression(
             self, ctx: Dart2Parser.LogicalAndExpressionContext):
-        act_token = ShortToken('', 0, 0)
-        file_node = ECSTNode(
-            str(uuid.uuid4()), self.current_node, act_token,
-            'AND')
-        self.current_node.add_child(file_node)
-        self.current_node = file_node
+        if ctx.equalityExpression(1):
+            act_token = ShortToken('', 0, 0)
+            file_node = ECSTNode(
+                str(uuid.uuid4()), self.current_node, act_token,
+                'AND')
+            self.current_node.add_child(file_node)
+            self.current_node = file_node
 
     # Exit a parse tree produced by Dart2Parser#logicalAndExpression.
     def exitLogicalAndExpression(
             self, ctx: Dart2Parser.LogicalAndExpressionContext):
-        self.current_node = self.current_node.parent
+        if ctx.equalityExpression(1):
+            self.current_node = self.current_node.parent
 
     # Enter a parse tree produced by Dart2Parser#equalityExpression.
     def enterEqualityExpression(
@@ -1039,17 +1054,20 @@ class DartECSTListener(ParseTreeListener):
     # Enter a parse tree produced by Dart2Parser#relationalOperator.
     def enterRelationalOperator(
             self, ctx: Dart2Parser.RelationalOperatorContext):
-        act_token = ShortToken('', 0, 0)
-        file_node = ECSTNode(
-            str(uuid.uuid4()), self.current_node, act_token,
-            'COMPARISON_OPERATOR')
-        self.current_node.add_child(file_node)
-        self.current_node = file_node
+        if ctx.TOKEN():
+            token = ctx.TOKEN().symbol
+            act_token = ShortToken(token.text, token.line, token.column)
+            file_node = ECSTNode(
+                str(uuid.uuid4()), self.current_node, act_token,
+                'COMPARISON_OPERATOR')
+            self.current_node.add_child(file_node)
+            self.current_node = file_node
 
     # Exit a parse tree produced by Dart2Parser#relationalOperator.
     def exitRelationalOperator(
             self, ctx: Dart2Parser.RelationalOperatorContext):
-        self.current_node = self.current_node.parent
+        if ctx.TOKEN():
+            self.current_node = self.current_node.parent
 
     # Enter a parse tree produced by Dart2Parser#bitwiseOrExpression.
     def enterBitwiseOrExpression(
@@ -1117,16 +1135,19 @@ class DartECSTListener(ParseTreeListener):
 
     # Enter a parse tree produced by Dart2Parser#additiveOperator.
     def enterAdditiveOperator(self, ctx: Dart2Parser.AdditiveOperatorContext):
-        act_token = ShortToken('', 0, 0)
-        file_node = ECSTNode(
-            str(uuid.uuid4()), self.current_node, act_token,
-            'ADDITIVE_OPERATOR')
-        self.current_node.add_child(file_node)
-        self.current_node = file_node
+        if ctx.TOKEN():
+            token = ctx.TOKEN().symbol
+            act_token = ShortToken(token.text, token.line, token.column)
+            file_node = ECSTNode(
+                str(uuid.uuid4()), self.current_node, act_token,
+                'ADDITIVE_OPERATOR')
+            self.current_node.add_child(file_node)
+            self.current_node = file_node
 
     # Exit a parse tree produced by Dart2Parser#additiveOperator.
     def exitAdditiveOperator(self, ctx: Dart2Parser.AdditiveOperatorContext):
-        self.current_node = self.current_node.parent
+        if ctx.TOKEN():
+            self.current_node = self.current_node.parent
 
     # Enter a parse tree produced by Dart2Parser#multiplicativeExpression.
     def enterMultiplicativeExpression(
@@ -1225,16 +1246,11 @@ class DartECSTListener(ParseTreeListener):
 
     # Enter a parse tree produced by Dart2Parser#postfixOperator.
     def enterPostfixOperator(self, ctx: Dart2Parser.PostfixOperatorContext):
-        act_token = ShortToken('', 0, 0)
-        file_node = ECSTNode(
-            str(uuid.uuid4()), self.current_node, act_token,
-            'POSFIX')
-        self.current_node.add_child(file_node)
-        self.current_node = file_node
+        pass
 
     # Exit a parse tree produced by Dart2Parser#postfixOperator.
     def exitPostfixOperator(self, ctx: Dart2Parser.PostfixOperatorContext):
-        self.current_node = self.current_node.parent
+        pass
 
     # Enter a parse tree produced by Dart2Parser#selector.
     def enterSelector(self, ctx: Dart2Parser.SelectorContext):
@@ -1247,12 +1263,19 @@ class DartECSTListener(ParseTreeListener):
     # Enter a parse tree produced by Dart2Parser#incrementOperator.
     def enterIncrementOperator(
             self, ctx: Dart2Parser.IncrementOperatorContext):
-        # TODO: add increment operator ++, --
-        pass
+        if ctx.TOKEN():
+            token = ctx.TOKEN().symbol
+            act_token = ShortToken(token.text, token.line, token.column)
+            file_node = ECSTNode(
+                str(uuid.uuid4()), self.current_node, act_token,
+                'POSFIX')
+            self.current_node.add_child(file_node)
+            self.current_node = file_node
 
     # Exit a parse tree produced by Dart2Parser#incrementOperator.
     def exitIncrementOperator(self, ctx: Dart2Parser.IncrementOperatorContext):
-        pass
+        if ctx.TOKEN():
+            self.current_node = self.current_node.parent
 
     # Enter a parse tree produced by Dart2Parser#assignableExpression.
     def enterAssignableExpression(
@@ -1273,13 +1296,18 @@ class DartECSTListener(ParseTreeListener):
     # Dart2Parser#unconditionalAssignableSelector.
     def enterUnconditionalAssignableSelector(
             self, ctx: Dart2Parser.UnconditionalAssignableSelectorContext):
-        pass
+        act_token = ShortToken('', 0, 0)
+        file_node = ECSTNode(
+            str(uuid.uuid4()), self.current_node, act_token,
+            'ACCESS_OPERATOR')
+        self.current_node.add_child(file_node)
+        self.current_node = file_node
 
     # Exit a parse tree produced by
     # Dart2Parser#unconditionalAssignableSelector.
     def exitUnconditionalAssignableSelector(
             self, ctx: Dart2Parser.UnconditionalAssignableSelectorContext):
-        pass
+        self.current_node = self.current_node.parent
 
     # Enter a parse tree produced by Dart2Parser#assignableSelector.
     def enterAssignableSelector(
@@ -1384,12 +1412,17 @@ class DartECSTListener(ParseTreeListener):
     # Enter a parse tree produced by Dart2Parser#expressionStatement.
     def enterExpressionStatement(
             self, ctx: Dart2Parser.ExpressionStatementContext):
-        pass
+        act_token = ShortToken('', 0, 0)
+        file_node = ECSTNode(
+            str(uuid.uuid4()), self.current_node, act_token,
+            'EXPRESSION')
+        self.current_node.add_child(file_node)
+        self.current_node = file_node
 
     # Exit a parse tree produced by Dart2Parser#expressionStatement.
     def exitExpressionStatement(
             self, ctx: Dart2Parser.ExpressionStatementContext):
-        pass
+        self.current_node = self.current_node.parent
 
     # Enter a parse tree produced by Dart2Parser#localVariableDeclaration.
     def enterLocalVariableDeclaration(

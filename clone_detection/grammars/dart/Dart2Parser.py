@@ -7933,6 +7933,10 @@ class Dart2Parser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def TOKEN(self):
+            for child in self.getChildren():
+                return child
+            return None
 
         def getRuleIndex(self):
             return Dart2Parser.RULE_relationalOperator
@@ -8548,6 +8552,10 @@ class Dart2Parser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def TOKEN(self):
+            for child in self.getChildren():
+                return child
+            return None
 
         def getRuleIndex(self):
             return Dart2Parser.RULE_additiveOperator
@@ -9310,6 +9318,10 @@ class Dart2Parser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
+        def TOKEN(self):
+            for child in self.getChildren():
+                return child
+            return None
 
         def getRuleIndex(self):
             return Dart2Parser.RULE_incrementOperator
