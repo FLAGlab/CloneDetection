@@ -12,18 +12,3 @@ bubbleSort(List<int> array) {
   }
   return (array);
 }
-
-
-class SamePerson {
-  SamePerson(parent){
-    parent.children.add(this);
-  }
-
-  String present(){
-    return "Hola";
-  }
-
-  String greet(){
-    return "lalala";
-  }
-}

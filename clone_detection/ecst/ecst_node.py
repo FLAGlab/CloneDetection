@@ -82,18 +82,35 @@ class ECSTNode():
                 res.append(child)
         return res
 
-    def dfs_subtree(self, exclude_universal_nodes):
+    def dfs_subtree(self):
         """Get the dfs subtree."""
         dfs_children_list = list(self.children)
         res = []
         while dfs_children_list != []:
             child = dfs_children_list.pop(0)
-            is_universal_node = child.token in UNIVERSAL_NODES
-            if ((exclude_universal_nodes and not is_universal_node) or not
-                    exclude_universal_nodes):
-                res.append(child)
+            res.append(child)
             dfs_children_list += child.children
         return res
+
+    def dfs_split_blocks(self):
+        """Get the subtrees splitted by function or classes."""
+        dfs_children_list = list(self.children)
+        res = {}
+        while dfs_children_list != []:
+            child = dfs_children_list.pop(0)
+            if self.is_block(child):
+                if child.type in res:
+                    res[child.type].append(child)
+                else:
+                    res[child.type] = [child]
+            dfs_children_list += child.children
+        return res
+
+    def is_block(self, node):
+        """Returns if the node is a function or class block."""
+        block_types = {
+            'FUNCTION_DECL', 'FUNCTION_BODY', 'CLASS_BODY', 'CLASS_DECL'}
+        return node.type in block_types
 
     def empty_subtree(self):
         """Return if the subtree is empty."""

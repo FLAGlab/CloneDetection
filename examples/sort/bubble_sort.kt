@@ -25,8 +25,15 @@ class Person(val name: String, var age: Int){
     fun greet(other: String) = "Lalalalalala"
 }
 
-var a = 3 || 1 || 0 || 4
+class SamePerson {
+    constructor(parent: Person) {
+        parent.children.add(this)
+    }
 
-var b = 3 && 4 && 10
-
-var c = 3 <= 10
+    fun present(){
+        return "Hola"
+    }
+    fun greet(other:String){
+        return "lalala"
+    }
+}
