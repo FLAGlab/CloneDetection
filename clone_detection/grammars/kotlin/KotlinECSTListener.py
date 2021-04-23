@@ -909,17 +909,19 @@ class KotlinECSTListener(KotlinParserListener):
 
     # Enter a parse tree produced by KotlinParser#annotatedLambda.
     def enterAnnotatedLambda(self, ctx: KotlinParser.AnnotatedLambdaContext):
-        token = ctx.LabelDefinition().symbol
-        act_token = ShortToken(token.text, token.line, token.column)
-        class_param_node = ECSTNode(
-            str(uuid.uuid4()), self.current_node, act_token, 'FUNCTION_DECL'
-        )
-        self.current_node.add_child(class_param_node)
-        self.current_node = class_param_node
+        if ctx.LabelDefinition():
+            token = ctx.LabelDefinition().symbol
+            act_token = ShortToken(token.text, token.line, token.column)
+            class_param_node = ECSTNode(
+                str(uuid.uuid4()), self.current_node, act_token, 'FUNCTION_DECL'
+            )
+            self.current_node.add_child(class_param_node)
+            self.current_node = class_param_node
 
     # Exit a parse tree produced by KotlinParser#annotatedLambda.
     def exitAnnotatedLambda(self, ctx: KotlinParser.AnnotatedLambdaContext):
-        self.current_node = self.current_node.parent
+        if ctx.LabelDefinition():
+            self.current_node = self.current_node.parent
 
     # Enter a parse tree produced by KotlinParser#arrayAccess.
     def enterArrayAccess(self, ctx: KotlinParser.ArrayAccessContext):
@@ -1657,7 +1659,9 @@ class KotlinECSTListener(KotlinParserListener):
 
     # Enter a parse tree produced by KotlinParser#propertyModifier.
     def enterPropertyModifier(self, ctx: KotlinParser.PropertyModifierContext):
-        act_token = ctx.CONST().symbol
+        act_token = ctx.CONST()
+        token = act_token.symbol
+        act_token = ShortToken(token.text, token.line, token.column)
         class_param_node = ECSTNode(
             str(uuid.uuid4()), self.current_node, act_token,
             'CONST_DECL')
@@ -1767,17 +1771,19 @@ class KotlinECSTListener(KotlinParserListener):
 
     # Enter a parse tree produced by KotlinParser#simpleIdentifier.
     def enterSimpleIdentifier(self, ctx: KotlinParser.SimpleIdentifierContext):
-        identifier = ctx.Identifier().symbol
-        act_token = ShortToken(
-            identifier.text, identifier.line, identifier.column)
-        identifier_node = ECSTNode(
-            str(uuid.uuid4()), self.current_node, act_token, 'IDENTIFIER')
-        self.current_node.add_child(identifier_node)
-        self.current_node = identifier_node
+        if ctx.Identifier():
+            identifier = ctx.Identifier().symbol
+            act_token = ShortToken(
+                identifier.text, identifier.line, identifier.column)
+            identifier_node = ECSTNode(
+                str(uuid.uuid4()), self.current_node, act_token, 'IDENTIFIER')
+            self.current_node.add_child(identifier_node)
+            self.current_node = identifier_node
 
     # Exit a parse tree produced by KotlinParser#simpleIdentifier.
     def exitSimpleIdentifier(self, ctx: KotlinParser.SimpleIdentifierContext):
-        self.current_node = self.current_node.parent
+        if ctx.Identifier():
+            self.current_node = self.current_node.parent
 
     # Enter a parse tree produced by KotlinParser#semi.
     def enterSemi(self, ctx: KotlinParser.SemiContext):

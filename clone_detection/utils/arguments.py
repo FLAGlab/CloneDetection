@@ -8,5 +8,7 @@ def get_args():
 
     parser.add_argument('--f', nargs='+', type=str,
                         help='Files for detecting clones')
+    parser.add_argument('--d', nargs='+', type=str, default='',
+                        help='Directory of projects for detecting clones')
 
     return parser.parse_args()

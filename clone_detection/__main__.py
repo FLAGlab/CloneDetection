@@ -1,4 +1,5 @@
 import os
+import os.path as osp
 import itertools
 
 from antlr4 import FileStream, CommonTokenStream, ParseTreeWalker
@@ -15,6 +16,8 @@ START_RULE = {
     'cpp': 'translationUnit',
     'dart': 'compilationUnit',
 }
+
+SUPPORTED_LANGUAGES = {'kt', 'dart'}
 
 SIMILAR_NODES = {
     'IDENTIFIER': ['LITERAL', 'IDENTIFIER'],
@@ -115,6 +118,8 @@ def load_grammar(f):
 
 def compare_block(tree_1, tree_2):
     """Compare a function declaration statement among the given trees."""
+    count_type_1 = 0
+    count_type_2_3 = 0
     clones = []
     tree_1 = tree_1.dfs_subtree()
     tree_2 = tree_2.dfs_subtree()
@@ -140,35 +145,70 @@ def compare_block(tree_1, tree_2):
             token_2 = act_2.token
             if token_1.text == token_2.text and token_1 != '':
                 # Type 1 clone
-                print('*****', token_1.text, token_2.text)
                 clones.append((token_1, token_2))
+                count_type_1 += 1
             else:
                 # Type 2/3 clone
-                print('!!!!!!', token_1.text, token_2.text)
                 clones.append((token_1, token_2))
+                count_type_2_3 += 1
         i += 1
         j += 1
+    return clones, count_type_1, count_type_2_3
 
 
-def compare_ecst(trees):
+def compare_ecst(trees, return_all=False):
     """Compare the given trees to find clones."""
     blocks = {}
     block_keys = set()
+    final_clones = []
     for i, tree in enumerate(trees):
         act_blocks = tree.dfs_split_blocks()
         blocks[i] = act_blocks
         block_keys |= act_blocks.keys()
     for key in block_keys:
         pairs = list(itertools.combinations(range(0, len(trees)), 2))
+        act_clones = []
+        max_type_1 = 0
+        max_type_2_3 = 0
         for i, j in pairs:
             try:
                 first_subtrees = blocks[i][key]
                 second_subtrees = blocks[j][key]
+                max_clones = []
                 for first_tree in first_subtrees:
                     for second_tree in second_subtrees:
-                        compare_block(first_tree, second_tree)
+                        res = compare_block(first_tree, second_tree)
+                        clones, count_type_1, count_type_2_3 = res
+                        total = count_type_1 + count_type_2_3
+                        if return_all:
+                            max_clones = max_clones + clones
+                        else:
+                            if total > max_type_1 + max_type_2_3:
+                                # Has more clones than the other blocks
+                                max_type_1 += count_type_1
+                                max_type_2_3 += count_type_2_3
+                                max_clones = clones
+                            elif total == max_type_1 + max_type_2_3:
+                                if max_type_1 > max_type_2_3:
+                                    max_type_1 += count_type_1
+                                    max_type_2_3 += count_type_2_3
+                                    max_clones = clones
+                act_clones = act_clones + max_clones
             except KeyError:
                 pass
+        final_clones = final_clones + act_clones
+    return final_clones
+
+
+def discover_files(directory):
+    """Discover supported files in the given directory."""
+    res = []
+    for root, _, files in os.walk(directory):
+        for f in files:
+            _, ext = osp.splitext(f)
+            if ext in SUPPORTED_LANGUAGES:
+                res.append(osp.join(root, f))
+    return res
 
 
 if __name__ == "__main__":
@@ -176,9 +216,22 @@ if __name__ == "__main__":
     if len(args.f) < 2:
         raise ValueError('Not enough files provided for comparison')
 
-    ecst_trees = []
-    for f in args.f:
+    if args.d != '':
+        directory_files = discover_files(args.d)
+
+    files = args.f + directory_files
+
+    ecst_trees = {}
+    for f in files:
         tree = load_grammar(f)
         ecst_trees.append(tree)
 
-    compare_ecst(ecst_trees)
+    clones = compare_ecst(ecst_trees, return_all=False)
+    for token_1, token_2 in clones:
+        if (token_1.line == 0 and token_1.column == 0 or
+                token_2.line == 0 and token_2.column == 0):
+            print(token_1.type, token_2.type)
+        else:
+            print(token_1.text, token_2.text)
+            print(token_1.line, token_2.line)
+            print(token_1.column, token_2.column)

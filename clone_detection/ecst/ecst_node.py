@@ -11,19 +11,20 @@ class ECSTNode():
         self.type = type_
         self.children = []
         self.level = 0
+        self.token.set_type(type_)
 
     def add_child(self, node):
         """Add a new children to the node."""
         node.level = self.level + 1
         self.children.append(node)
 
-    def rewrite_token(self, new_token):
+    def set_token(self, new_token):
         """Change the token for a new one."""
         self.token = new_token
 
-    def rewrite_type(self, new_type):
+    def set_type(self, new_type):
         """Change the type of the node."""
-        self.type = type
+        self.type = new_type
 
     def dispose_children(self):
         """Clear all the children of the node."""
@@ -130,3 +131,8 @@ class ShortToken():
         self.text = text
         self.line = line
         self.column = column
+        self.type = None
+
+    def set_type(self, _type):
+        """Set the type of the token."""
+        self.type = _type
