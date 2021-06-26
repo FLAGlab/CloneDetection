@@ -364,6 +364,8 @@ class KotlinECSTListener(KotlinParserListener):
         try:
             act_token = ctx.ASSIGNMENT().symbol
             act_type = 'ASSIGNMENT_OPERATOR'
+            act_token = ShortToken(
+                act_token.text, act_token.line, act_token.column)
         except AttributeError:
             act_token = ShortToken('', 0, 0)
             act_type = 'FUNCTION_BODY'

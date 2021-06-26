@@ -39,7 +39,8 @@ SIMILAR_NODES = {
     'SETTER': ['SETTER'],
     'TYPE_ALIAS': ['TYPE_ALIAS'],
     'PARAMETER_TYPE': ['PARAMETER_TYPE', 'TYPE'],
-    'TYPE': ['TYPE'],
+    'TYPE': ['TYPE', 'PARAMETER_TYPE', 'FUNCTION_TYPE', 'NULLABLE_TYPE',
+             'USER_TYPE'],
     'NULLABLE_TYPE': ['NULLABLE_TYPE', 'TYPE'],
     'FUNCTION_TYPE': ['FUNCTION_TYPE', 'TYPE'],
     'USER_TYPE': ['USER_TYPE', 'TYPE'],
@@ -50,7 +51,7 @@ SIMILAR_NODES = {
     'PREFIX': ['PREFIX'],
     'POSFIX': ['POSFIX'],
     'COLLECTION_INDEXING': ['COLLECTION_INDEXING'],
-    'VALUE_ARGUMENT_LIST': ['PARAMETER_LIST'],
+    'VALUE_ARGUMENT_LIST': ['PARAMETER_LIST', 'VALUE_ARGUMENT_LIST'],
     'VALUE_ARGUMENT': ['VALUE_ARGUMENT'],
     'TYPE_ARGUMENT_LIST': ['TYPE_ARGUMENT_LIST'],
     'TYPE_ARGUMENT': ['TYPE_ARGUMENT'],
@@ -112,7 +113,7 @@ def load_grammar(f):
     listener = LISTENERS[ext]()
     walker = ParseTreeWalker()
     walker.walk(listener, tree)
-    # print(repr(listener.tree.children))
+    print(repr(listener.tree.children))
     return listener.tree
 
 
@@ -206,27 +207,26 @@ def discover_files(directory):
     for root, _, files in os.walk(directory):
         for f in files:
             _, ext = osp.splitext(f)
-            if ext in SUPPORTED_LANGUAGES:
+            if ext[1:] in SUPPORTED_LANGUAGES:
                 res.append(osp.join(root, f))
     return res
 
 
 if __name__ == "__main__":
     args = get_args()
-    if len(args.f) < 2:
+    dir_files = [] if args.d == '' else sum(
+        [discover_files(d) for d in args.d], [])
+    files = args.f + dir_files
+    print('Files loaded: ', files)
+    if len(files) < 2:
         raise ValueError('Not enough files provided for comparison')
 
-    if args.d != '':
-        directory_files = discover_files(args.d)
-
-    files = args.f + directory_files
-
-    ecst_trees = {}
+    ecst_trees = []
     for f in files:
         tree = load_grammar(f)
         ecst_trees.append(tree)
 
-    clones = compare_ecst(ecst_trees, return_all=False)
+    clones = compare_ecst(ecst_trees, return_all=True)
     for token_1, token_2 in clones:
         if (token_1.line == 0 and token_1.column == 0 or
                 token_2.line == 0 and token_2.column == 0):
@@ -235,3 +235,5 @@ if __name__ == "__main__":
             print(token_1.text, token_2.text)
             print(token_1.line, token_2.line)
             print(token_1.column, token_2.column)
+
+    print(len(clones))

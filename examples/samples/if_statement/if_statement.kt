@@ -5,4 +5,5 @@ fun main(j:int){
     else {
         return "Fin";
     }
+    val ten = 10
 }

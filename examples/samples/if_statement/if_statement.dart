@@ -5,4 +5,5 @@ void main(int j){
     else {
         return "Fin";
     }
+    int ten = 10
 }
