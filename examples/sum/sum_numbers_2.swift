@@ -1,14 +1,12 @@
-fun sum_range(start: Int, end: Int) -> Int {
+func sum_range(_ start: Int, _ end: Int) -> Int {
     var sum : Int
     sum = 0
     var current = start
     while current < end {
         sum += current
-        current++
+        current += 1
     }
     return sum
 }
 
-fun main() {
-    print("\(sum_range(0,10))")
-}
+print("\(sum_range(0,10))")
