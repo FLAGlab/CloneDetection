@@ -132,6 +132,7 @@ class ShortToken():
         self.line = line
         self.column = column
         self.type = None
+        self.clone_type = None
 
     def set_type(self, _type):
         """Set the type of the token."""
