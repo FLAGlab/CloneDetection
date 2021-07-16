@@ -14,6 +14,8 @@ SEMI = 141
 WS = 169
 Block_comment = 170
 Line_comment = 171
+Multi_line = 172
+Single_line =  173
 operatorHead = set({})
 leftWS = set({})
 rightWS = set({})
@@ -43,10 +45,6 @@ operatorHead |= {0x00AB}
 # operator-head → U+00AC or U+00AE
 operatorHead |= {0x00AC}
 operatorHead |= {0x00AE}
-
-# operator-head → U+00A9 or U+00AB
-operatorHead |= {0x00A9}
-operatorHead |= {0x00AB}
 
 # operator-head → U+00B0–U+00B1, U+00B6, U+00BB, U+00BF, U+00D7, or U+00F7
 operatorHead |= {x for x in range(0x00B0, 0x00B1+1)}
@@ -87,6 +85,8 @@ operatorHead |= {x for x in range(0x3001, 0x3003+1)}
 # operator-head → U+3008–U+3030
 operatorHead |= {x for x in range(0x3008, 0x3030+1)}
 
+operatorHead |= {0x3030}
+
 # operator-character → operator-head­
 operatorCharacter = set(operatorHead)
 
@@ -110,6 +110,8 @@ operatorCharacter |= {x for x in range(0xE0100, 0xE01EF+1)}
 
 leftWS |= {WS}
 leftWS |= {LPAREN}
+leftWS |= {Multi_line}
+leftWS |= {Single_line}
 leftWS |= {LBRACK}
 leftWS |= {LCURLY}
 leftWS |= {COMMA}
@@ -189,9 +191,7 @@ class SwiftSupport():
         start = tokens.index
         lt = tokens.get(start)
         stop = SwiftSupport.getLastOpTokenIndex(tokens)
-        if stop == -1:
-            return False
-        return True
+        return stop != -1
 
     @staticmethod
     def getLastOpTokenIndex(tokens):
