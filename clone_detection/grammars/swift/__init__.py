@@ -1,7 +1,7 @@
-from .Swift3Lexer import Swift3Lexer
-from .Swift3Parser import Swift3Parser
-from .Swift3ECSTListener import Swift3ECSTListener
+from .Swift5Lexer import Swift5Lexer
+from .Swift5Parser import Swift5Parser
+from .SwiftECSTListener import SwiftECSTListener
 
-Swift3Lexer
-Swift3Parser
-Swift3ECSTListener
+Swift5Lexer
+Swift5Parser
+SwiftECSTListener
