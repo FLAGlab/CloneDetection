@@ -9,7 +9,7 @@ pip install antlr4-python3-runtime
 
 Download any grammar defined in ANTLR4 and run the following command,
 ```
-java -cp antlr-4.7.1-complete.jar org.antlr.v4.Tool -Dlanguage=Python3 -visitor ../clone_detection/grammars/XXX
+java -cp antlr-4.9-complete.jar org.antlr.v4.Tool -Dlanguage=Python3 -visitor ../clone_detection/grammars/XXX/XXX.g4
 ```
 
 ```
