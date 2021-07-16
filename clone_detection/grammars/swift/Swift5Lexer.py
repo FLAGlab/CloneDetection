@@ -3,11 +3,7 @@ from antlr4 import *
 from io import StringIO
 from typing.io import TextIO
 import sys
-
-
-	import java.util.Stack;
-
-
+from queue import LifoQueue
 
 def serializedATN():
     with StringIO() as buf:
@@ -1289,16 +1285,7 @@ class Swift5Lexer(Lexer):
         self._interp = LexerATNSimulator(self, self.atn, self.decisionsToDFA, PredictionContextCache())
         self._actions = None
         self._predicates = None
-
-
-    	Stack<Integer> parenthesis = new Stack<Integer>();
-
-    	@Override
-    	public void reset(){
-    		super.reset();
-    		parenthesis.clear();
-    	}
-
+        self.parenthesis = LifoQueue()
 
     def action(self, localctx:RuleContext, ruleIndex:int, actionIndex:int):
         if self._actions is None:
@@ -1317,31 +1304,27 @@ class Swift5Lexer(Lexer):
 
     def LPAREN_action(self, localctx:RuleContext , actionIndex:int):
         if actionIndex == 0:
-             if(!parenthesis.isEmpty()) parenthesis.push(parenthesis.pop()+1);
+             if not self.parenthesis.empty(): 
+                 self.parenthesis.put(self.parenthesis.get()+1)
      
 
     def RPAREN_action(self, localctx:RuleContext , actionIndex:int):
         if actionIndex == 1:
-             if(!parenthesis.isEmpty()) 
-            		{
-            			parenthesis.push(parenthesis.pop()-1); 
-            			if(parenthesis.peek() == 0) 
-            			{ 
-            				parenthesis.pop();
-            				popMode();
-            			}
-            		}
-            		
+            if not self.parenthesis.empty(): 
+            	self.parenthesis.put(parenthesis.get()-1) 
+                top = self.parenthesis.get()
+                if top != 0:
+            		self.parenthesis.put(top)#popMode()            			
      
 
     def Interpolataion_single_line_action(self, localctx:RuleContext , actionIndex:int):
         if actionIndex == 2:
-             parenthesis.push(1);
+            self.parenthesis.put(1)
      
 
     def Interpolataion_multi_line_action(self, localctx:RuleContext , actionIndex:int):
         if actionIndex == 3:
-            parenthesis.push(1); 
+            self.parenthesis.put(1); 
      
 
 
