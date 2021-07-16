@@ -11,13 +11,13 @@ from clone_detection.grammars.grammars_registry import (PARSERS, LEXERS,
 
 START_RULE = {
     'java': 'compilationUnit',
-    'swift': 'top_level_declaration',
+    'swift': 'top_level', #check start rule
     'kt': 'kotlinFile',
     'cpp': 'translationUnit',
     'dart': 'compilationUnit',
 }
 
-SUPPORTED_LANGUAGES = {'kt', 'dart'}
+SUPPORTED_LANGUAGES = {'kt', 'dart', 'swift'}
 
 SIMILAR_NODES = {
     'IDENTIFIER': ['LITERAL', 'IDENTIFIER'],
@@ -113,7 +113,7 @@ def load_grammar(f):
     listener = LISTENERS[ext]()
     walker = ParseTreeWalker()
     walker.walk(listener, tree)
-    print(repr(listener.tree.children))
+    print(repr(listener.tree.children)) #tree in console
     return listener.tree
 
 
