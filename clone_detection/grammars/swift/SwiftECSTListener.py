@@ -1,13 +1,12 @@
 import uuid
 from clone_detection.ecst.ecst_tree import ECSTree
 from clone_detection.ecst.ecst_node import ECSTNode, ShortToken
-from .Swift5ParserListener import SwiftParserListener
-from .Swift5Parser import SwiftParser
+from .Swift5ParserListener import Swift5ParserListener
+from .Swift5Parser import Swift5Parser
 from clone_detection.grammars.grammars_registry import LISTENERS
 
-
 @LISTENERS.register('swift')
-class SwiftECSTListener(SwiftParserListener):
+class SwiftECSTListener(Swift5ParserListener):
     def __init__(self):
         self.tree = ECSTree()
         self.current_node = self.tree
@@ -24,7 +23,6 @@ class SwiftECSTListener(SwiftParserListener):
     def exitTop_level(self, ctx:Swift5Parser.Top_levelContext):
         self.current_node = self.current_node.parent
 
-
     # Enter a parse tree produced by Swift5Parser#statement.
     def enterStatement(self, ctx:Swift5Parser.StatementContext):
         pass
@@ -32,7 +30,6 @@ class SwiftECSTListener(SwiftParserListener):
     # Exit a parse tree produced by Swift5Parser#statement.
     def exitStatement(self, ctx:Swift5Parser.StatementContext):
         pass
-
 
     # Enter a parse tree produced by Swift5Parser#statements.
     def enterStatements(self, ctx:Swift5Parser.StatementsContext):
@@ -45,11 +42,16 @@ class SwiftECSTListener(SwiftParserListener):
 
     # Enter a parse tree produced by Swift5Parser#loop_statement.
     def enterLoop_statement(self, ctx:Swift5Parser.Loop_statementContext):
-        pass
+        act_token = ShortToken('', 0, 0)
+        loop_node = ECSTNode(
+            str(uuid.uuid4()), self.current_node, act_token, 'LOOP_STATEMENT'
+        )
+        self.current_node.add_child(loop_node)
+        self.current_node = loop_node
 
     # Exit a parse tree produced by Swift5Parser#loop_statement.
     def exitLoop_statement(self, ctx:Swift5Parser.Loop_statementContext):
-        pass
+        self.current_node = self.current_node.parent
 
 
     # Enter a parse tree produced by Swift5Parser#for_in_statement.

@@ -4,6 +4,7 @@ from io import StringIO
 from typing.io import TextIO
 import sys
 from queue import LifoQueue
+from clone_detection.grammars.grammars_registry import LEXERS
 
 def serializedATN():
     with StringIO() as buf:
@@ -940,9 +941,8 @@ def serializedATN():
         buf.write("\u00d1\4\7\2\2\6\2\2\3\u00d4\5")
         return buf.getvalue()
 
-
+@LEXERS.register('swift')
 class Swift5Lexer(Lexer):
-
     atn = ATNDeserializer().deserialize(serializedATN())
 
     decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
@@ -1304,17 +1304,17 @@ class Swift5Lexer(Lexer):
 
     def LPAREN_action(self, localctx:RuleContext , actionIndex:int):
         if actionIndex == 0:
-             if not self.parenthesis.empty(): 
-                 self.parenthesis.put(self.parenthesis.get()+1)
+            if not self.parenthesis.empty(): 
+                self.parenthesis.put(self.parenthesis.get()+1)
      
 
     def RPAREN_action(self, localctx:RuleContext , actionIndex:int):
         if actionIndex == 1:
             if not self.parenthesis.empty(): 
-            	self.parenthesis.put(parenthesis.get()-1) 
+                self.parenthesis.put(parenthesis.get()-1) 
                 top = self.parenthesis.get()
                 if top != 0:
-            		self.parenthesis.put(top)#popMode()            			
+            	    self.parenthesis.put(top)#popMode()            			
      
 
     def Interpolataion_single_line_action(self, localctx:RuleContext , actionIndex:int):

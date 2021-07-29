@@ -4,6 +4,7 @@ from antlr4 import *
 from io import StringIO
 from .SwiftSupport import SwiftSupport
 import sys
+from clone_detection.grammars.grammars_registry import PARSERS
 if sys.version_info[1] > 5:
 	from typing import TextIO
 else:
@@ -1664,7 +1665,7 @@ def serializedATN():
         buf.write("\u0b0d\u0b11\u0b1b\u0b1f\u0b21\u0b2d\u0b31\u0b33\u0b37")
         return buf.getvalue()
 
-
+@PARSERS.register('swift')
 class Swift5Parser ( Parser ):
 
     grammarFileName = "Swift5Parser.g4"
@@ -2502,9 +2503,6 @@ class Swift5Parser ( Parser ):
             else:
                 return visitor.visitChildren(self)
 
-
-
-
     def statement(self):
 
         localctx = Swift5Parser.StatementContext(self, self._ctx, self.state)
@@ -2574,8 +2572,6 @@ class Swift5Parser ( Parser ):
                 self.state = 646
                 self.compiler_control_statement()
                 pass
-
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2631,14 +2627,13 @@ class Swift5Parser ( Parser ):
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt == 1:
                     self.state = 649
-                    if not SwiftSupport.isSeparatedStatement(_input, localctx.indexBefore):
+                    print(localctx.indexBefore)
+                    if not SwiftSupport.isSeparatedStatement(localctx, localctx.indexBefore):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "SwiftSupport.isSeparatedStatement(_input, $indexBefore)")
                     self.state = 650
                     self.statement()
                     localctx.indexBefore =  _input.index()
-                    			
-
                 else:
                     raise NoViableAltException(self)
                 self.state = 655 
@@ -25373,9 +25368,6 @@ class Swift5Parser ( Parser ):
                 return visitor.visitBoolean_literal(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def boolean_literal(self):
 
