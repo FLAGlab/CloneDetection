@@ -184,9 +184,9 @@ staticFinalDeclaration
 
 // 10.1.1 Operators
 operatorSignature
-  : returnType? 'operator' operator formalParameterList
+  : returnType? 'operator' operator_ formalParameterList
   ;
-operator
+operator_
   : '~' | binaryOperator | '[]' | '[]='
   ;
 
@@ -400,7 +400,7 @@ stringInterpolation
 
 // 16.6 Symbols
 symbolLiteral
-  : '#' (operator | (identifier (',' identifier)*))
+  : '#' (operator_ | (identifier (',' identifier)*))
   ;
 // 16.7 Lists
 listLiteral
@@ -885,7 +885,7 @@ uriTest
 
 // 19.1 Static Types
 dtype
-  : typeName typeArguments?
+  : typeName'?'? typeArguments?
   ;
 typeName
   : qualified
@@ -988,3 +988,4 @@ MULTI_LINE_COMMENT
 //  : '/*' (MULTI_LINE_COMMENT | ~'*/')* '*/' // Origin Syntax
   : '/*' .*? '*/' -> skip
   ;
+

@@ -156,9 +156,12 @@ class KotlinECSTListener(KotlinParserListener):
 
     # Enter a parse tree produced by KotlinParser#classParameter.
     def enterClassParameter(self, ctx: KotlinParser.ClassParameterContext):
-        token = ctx.VAL() or ctx.VAR()
-        token = token.symbol
-        act_token = ShortToken(token.text, token.line, token.column)
+        try:
+            token = ctx.VAL() or ctx.VAR()
+            token = token.symbol
+            act_token = ShortToken(token.text, token.line, token.column)
+        except AttributeError:
+            act_token = ShortToken('', -1, -1)
         class_param_node = ECSTNode(
             str(uuid.uuid4()), self.current_node, act_token, 'PARAMETER'
         )
@@ -1518,8 +1521,11 @@ class KotlinECSTListener(KotlinParserListener):
             cur_type = 'LOGICAL_OPERATOR'
         else:
             act_token = ctx.ADD() or ctx.DECR() or ctx.INCR() or ctx.SUB()
-            token = act_token.symbol
-            act_token = ShortToken(token.text, token.line, token.column)
+            try:
+                token = act_token.symbol
+                act_token = ShortToken(token.text, token.line, token.column)
+            except AttributeError:
+                act_token = ShortToken('+/-', -1, -1)
             cur_type = 'ADDITIVE_OPERATOR'
         class_param_node = ECSTNode(
             str(uuid.uuid4()), self.current_node, act_token,

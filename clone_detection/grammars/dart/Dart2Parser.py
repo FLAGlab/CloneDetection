@@ -1,17 +1,19 @@
-# Generated from ../clone_detection/grammars/dart/Dart2.g4 by ANTLR 4.7.1
+# Generated from ./clone_detection/grammars/dart/Dart2.g4 by ANTLR 4.9.3
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
-from typing.io import TextIO
 import sys
+if sys.version_info[1] > 5:
+	from typing import TextIO
+else:
+	from typing.io import TextIO
 
 from clone_detection.grammars.grammars_registry import PARSERS
-
 
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\u0080")
-        buf.write("\u071f\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\u0722\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
         buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31")
@@ -200,128 +202,128 @@ def serializedATN():
         buf.write("\f\u00a4\16\u00a4\u06ec\13\u00a4\3\u00a5\3\u00a5\3\u00a5")
         buf.write("\3\u00a5\3\u00a5\3\u00a5\3\u00a6\3\u00a6\3\u00a6\5\u00a6")
         buf.write("\u06f7\n\u00a6\3\u00a7\3\u00a7\5\u00a7\u06fb\n\u00a7\3")
-        buf.write("\u00a8\3\u00a8\5\u00a8\u06ff\n\u00a8\3\u00a9\3\u00a9\3")
-        buf.write("\u00a9\3\u00a9\3\u00aa\3\u00aa\3\u00aa\7\u00aa\u0708\n")
-        buf.write("\u00aa\f\u00aa\16\u00aa\u070b\13\u00aa\3\u00ab\3\u00ab")
-        buf.write("\3\u00ab\3\u00ab\3\u00ac\3\u00ac\3\u00ad\3\u00ad\5\u00ad")
-        buf.write("\u0715\n\u00ad\3\u00ad\3\u00ad\3\u00ad\3\u00ae\5\u00ae")
-        buf.write("\u071b\n\u00ae\3\u00ae\3\u00ae\3\u00ae\2\2\u00af\2\4\6")
-        buf.write("\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\60\62\64\66")
-        buf.write("8:<>@BDFHJLNPRTVXZ\\^`bdfhjlnprtvxz|~\u0080\u0082\u0084")
-        buf.write("\u0086\u0088\u008a\u008c\u008e\u0090\u0092\u0094\u0096")
-        buf.write("\u0098\u009a\u009c\u009e\u00a0\u00a2\u00a4\u00a6\u00a8")
-        buf.write("\u00aa\u00ac\u00ae\u00b0\u00b2\u00b4\u00b6\u00b8\u00ba")
-        buf.write("\u00bc\u00be\u00c0\u00c2\u00c4\u00c6\u00c8\u00ca\u00cc")
-        buf.write("\u00ce\u00d0\u00d2\u00d4\u00d6\u00d8\u00da\u00dc\u00de")
-        buf.write("\u00e0\u00e2\u00e4\u00e6\u00e8\u00ea\u00ec\u00ee\u00f0")
-        buf.write("\u00f2\u00f4\u00f6\u00f8\u00fa\u00fc\u00fe\u0100\u0102")
-        buf.write("\u0104\u0106\u0108\u010a\u010c\u010e\u0110\u0112\u0114")
-        buf.write("\u0116\u0118\u011a\u011c\u011e\u0120\u0122\u0124\u0126")
-        buf.write("\u0128\u012a\u012c\u012e\u0130\u0132\u0134\u0136\u0138")
-        buf.write("\u013a\u013c\u013e\u0140\u0142\u0144\u0146\u0148\u014a")
-        buf.write("\u014c\u014e\u0150\u0152\u0154\u0156\u0158\u015a\2\22")
-        buf.write("\4\2\t\t\f\r\3\2\4\5\4\2\24\24\33\33\3\2yz\3\2-.\3\2{")
-        buf.write("|\3\2\65@\4\2!!EE\4\2)*FG\3\2HJ\3\2KM\3\2NO\3\2PS\3\2")
-        buf.write("VW\3\2\"#\3\2}}\2\u078f\2\u015e\3\2\2\2\4\u0160\3\2\2")
-        buf.write("\2\6\u0168\3\2\2\2\b\u0175\3\2\2\2\n\u0179\3\2\2\2\f\u017b")
-        buf.write("\3\2\2\2\16\u0187\3\2\2\2\20\u018c\3\2\2\2\22\u0194\3")
-        buf.write("\2\2\2\24\u019c\3\2\2\2\26\u01a2\3\2\2\2\30\u01af\3\2")
-        buf.write("\2\2\32\u01b1\3\2\2\2\34\u01c7\3\2\2\2\36\u01c9\3\2\2")
-        buf.write("\2 \u01d3\3\2\2\2\"\u01d5\3\2\2\2$\u01e3\3\2\2\2&\u01f4")
-        buf.write("\3\2\2\2(\u01f6\3\2\2\2*\u0207\3\2\2\2,\u0209\3\2\2\2")
-        buf.write(".\u0213\3\2\2\2\60\u0222\3\2\2\2\62\u0248\3\2\2\2\64\u024a")
-        buf.write("\3\2\2\2\66\u0253\3\2\2\28\u0267\3\2\2\2:\u02a3\3\2\2")
-        buf.write("\2<\u02a5\3\2\2\2>\u02ad\3\2\2\2@\u02b2\3\2\2\2B\u02bc")
-        buf.write("\3\2\2\2D\u02c4\3\2\2\2F\u02c7\3\2\2\2H\u02cd\3\2\2\2")
-        buf.write("J\u02d3\3\2\2\2L\u02da\3\2\2\2N\u02e2\3\2\2\2P\u02f4\3")
-        buf.write("\2\2\2R\u02f8\3\2\2\2T\u0303\3\2\2\2V\u030c\3\2\2\2X\u031b")
-        buf.write("\3\2\2\2Z\u031f\3\2\2\2\\\u0322\3\2\2\2^\u0325\3\2\2\2")
-        buf.write("`\u032d\3\2\2\2b\u0332\3\2\2\2d\u0343\3\2\2\2f\u0346\3")
-        buf.write("\2\2\2h\u034c\3\2\2\2j\u0362\3\2\2\2l\u0371\3\2\2\2n\u0379")
-        buf.write("\3\2\2\2p\u037b\3\2\2\2r\u038f\3\2\2\2t\u0398\3\2\2\2")
-        buf.write("v\u039a\3\2\2\2x\u039c\3\2\2\2z\u039e\3\2\2\2|\u03a1\3")
-        buf.write("\2\2\2~\u03ab\3\2\2\2\u0080\u03ad\3\2\2\2\u0082\u03ba")
-        buf.write("\3\2\2\2\u0084\u03c9\3\2\2\2\u0086\u03de\3\2\2\2\u0088")
-        buf.write("\u03e2\3\2\2\2\u008a\u03e5\3\2\2\2\u008c\u03e8\3\2\2\2")
-        buf.write("\u008e\u03eb\3\2\2\2\u0090\u03ed\3\2\2\2\u0092\u03f5\3")
-        buf.write("\2\2\2\u0094\u03fd\3\2\2\2\u0096\u0416\3\2\2\2\u0098\u0418")
-        buf.write("\3\2\2\2\u009a\u041b\3\2\2\2\u009c\u0439\3\2\2\2\u009e")
-        buf.write("\u043c\3\2\2\2\u00a0\u0442\3\2\2\2\u00a2\u0444\3\2\2\2")
-        buf.write("\u00a4\u0446\3\2\2\2\u00a6\u044e\3\2\2\2\u00a8\u0456\3")
-        buf.write("\2\2\2\u00aa\u045e\3\2\2\2\u00ac\u0470\3\2\2\2\u00ae\u0472")
-        buf.write("\3\2\2\2\u00b0\u0480\3\2\2\2\u00b2\u0482\3\2\2\2\u00b4")
-        buf.write("\u0493\3\2\2\2\u00b6\u04a4\3\2\2\2\u00b8\u04b5\3\2\2\2")
-        buf.write("\u00ba\u04b7\3\2\2\2\u00bc\u04ca\3\2\2\2\u00be\u04cc\3")
-        buf.write("\2\2\2\u00c0\u04df\3\2\2\2\u00c2\u04e1\3\2\2\2\u00c4\u04f4")
-        buf.write("\3\2\2\2\u00c6\u04f6\3\2\2\2\u00c8\u0506\3\2\2\2\u00ca")
-        buf.write("\u050b\3\2\2\2\u00cc\u050d\3\2\2\2\u00ce\u050f\3\2\2\2")
-        buf.write("\u00d0\u0511\3\2\2\2\u00d2\u0513\3\2\2\2\u00d4\u0520\3")
-        buf.write("\2\2\2\u00d6\u0522\3\2\2\2\u00d8\u0526\3\2\2\2\u00da\u0528")
-        buf.write("\3\2\2\2\u00dc\u0538\3\2\2\2\u00de\u0540\3\2\2\2\u00e0")
-        buf.write("\u0545\3\2\2\2\u00e2\u0547\3\2\2\2\u00e4\u0549\3\2\2\2")
-        buf.write("\u00e6\u054e\3\2\2\2\u00e8\u0551\3\2\2\2\u00ea\u0555\3")
-        buf.write("\2\2\2\u00ec\u0558\3\2\2\2\u00ee\u055d\3\2\2\2\u00f0\u0563")
-        buf.write("\3\2\2\2\u00f2\u0579\3\2\2\2\u00f4\u057c\3\2\2\2\u00f6")
-        buf.write("\u0580\3\2\2\2\u00f8\u0583\3\2\2\2\u00fa\u0586\3\2\2\2")
-        buf.write("\u00fc\u0590\3\2\2\2\u00fe\u05a8\3\2\2\2\u0100\u05af\3")
-        buf.write("\2\2\2\u0102\u05b1\3\2\2\2\u0104\u05b7\3\2\2\2\u0106\u05bf")
-        buf.write("\3\2\2\2\u0108\u05d2\3\2\2\2\u010a\u05dd\3\2\2\2\u010c")
-        buf.write("\u05e4\3\2\2\2\u010e\u05e7\3\2\2\2\u0110\u05fe\3\2\2\2")
-        buf.write("\u0112\u0600\3\2\2\2\u0114\u0609\3\2\2\2\u0116\u060c\3")
-        buf.write("\2\2\2\u0118\u0612\3\2\2\2\u011a\u0615\3\2\2\2\u011c\u061b")
-        buf.write("\3\2\2\2\u011e\u0621\3\2\2\2\u0120\u0625\3\2\2\2\u0122")
-        buf.write("\u0629\3\2\2\2\u0124\u062c\3\2\2\2\u0126\u0669\3\2\2\2")
-        buf.write("\u0128\u066b\3\2\2\2\u012a\u066e\3\2\2\2\u012c\u0685\3")
-        buf.write("\2\2\2\u012e\u068e\3\2\2\2\u0130\u0695\3\2\2\2\u0132\u0697")
-        buf.write("\3\2\2\2\u0134\u069f\3\2\2\2\u0136\u06a2\3\2\2\2\u0138")
-        buf.write("\u06b4\3\2\2\2\u013a\u06b6\3\2\2\2\u013c\u06be\3\2\2\2")
-        buf.write("\u013e\u06c9\3\2\2\2\u0140\u06ce\3\2\2\2\u0142\u06db\3")
-        buf.write("\2\2\2\u0144\u06e4\3\2\2\2\u0146\u06e6\3\2\2\2\u0148\u06ed")
-        buf.write("\3\2\2\2\u014a\u06f3\3\2\2\2\u014c\u06f8\3\2\2\2\u014e")
-        buf.write("\u06fe\3\2\2\2\u0150\u0700\3\2\2\2\u0152\u0704\3\2\2\2")
-        buf.write("\u0154\u070c\3\2\2\2\u0156\u0710\3\2\2\2\u0158\u0712\3")
-        buf.write("\2\2\2\u015a\u071a\3\2\2\2\u015c\u015f\5\u012a\u0096\2")
-        buf.write("\u015d\u015f\5\u0142\u00a2\2\u015e\u015c\3\2\2\2\u015e")
-        buf.write("\u015d\3\2\2\2\u015f\3\3\2\2\2\u0160\u0165\5\6\4\2\u0161")
-        buf.write("\u0162\7\3\2\2\u0162\u0164\5\u00e2r\2\u0163\u0161\3\2")
-        buf.write("\2\2\u0164\u0167\3\2\2\2\u0165\u0163\3\2\2\2\u0165\u0166")
-        buf.write("\3\2\2\2\u0166\5\3\2\2\2\u0167\u0165\3\2\2\2\u0168\u0169")
-        buf.write("\5j\66\2\u0169\u016a\5\b\5\2\u016a\u016b\5\u00e2r\2\u016b")
-        buf.write("\7\3\2\2\2\u016c\u016e\7\4\2\2\u016d\u016f\5\u014c\u00a7")
-        buf.write("\2\u016e\u016d\3\2\2\2\u016e\u016f\3\2\2\2\u016f\u0176")
-        buf.write("\3\2\2\2\u0170\u0172\7\5\2\2\u0171\u0173\5\u014c\u00a7")
-        buf.write("\2\u0172\u0171\3\2\2\2\u0172\u0173\3\2\2\2\u0173\u0176")
-        buf.write("\3\2\2\2\u0174\u0176\5\n\6\2\u0175\u016c\3\2\2\2\u0175")
-        buf.write("\u0170\3\2\2\2\u0175\u0174\3\2\2\2\u0176\t\3\2\2\2\u0177")
-        buf.write("\u017a\7\6\2\2\u0178\u017a\5\u014c\u00a7\2\u0179\u0177")
-        buf.write("\3\2\2\2\u0179\u0178\3\2\2\2\u017a\13\3\2\2\2\u017b\u017e")
-        buf.write("\5\6\4\2\u017c\u017d\7\7\2\2\u017d\u017f\5l\67\2\u017e")
-        buf.write("\u017c\3\2\2\2\u017e\u017f\3\2\2\2\u017f\u0184\3\2\2\2")
-        buf.write("\u0180\u0181\7\3\2\2\u0181\u0183\5\16\b\2\u0182\u0180")
-        buf.write("\3\2\2\2\u0183\u0186\3\2\2\2\u0184\u0182\3\2\2\2\u0184")
-        buf.write("\u0185\3\2\2\2\u0185\r\3\2\2\2\u0186\u0184\3\2\2\2\u0187")
-        buf.write("\u018a\5\u00e2r\2\u0188\u0189\7\7\2\2\u0189\u018b\5l\67")
-        buf.write("\2\u018a\u0188\3\2\2\2\u018a\u018b\3\2\2\2\u018b\17\3")
-        buf.write("\2\2\2\u018c\u0191\5\16\b\2\u018d\u018e\7\3\2\2\u018e")
-        buf.write("\u0190\5\16\b\2\u018f\u018d\3\2\2\2\u0190\u0193\3\2\2")
-        buf.write("\2\u0191\u018f\3\2\2\2\u0191\u0192\3\2\2\2\u0192\21\3")
-        buf.write("\2\2\2\u0193\u0191\3\2\2\2\u0194\u0196\5j\66\2\u0195\u0197")
-        buf.write("\5\26\f\2\u0196\u0195\3\2\2\2\u0196\u0197\3\2\2\2\u0197")
-        buf.write("\u0198\3\2\2\2\u0198\u0199\5\u00e2r\2\u0199\u019a\5\24")
-        buf.write("\13\2\u019a\23\3\2\2\2\u019b\u019d\5h\65\2\u019c\u019b")
-        buf.write("\3\2\2\2\u019c\u019d\3\2\2\2\u019d\u019e\3\2\2\2\u019e")
-        buf.write("\u019f\5\34\17\2\u019f\25\3\2\2\2\u01a0\u01a3\7\b\2\2")
-        buf.write("\u01a1\u01a3\5\u014c\u00a7\2\u01a2\u01a0\3\2\2\2\u01a2")
-        buf.write("\u01a1\3\2\2\2\u01a3\27\3\2\2\2\u01a4\u01a6\7\t\2\2\u01a5")
-        buf.write("\u01a4\3\2\2\2\u01a5\u01a6\3\2\2\2\u01a6\u01a7\3\2\2\2")
-        buf.write("\u01a7\u01a8\7\n\2\2\u01a8\u01a9\5l\67\2\u01a9\u01aa\7")
-        buf.write("\13\2\2\u01aa\u01b0\3\2\2\2\u01ab\u01ad\t\2\2\2\u01ac")
-        buf.write("\u01ab\3\2\2\2\u01ac\u01ad\3\2\2\2\u01ad\u01ae\3\2\2\2")
-        buf.write("\u01ae\u01b0\5\32\16\2\u01af\u01a5\3\2\2\2\u01af\u01ac")
-        buf.write("\3\2\2\2\u01b0\31\3\2\2\2\u01b1\u01b2\7\16\2\2\u01b2\u01b3")
-        buf.write("\5\u00eex\2\u01b3\u01b4\7\17\2\2\u01b4\33\3\2\2\2\u01b5")
-        buf.write("\u01b6\7\20\2\2\u01b6\u01c8\7\21\2\2\u01b7\u01b8\7\20")
-        buf.write("\2\2\u01b8\u01b9\5\36\20\2\u01b9\u01ba\7\21\2\2\u01ba")
+        buf.write("\u00a7\5\u00a7\u06fe\n\u00a7\3\u00a8\3\u00a8\5\u00a8\u0702")
+        buf.write("\n\u00a8\3\u00a9\3\u00a9\3\u00a9\3\u00a9\3\u00aa\3\u00aa")
+        buf.write("\3\u00aa\7\u00aa\u070b\n\u00aa\f\u00aa\16\u00aa\u070e")
+        buf.write("\13\u00aa\3\u00ab\3\u00ab\3\u00ab\3\u00ab\3\u00ac\3\u00ac")
+        buf.write("\3\u00ad\3\u00ad\5\u00ad\u0718\n\u00ad\3\u00ad\3\u00ad")
+        buf.write("\3\u00ad\3\u00ae\5\u00ae\u071e\n\u00ae\3\u00ae\3\u00ae")
+        buf.write("\3\u00ae\2\2\u00af\2\4\6\b\n\f\16\20\22\24\26\30\32\34")
+        buf.write("\36 \"$&(*,.\60\62\64\668:<>@BDFHJLNPRTVXZ\\^`bdfhjln")
+        buf.write("prtvxz|~\u0080\u0082\u0084\u0086\u0088\u008a\u008c\u008e")
+        buf.write("\u0090\u0092\u0094\u0096\u0098\u009a\u009c\u009e\u00a0")
+        buf.write("\u00a2\u00a4\u00a6\u00a8\u00aa\u00ac\u00ae\u00b0\u00b2")
+        buf.write("\u00b4\u00b6\u00b8\u00ba\u00bc\u00be\u00c0\u00c2\u00c4")
+        buf.write("\u00c6\u00c8\u00ca\u00cc\u00ce\u00d0\u00d2\u00d4\u00d6")
+        buf.write("\u00d8\u00da\u00dc\u00de\u00e0\u00e2\u00e4\u00e6\u00e8")
+        buf.write("\u00ea\u00ec\u00ee\u00f0\u00f2\u00f4\u00f6\u00f8\u00fa")
+        buf.write("\u00fc\u00fe\u0100\u0102\u0104\u0106\u0108\u010a\u010c")
+        buf.write("\u010e\u0110\u0112\u0114\u0116\u0118\u011a\u011c\u011e")
+        buf.write("\u0120\u0122\u0124\u0126\u0128\u012a\u012c\u012e\u0130")
+        buf.write("\u0132\u0134\u0136\u0138\u013a\u013c\u013e\u0140\u0142")
+        buf.write("\u0144\u0146\u0148\u014a\u014c\u014e\u0150\u0152\u0154")
+        buf.write("\u0156\u0158\u015a\2\22\4\2\t\t\f\r\3\2\4\5\4\2\24\24")
+        buf.write("\33\33\3\2yz\3\2-.\3\2{|\3\2\65@\4\2!!EE\4\2)*FG\3\2H")
+        buf.write("J\3\2KM\3\2NO\3\2PS\3\2VW\3\2\"#\3\2}}\2\u0793\2\u015e")
+        buf.write("\3\2\2\2\4\u0160\3\2\2\2\6\u0168\3\2\2\2\b\u0175\3\2\2")
+        buf.write("\2\n\u0179\3\2\2\2\f\u017b\3\2\2\2\16\u0187\3\2\2\2\20")
+        buf.write("\u018c\3\2\2\2\22\u0194\3\2\2\2\24\u019c\3\2\2\2\26\u01a2")
+        buf.write("\3\2\2\2\30\u01af\3\2\2\2\32\u01b1\3\2\2\2\34\u01c7\3")
+        buf.write("\2\2\2\36\u01c9\3\2\2\2 \u01d3\3\2\2\2\"\u01d5\3\2\2\2")
+        buf.write("$\u01e3\3\2\2\2&\u01f4\3\2\2\2(\u01f6\3\2\2\2*\u0207\3")
+        buf.write("\2\2\2,\u0209\3\2\2\2.\u0213\3\2\2\2\60\u0222\3\2\2\2")
+        buf.write("\62\u0248\3\2\2\2\64\u024a\3\2\2\2\66\u0253\3\2\2\28\u0267")
+        buf.write("\3\2\2\2:\u02a3\3\2\2\2<\u02a5\3\2\2\2>\u02ad\3\2\2\2")
+        buf.write("@\u02b2\3\2\2\2B\u02bc\3\2\2\2D\u02c4\3\2\2\2F\u02c7\3")
+        buf.write("\2\2\2H\u02cd\3\2\2\2J\u02d3\3\2\2\2L\u02da\3\2\2\2N\u02e2")
+        buf.write("\3\2\2\2P\u02f4\3\2\2\2R\u02f8\3\2\2\2T\u0303\3\2\2\2")
+        buf.write("V\u030c\3\2\2\2X\u031b\3\2\2\2Z\u031f\3\2\2\2\\\u0322")
+        buf.write("\3\2\2\2^\u0325\3\2\2\2`\u032d\3\2\2\2b\u0332\3\2\2\2")
+        buf.write("d\u0343\3\2\2\2f\u0346\3\2\2\2h\u034c\3\2\2\2j\u0362\3")
+        buf.write("\2\2\2l\u0371\3\2\2\2n\u0379\3\2\2\2p\u037b\3\2\2\2r\u038f")
+        buf.write("\3\2\2\2t\u0398\3\2\2\2v\u039a\3\2\2\2x\u039c\3\2\2\2")
+        buf.write("z\u039e\3\2\2\2|\u03a1\3\2\2\2~\u03ab\3\2\2\2\u0080\u03ad")
+        buf.write("\3\2\2\2\u0082\u03ba\3\2\2\2\u0084\u03c9\3\2\2\2\u0086")
+        buf.write("\u03de\3\2\2\2\u0088\u03e2\3\2\2\2\u008a\u03e5\3\2\2\2")
+        buf.write("\u008c\u03e8\3\2\2\2\u008e\u03eb\3\2\2\2\u0090\u03ed\3")
+        buf.write("\2\2\2\u0092\u03f5\3\2\2\2\u0094\u03fd\3\2\2\2\u0096\u0416")
+        buf.write("\3\2\2\2\u0098\u0418\3\2\2\2\u009a\u041b\3\2\2\2\u009c")
+        buf.write("\u0439\3\2\2\2\u009e\u043c\3\2\2\2\u00a0\u0442\3\2\2\2")
+        buf.write("\u00a2\u0444\3\2\2\2\u00a4\u0446\3\2\2\2\u00a6\u044e\3")
+        buf.write("\2\2\2\u00a8\u0456\3\2\2\2\u00aa\u045e\3\2\2\2\u00ac\u0470")
+        buf.write("\3\2\2\2\u00ae\u0472\3\2\2\2\u00b0\u0480\3\2\2\2\u00b2")
+        buf.write("\u0482\3\2\2\2\u00b4\u0493\3\2\2\2\u00b6\u04a4\3\2\2\2")
+        buf.write("\u00b8\u04b5\3\2\2\2\u00ba\u04b7\3\2\2\2\u00bc\u04ca\3")
+        buf.write("\2\2\2\u00be\u04cc\3\2\2\2\u00c0\u04df\3\2\2\2\u00c2\u04e1")
+        buf.write("\3\2\2\2\u00c4\u04f4\3\2\2\2\u00c6\u04f6\3\2\2\2\u00c8")
+        buf.write("\u0506\3\2\2\2\u00ca\u050b\3\2\2\2\u00cc\u050d\3\2\2\2")
+        buf.write("\u00ce\u050f\3\2\2\2\u00d0\u0511\3\2\2\2\u00d2\u0513\3")
+        buf.write("\2\2\2\u00d4\u0520\3\2\2\2\u00d6\u0522\3\2\2\2\u00d8\u0526")
+        buf.write("\3\2\2\2\u00da\u0528\3\2\2\2\u00dc\u0538\3\2\2\2\u00de")
+        buf.write("\u0540\3\2\2\2\u00e0\u0545\3\2\2\2\u00e2\u0547\3\2\2\2")
+        buf.write("\u00e4\u0549\3\2\2\2\u00e6\u054e\3\2\2\2\u00e8\u0551\3")
+        buf.write("\2\2\2\u00ea\u0555\3\2\2\2\u00ec\u0558\3\2\2\2\u00ee\u055d")
+        buf.write("\3\2\2\2\u00f0\u0563\3\2\2\2\u00f2\u0579\3\2\2\2\u00f4")
+        buf.write("\u057c\3\2\2\2\u00f6\u0580\3\2\2\2\u00f8\u0583\3\2\2\2")
+        buf.write("\u00fa\u0586\3\2\2\2\u00fc\u0590\3\2\2\2\u00fe\u05a8\3")
+        buf.write("\2\2\2\u0100\u05af\3\2\2\2\u0102\u05b1\3\2\2\2\u0104\u05b7")
+        buf.write("\3\2\2\2\u0106\u05bf\3\2\2\2\u0108\u05d2\3\2\2\2\u010a")
+        buf.write("\u05dd\3\2\2\2\u010c\u05e4\3\2\2\2\u010e\u05e7\3\2\2\2")
+        buf.write("\u0110\u05fe\3\2\2\2\u0112\u0600\3\2\2\2\u0114\u0609\3")
+        buf.write("\2\2\2\u0116\u060c\3\2\2\2\u0118\u0612\3\2\2\2\u011a\u0615")
+        buf.write("\3\2\2\2\u011c\u061b\3\2\2\2\u011e\u0621\3\2\2\2\u0120")
+        buf.write("\u0625\3\2\2\2\u0122\u0629\3\2\2\2\u0124\u062c\3\2\2\2")
+        buf.write("\u0126\u0669\3\2\2\2\u0128\u066b\3\2\2\2\u012a\u066e\3")
+        buf.write("\2\2\2\u012c\u0685\3\2\2\2\u012e\u068e\3\2\2\2\u0130\u0695")
+        buf.write("\3\2\2\2\u0132\u0697\3\2\2\2\u0134\u069f\3\2\2\2\u0136")
+        buf.write("\u06a2\3\2\2\2\u0138\u06b4\3\2\2\2\u013a\u06b6\3\2\2\2")
+        buf.write("\u013c\u06be\3\2\2\2\u013e\u06c9\3\2\2\2\u0140\u06ce\3")
+        buf.write("\2\2\2\u0142\u06db\3\2\2\2\u0144\u06e4\3\2\2\2\u0146\u06e6")
+        buf.write("\3\2\2\2\u0148\u06ed\3\2\2\2\u014a\u06f3\3\2\2\2\u014c")
+        buf.write("\u06f8\3\2\2\2\u014e\u0701\3\2\2\2\u0150\u0703\3\2\2\2")
+        buf.write("\u0152\u0707\3\2\2\2\u0154\u070f\3\2\2\2\u0156\u0713\3")
+        buf.write("\2\2\2\u0158\u0715\3\2\2\2\u015a\u071d\3\2\2\2\u015c\u015f")
+        buf.write("\5\u012a\u0096\2\u015d\u015f\5\u0142\u00a2\2\u015e\u015c")
+        buf.write("\3\2\2\2\u015e\u015d\3\2\2\2\u015f\3\3\2\2\2\u0160\u0165")
+        buf.write("\5\6\4\2\u0161\u0162\7\3\2\2\u0162\u0164\5\u00e2r\2\u0163")
+        buf.write("\u0161\3\2\2\2\u0164\u0167\3\2\2\2\u0165\u0163\3\2\2\2")
+        buf.write("\u0165\u0166\3\2\2\2\u0166\5\3\2\2\2\u0167\u0165\3\2\2")
+        buf.write("\2\u0168\u0169\5j\66\2\u0169\u016a\5\b\5\2\u016a\u016b")
+        buf.write("\5\u00e2r\2\u016b\7\3\2\2\2\u016c\u016e\7\4\2\2\u016d")
+        buf.write("\u016f\5\u014c\u00a7\2\u016e\u016d\3\2\2\2\u016e\u016f")
+        buf.write("\3\2\2\2\u016f\u0176\3\2\2\2\u0170\u0172\7\5\2\2\u0171")
+        buf.write("\u0173\5\u014c\u00a7\2\u0172\u0171\3\2\2\2\u0172\u0173")
+        buf.write("\3\2\2\2\u0173\u0176\3\2\2\2\u0174\u0176\5\n\6\2\u0175")
+        buf.write("\u016c\3\2\2\2\u0175\u0170\3\2\2\2\u0175\u0174\3\2\2\2")
+        buf.write("\u0176\t\3\2\2\2\u0177\u017a\7\6\2\2\u0178\u017a\5\u014c")
+        buf.write("\u00a7\2\u0179\u0177\3\2\2\2\u0179\u0178\3\2\2\2\u017a")
+        buf.write("\13\3\2\2\2\u017b\u017e\5\6\4\2\u017c\u017d\7\7\2\2\u017d")
+        buf.write("\u017f\5l\67\2\u017e\u017c\3\2\2\2\u017e\u017f\3\2\2\2")
+        buf.write("\u017f\u0184\3\2\2\2\u0180\u0181\7\3\2\2\u0181\u0183\5")
+        buf.write("\16\b\2\u0182\u0180\3\2\2\2\u0183\u0186\3\2\2\2\u0184")
+        buf.write("\u0182\3\2\2\2\u0184\u0185\3\2\2\2\u0185\r\3\2\2\2\u0186")
+        buf.write("\u0184\3\2\2\2\u0187\u018a\5\u00e2r\2\u0188\u0189\7\7")
+        buf.write("\2\2\u0189\u018b\5l\67\2\u018a\u0188\3\2\2\2\u018a\u018b")
+        buf.write("\3\2\2\2\u018b\17\3\2\2\2\u018c\u0191\5\16\b\2\u018d\u018e")
+        buf.write("\7\3\2\2\u018e\u0190\5\16\b\2\u018f\u018d\3\2\2\2\u0190")
+        buf.write("\u0193\3\2\2\2\u0191\u018f\3\2\2\2\u0191\u0192\3\2\2\2")
+        buf.write("\u0192\21\3\2\2\2\u0193\u0191\3\2\2\2\u0194\u0196\5j\66")
+        buf.write("\2\u0195\u0197\5\26\f\2\u0196\u0195\3\2\2\2\u0196\u0197")
+        buf.write("\3\2\2\2\u0197\u0198\3\2\2\2\u0198\u0199\5\u00e2r\2\u0199")
+        buf.write("\u019a\5\24\13\2\u019a\23\3\2\2\2\u019b\u019d\5h\65\2")
+        buf.write("\u019c\u019b\3\2\2\2\u019c\u019d\3\2\2\2\u019d\u019e\3")
+        buf.write("\2\2\2\u019e\u019f\5\34\17\2\u019f\25\3\2\2\2\u01a0\u01a3")
+        buf.write("\7\b\2\2\u01a1\u01a3\5\u014c\u00a7\2\u01a2\u01a0\3\2\2")
+        buf.write("\2\u01a2\u01a1\3\2\2\2\u01a3\27\3\2\2\2\u01a4\u01a6\7")
+        buf.write("\t\2\2\u01a5\u01a4\3\2\2\2\u01a5\u01a6\3\2\2\2\u01a6\u01a7")
+        buf.write("\3\2\2\2\u01a7\u01a8\7\n\2\2\u01a8\u01a9\5l\67\2\u01a9")
+        buf.write("\u01aa\7\13\2\2\u01aa\u01b0\3\2\2\2\u01ab\u01ad\t\2\2")
+        buf.write("\2\u01ac\u01ab\3\2\2\2\u01ac\u01ad\3\2\2\2\u01ad\u01ae")
+        buf.write("\3\2\2\2\u01ae\u01b0\5\32\16\2\u01af\u01a5\3\2\2\2\u01af")
+        buf.write("\u01ac\3\2\2\2\u01b0\31\3\2\2\2\u01b1\u01b2\7\16\2\2\u01b2")
+        buf.write("\u01b3\5\u00eex\2\u01b3\u01b4\7\17\2\2\u01b4\33\3\2\2")
+        buf.write("\2\u01b5\u01b6\7\20\2\2\u01b6\u01c8\7\21\2\2\u01b7\u01b8")
+        buf.write("\7\20\2\2\u01b8\u01b9\5\36\20\2\u01b9\u01ba\7\21\2\2\u01ba")
         buf.write("\u01c8\3\2\2\2\u01bb\u01bc\7\20\2\2\u01bc\u01bf\5\36\20")
         buf.write("\2\u01bd\u01be\7\3\2\2\u01be\u01c0\5 \21\2\u01bf\u01bd")
         buf.write("\3\2\2\2\u01bf\u01c0\3\2\2\2\u01c0\u01c1\3\2\2\2\u01c1")
@@ -926,49 +928,50 @@ def serializedATN():
         buf.write("\u00a3\2\u06f2\u0149\3\2\2\2\u06f3\u06f6\5\u0132\u009a")
         buf.write("\2\u06f4\u06f5\7!\2\2\u06f5\u06f7\5|?\2\u06f6\u06f4\3")
         buf.write("\2\2\2\u06f6\u06f7\3\2\2\2\u06f7\u014b\3\2\2\2\u06f8\u06fa")
-        buf.write("\5\u014e\u00a8\2\u06f9\u06fb\5\u0150\u00a9\2\u06fa\u06f9")
-        buf.write("\3\2\2\2\u06fa\u06fb\3\2\2\2\u06fb\u014d\3\2\2\2\u06fc")
-        buf.write("\u06ff\5\u00e4s\2\u06fd\u06ff\7\b\2\2\u06fe\u06fc\3\2")
-        buf.write("\2\2\u06fe\u06fd\3\2\2\2\u06ff\u014f\3\2\2\2\u0700\u0701")
-        buf.write("\7)\2\2\u0701\u0702\5\u0152\u00aa\2\u0702\u0703\7*\2\2")
-        buf.write("\u0703\u0151\3\2\2\2\u0704\u0709\5\u014c\u00a7\2\u0705")
-        buf.write("\u0706\7\3\2\2\u0706\u0708\5\u014c\u00a7\2\u0707\u0705")
-        buf.write("\3\2\2\2\u0708\u070b\3\2\2\2\u0709\u0707\3\2\2\2\u0709")
-        buf.write("\u070a\3\2\2\2\u070a\u0153\3\2\2\2\u070b\u0709\3\2\2\2")
-        buf.write("\u070c\u070d\5j\66\2\u070d\u070e\7w\2\2\u070e\u070f\5")
-        buf.write("\u0156\u00ac\2\u070f\u0155\3\2\2\2\u0710\u0711\5\u0158")
-        buf.write("\u00ad\2\u0711\u0157\3\2\2\2\u0712\u0714\5\u015a\u00ae")
-        buf.write("\2\u0713\u0715\5h\65\2\u0714\u0713\3\2\2\2\u0714\u0715")
-        buf.write("\3\2\2\2\u0715\u0716\3\2\2\2\u0716\u0717\5\34\17\2\u0717")
-        buf.write("\u0718\7\13\2\2\u0718\u0159\3\2\2\2\u0719\u071b\5\26\f")
-        buf.write("\2\u071a\u0719\3\2\2\2\u071a\u071b\3\2\2\2\u071b\u071c")
-        buf.write("\3\2\2\2\u071c\u071d\5\u00e2r\2\u071d\u015b\3\2\2\2\u00d9")
-        buf.write("\u015e\u0165\u016e\u0172\u0175\u0179\u017e\u0184\u018a")
-        buf.write("\u0191\u0196\u019c\u01a2\u01a5\u01ac\u01af\u01bf\u01c7")
-        buf.write("\u01ce\u01d3\u01db\u01df\u01e9\u01ed\u01f4\u01f8\u01fb")
-        buf.write("\u0203\u0207\u020b\u0211\u0216\u021b\u0220\u0222\u0226")
-        buf.write("\u022b\u022e\u0231\u0234\u023c\u0243\u0248\u0253\u0257")
-        buf.write("\u025b\u025f\u0263\u0267\u026c\u0271\u0279\u027b\u0280")
-        buf.write("\u0282\u0286\u028b\u028d\u0293\u0298\u029c\u02a0\u02a3")
-        buf.write("\u02aa\u02b2\u02bc\u02c4\u02c7\u02cd\u02d6\u02de\u02e8")
-        buf.write("\u02f4\u02f8\u0300\u0307\u030c\u0312\u0319\u0327\u0330")
-        buf.write("\u033b\u033f\u034a\u0352\u035b\u035e\u0362\u036d\u0371")
-        buf.write("\u0379\u0380\u038f\u0398\u03a3\u03ab\u03b4\u03b7\u03ba")
-        buf.write("\u03bd\u03c2\u03c4\u03c9\u03cc\u03d4\u03d8\u03da\u03f1")
-        buf.write("\u03f9\u0400\u0402\u040b\u0413\u0416\u0420\u0427\u042c")
-        buf.write("\u0432\u0439\u043c\u0442\u044c\u0453\u045b\u0463\u046a")
-        buf.write("\u0470\u047a\u0480\u0489\u0491\u0493\u049a\u04a2\u04a4")
-        buf.write("\u04ab\u04b3\u04b5\u04bf\u04c8\u04ca\u04d4\u04dd\u04df")
-        buf.write("\u04e9\u04f2\u04f4\u04ff\u0506\u050b\u051d\u0520\u0526")
-        buf.write("\u052e\u0532\u0538\u0540\u0545\u054c\u0553\u055d\u0563")
-        buf.write("\u0579\u057c\u058d\u0590\u059a\u059e\u05a8\u05ac\u05af")
-        buf.write("\u05c7\u05cb\u05d2\u05dd\u05ec\u05ef\u05f2\u05fa\u05fe")
-        buf.write("\u0605\u060e\u0617\u061d\u0631\u0634\u063c\u0642\u0648")
-        buf.write("\u0651\u0658\u0661\u0669\u066e\u0671\u0676\u067c\u0682")
-        buf.write("\u0689\u0695\u069c\u06a6\u06ab\u06b4\u06bb\u06c4\u06d6")
-        buf.write("\u06df\u06ea\u06f6\u06fa\u06fe\u0709\u0714\u071a")
+        buf.write("\5\u014e\u00a8\2\u06f9\u06fb\7A\2\2\u06fa\u06f9\3\2\2")
+        buf.write("\2\u06fa\u06fb\3\2\2\2\u06fb\u06fd\3\2\2\2\u06fc\u06fe")
+        buf.write("\5\u0150\u00a9\2\u06fd\u06fc\3\2\2\2\u06fd\u06fe\3\2\2")
+        buf.write("\2\u06fe\u014d\3\2\2\2\u06ff\u0702\5\u00e4s\2\u0700\u0702")
+        buf.write("\7\b\2\2\u0701\u06ff\3\2\2\2\u0701\u0700\3\2\2\2\u0702")
+        buf.write("\u014f\3\2\2\2\u0703\u0704\7)\2\2\u0704\u0705\5\u0152")
+        buf.write("\u00aa\2\u0705\u0706\7*\2\2\u0706\u0151\3\2\2\2\u0707")
+        buf.write("\u070c\5\u014c\u00a7\2\u0708\u0709\7\3\2\2\u0709\u070b")
+        buf.write("\5\u014c\u00a7\2\u070a\u0708\3\2\2\2\u070b\u070e\3\2\2")
+        buf.write("\2\u070c\u070a\3\2\2\2\u070c\u070d\3\2\2\2\u070d\u0153")
+        buf.write("\3\2\2\2\u070e\u070c\3\2\2\2\u070f\u0710\5j\66\2\u0710")
+        buf.write("\u0711\7w\2\2\u0711\u0712\5\u0156\u00ac\2\u0712\u0155")
+        buf.write("\3\2\2\2\u0713\u0714\5\u0158\u00ad\2\u0714\u0157\3\2\2")
+        buf.write("\2\u0715\u0717\5\u015a\u00ae\2\u0716\u0718\5h\65\2\u0717")
+        buf.write("\u0716\3\2\2\2\u0717\u0718\3\2\2\2\u0718\u0719\3\2\2\2")
+        buf.write("\u0719\u071a\5\34\17\2\u071a\u071b\7\13\2\2\u071b\u0159")
+        buf.write("\3\2\2\2\u071c\u071e\5\26\f\2\u071d\u071c\3\2\2\2\u071d")
+        buf.write("\u071e\3\2\2\2\u071e\u071f\3\2\2\2\u071f\u0720\5\u00e2")
+        buf.write("r\2\u0720\u015b\3\2\2\2\u00da\u015e\u0165\u016e\u0172")
+        buf.write("\u0175\u0179\u017e\u0184\u018a\u0191\u0196\u019c\u01a2")
+        buf.write("\u01a5\u01ac\u01af\u01bf\u01c7\u01ce\u01d3\u01db\u01df")
+        buf.write("\u01e9\u01ed\u01f4\u01f8\u01fb\u0203\u0207\u020b\u0211")
+        buf.write("\u0216\u021b\u0220\u0222\u0226\u022b\u022e\u0231\u0234")
+        buf.write("\u023c\u0243\u0248\u0253\u0257\u025b\u025f\u0263\u0267")
+        buf.write("\u026c\u0271\u0279\u027b\u0280\u0282\u0286\u028b\u028d")
+        buf.write("\u0293\u0298\u029c\u02a0\u02a3\u02aa\u02b2\u02bc\u02c4")
+        buf.write("\u02c7\u02cd\u02d6\u02de\u02e8\u02f4\u02f8\u0300\u0307")
+        buf.write("\u030c\u0312\u0319\u0327\u0330\u033b\u033f\u034a\u0352")
+        buf.write("\u035b\u035e\u0362\u036d\u0371\u0379\u0380\u038f\u0398")
+        buf.write("\u03a3\u03ab\u03b4\u03b7\u03ba\u03bd\u03c2\u03c4\u03c9")
+        buf.write("\u03cc\u03d4\u03d8\u03da\u03f1\u03f9\u0400\u0402\u040b")
+        buf.write("\u0413\u0416\u0420\u0427\u042c\u0432\u0439\u043c\u0442")
+        buf.write("\u044c\u0453\u045b\u0463\u046a\u0470\u047a\u0480\u0489")
+        buf.write("\u0491\u0493\u049a\u04a2\u04a4\u04ab\u04b3\u04b5\u04bf")
+        buf.write("\u04c8\u04ca\u04d4\u04dd\u04df\u04e9\u04f2\u04f4\u04ff")
+        buf.write("\u0506\u050b\u051d\u0520\u0526\u052e\u0532\u0538\u0540")
+        buf.write("\u0545\u054c\u0553\u055d\u0563\u0579\u057c\u058d\u0590")
+        buf.write("\u059a\u059e\u05a8\u05ac\u05af\u05c7\u05cb\u05d2\u05dd")
+        buf.write("\u05ec\u05ef\u05f2\u05fa\u05fe\u0605\u060e\u0617\u061d")
+        buf.write("\u0631\u0634\u063c\u0642\u0648\u0651\u0658\u0661\u0669")
+        buf.write("\u066e\u0671\u0676\u067c\u0682\u0689\u0695\u069c\u06a6")
+        buf.write("\u06ab\u06b4\u06bb\u06c4\u06d6\u06df\u06ea\u06f6\u06fa")
+        buf.write("\u06fd\u0701\u070c\u0717\u071d")
         return buf.getvalue()
-
 
 @PARSERS.register('dart')
 class Dart2Parser ( Parser ):
@@ -981,58 +984,58 @@ class Dart2Parser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "','", "'final'", "'const'", "'var'",
-                     "'='", "'void'", "'async'", "'=>'", "';'", "'async*'",
-                     "'sync*'", "'{'", "'}'", "'('", "')'", "'['", "']'",
-                     "'covariant'", "'this'", "'.'", "':'", "'abstract'",
-                     "'class'", "'with'", "'static'", "'external'", "'operator'",
-                     "'~'", "'[]'", "'[]='", "'=='", "'get'", "'set'", "'super'",
-                     "'factory'", "'extends'", "'implements'", "'enum'",
-                     "'<'", "'>'", "'@'", "'null'", "'true'", "'false'",
-                     "'$'", "'${'", "'#'", "'throw'", "'new'", "'..'", "'*='",
-                     "'/='", "'~/='", "'%='", "'+='", "'<<='", "'>>='",
-                     "'>>>='", "'&='", "'^='", "'|='", "'??='", "'?'", "'??'",
-                     "'||'", "'&&'", "'!='", "'>='", "'<='", "'|'", "'^'",
-                     "'&'", "'<<'", "'>>'", "'>>>'", "'+'", "'-'", "'*'",
-                     "'/'", "'%'", "'~/'", "'!'", "'await'", "'++'", "'--'",
-                     "'?.'", "'is'", "'as'", "'if'", "'else'", "'for'",
-                     "'in'", "'while'", "'do'", "'switch'", "'case'", "'default'",
-                     "'rethrow'", "'try'", "'on'", "'catch'", "'finally'",
-                     "'return'", "'break'", "'continue'", "'yield'", "'yield*'",
-                     "'assert'", "'#!'", "'library'", "'import'", "'show'",
+    literalNames = [ "<INVALID>", "','", "'final'", "'const'", "'var'", 
+                     "'='", "'void'", "'async'", "'=>'", "';'", "'async*'", 
+                     "'sync*'", "'{'", "'}'", "'('", "')'", "'['", "']'", 
+                     "'covariant'", "'this'", "'.'", "':'", "'abstract'", 
+                     "'class'", "'with'", "'static'", "'external'", "'operator'", 
+                     "'~'", "'[]'", "'[]='", "'=='", "'get'", "'set'", "'super'", 
+                     "'factory'", "'extends'", "'implements'", "'enum'", 
+                     "'<'", "'>'", "'@'", "'null'", "'true'", "'false'", 
+                     "'$'", "'${'", "'#'", "'throw'", "'new'", "'..'", "'*='", 
+                     "'/='", "'~/='", "'%='", "'+='", "'<<='", "'>>='", 
+                     "'>>>='", "'&='", "'^='", "'|='", "'??='", "'?'", "'??'", 
+                     "'||'", "'&&'", "'!='", "'>='", "'<='", "'|'", "'^'", 
+                     "'&'", "'<<'", "'>>'", "'>>>'", "'+'", "'-'", "'*'", 
+                     "'/'", "'%'", "'~/'", "'!'", "'await'", "'++'", "'--'", 
+                     "'?.'", "'is'", "'as'", "'if'", "'else'", "'for'", 
+                     "'in'", "'while'", "'do'", "'switch'", "'case'", "'default'", 
+                     "'rethrow'", "'try'", "'on'", "'catch'", "'finally'", 
+                     "'return'", "'break'", "'continue'", "'yield'", "'yield*'", 
+                     "'assert'", "'#!'", "'library'", "'import'", "'show'", 
                      "'hide'", "'export'", "'part'", "'of'", "'typedef'" ]
 
-    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                      "<INVALID>", "<INVALID>", "WHITESPACE", "NUMBER",
-                      "HEX_NUMBER", "SingleLineString", "MultiLineString",
+    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "WHITESPACE", "NUMBER", 
+                      "HEX_NUMBER", "SingleLineString", "MultiLineString", 
                       "NEWLINE", "IDENTIFIER", "SINGLE_LINE_COMMENT", "MULTI_LINE_COMMENT" ]
 
     RULE_compilationUnit = 0
@@ -1067,7 +1070,7 @@ class Dart2Parser ( Parser ):
     RULE_staticFinalDeclarationList = 29
     RULE_staticFinalDeclaration = 30
     RULE_operatorSignature = 31
-    RULE_operator = 32
+    RULE_operator_ = 32
     RULE_binaryOperator = 33
     RULE_getterSignature = 34
     RULE_setterSignature = 35
@@ -1209,59 +1212,59 @@ class Dart2Parser ( Parser ):
     RULE_functionTypeAlias = 171
     RULE_functionPrefix = 172
 
-    ruleNames =  [ "compilationUnit", "variableDeclaration", "declaredIdentifier",
-                   "finalConstVarOrType", "varOrType", "initializedVariableDeclaration",
-                   "initializedIdentifier", "initializedIdentifierList",
-                   "functionSignature", "formalParameterPart", "returnType",
-                   "functionBody", "block", "formalParameterList", "normalFormalParameters",
-                   "optionalFormalParameters", "optionalPositionalFormalParameters",
-                   "namedFormalParameters", "normalFormalParameter", "functionFormalParameter",
-                   "simpleFormalParameter", "fieldFormalParameter", "defaultFormalParameter",
-                   "defaultNamedParameter", "classDefinition", "mixins",
-                   "classMemberDefinition", "methodSignature", "declaration",
-                   "staticFinalDeclarationList", "staticFinalDeclaration",
-                   "operatorSignature", "operator", "binaryOperator", "getterSignature",
-                   "setterSignature", "constructorSignature", "redirection",
-                   "initializers", "initializerListEntry", "fieldInitializer",
-                   "factoryConstructorSignature", "redirectingFactoryConstructorSignature",
-                   "constantConstructorSignature", "superclass", "interfaces",
-                   "mixinApplicationClass", "mixinApplication", "enumType",
-                   "enumEntry", "typeParameter", "typeParameters", "metadata",
-                   "expression", "expressionWithoutCascade", "expressionList",
-                   "primary", "literal", "nullLiteral", "numericLiteral",
-                   "booleanLiteral", "stringLiteral", "stringInterpolation",
-                   "symbolLiteral", "listLiteral", "mapLiteral", "mapLiteralEntry",
-                   "throwExpression", "throwExpressionWithoutCascade", "functionExpression",
-                   "thisExpression", "nayaExpression", "constObjectExpression",
-                   "arguments", "argumentList", "namedArgument", "cascadeSection",
-                   "cascadeSelector", "argumentPart", "assignmentOperator",
-                   "compoundAssignmentOperator", "conditionalExpression",
-                   "ifNullExpression", "logicalOrExpression", "logicalAndExpression",
-                   "equalityExpression", "equalityOperator", "relationalExpression",
-                   "relationalOperator", "bitwiseOrExpression", "bitwiseXorExpression",
-                   "bitwiseAndExpression", "bitwiseOperator", "shiftExpression",
-                   "shiftOperator", "additiveExpression", "additiveOperator",
-                   "multiplicativeExpression", "multiplicativeOperator",
-                   "unaryExpression", "prefixOperator", "minusOperator",
-                   "negationOperator", "tildeOperator", "awaitExpression",
-                   "postfixExpression", "postfixOperator", "selector", "incrementOperator",
-                   "assignableExpression", "unconditionalAssignableSelector",
-                   "assignableSelector", "identifier", "qualified", "typeTest",
-                   "isOperator", "typeCast", "asOperator", "statements",
-                   "statement", "nonLabledStatment", "expressionStatement",
-                   "localVariableDeclaration", "localFunctionDeclaration",
-                   "ifStatement", "forStatement", "forLoopParts", "forInitializerStatement",
-                   "whileStatement", "doStatement", "switchStatement", "switchCase",
-                   "defaultCase", "rethrowStatment", "tryStatement", "onPart",
-                   "catchPart", "finallyPart", "returnStatement", "label",
-                   "breakStatement", "continueStatement", "yieldStatement",
-                   "yieldEachStatement", "assertStatement", "assertion",
-                   "topLevelDefinition", "getOrSet", "libraryDefinition",
-                   "scriptTag", "libraryName", "importOrExport", "dottedIdentifierList",
-                   "libraryimport", "importSpecification", "combinator",
-                   "identifierList", "libraryExport", "partDirective", "partHeader",
-                   "partDeclaration", "uri", "configurableUri", "configurationUri",
-                   "uriTest", "dtype", "typeName", "typeArguments", "typeList",
+    ruleNames =  [ "compilationUnit", "variableDeclaration", "declaredIdentifier", 
+                   "finalConstVarOrType", "varOrType", "initializedVariableDeclaration", 
+                   "initializedIdentifier", "initializedIdentifierList", 
+                   "functionSignature", "formalParameterPart", "returnType", 
+                   "functionBody", "block", "formalParameterList", "normalFormalParameters", 
+                   "optionalFormalParameters", "optionalPositionalFormalParameters", 
+                   "namedFormalParameters", "normalFormalParameter", "functionFormalParameter", 
+                   "simpleFormalParameter", "fieldFormalParameter", "defaultFormalParameter", 
+                   "defaultNamedParameter", "classDefinition", "mixins", 
+                   "classMemberDefinition", "methodSignature", "declaration", 
+                   "staticFinalDeclarationList", "staticFinalDeclaration", 
+                   "operatorSignature", "operator_", "binaryOperator", "getterSignature", 
+                   "setterSignature", "constructorSignature", "redirection", 
+                   "initializers", "initializerListEntry", "fieldInitializer", 
+                   "factoryConstructorSignature", "redirectingFactoryConstructorSignature", 
+                   "constantConstructorSignature", "superclass", "interfaces", 
+                   "mixinApplicationClass", "mixinApplication", "enumType", 
+                   "enumEntry", "typeParameter", "typeParameters", "metadata", 
+                   "expression", "expressionWithoutCascade", "expressionList", 
+                   "primary", "literal", "nullLiteral", "numericLiteral", 
+                   "booleanLiteral", "stringLiteral", "stringInterpolation", 
+                   "symbolLiteral", "listLiteral", "mapLiteral", "mapLiteralEntry", 
+                   "throwExpression", "throwExpressionWithoutCascade", "functionExpression", 
+                   "thisExpression", "nayaExpression", "constObjectExpression", 
+                   "arguments", "argumentList", "namedArgument", "cascadeSection", 
+                   "cascadeSelector", "argumentPart", "assignmentOperator", 
+                   "compoundAssignmentOperator", "conditionalExpression", 
+                   "ifNullExpression", "logicalOrExpression", "logicalAndExpression", 
+                   "equalityExpression", "equalityOperator", "relationalExpression", 
+                   "relationalOperator", "bitwiseOrExpression", "bitwiseXorExpression", 
+                   "bitwiseAndExpression", "bitwiseOperator", "shiftExpression", 
+                   "shiftOperator", "additiveExpression", "additiveOperator", 
+                   "multiplicativeExpression", "multiplicativeOperator", 
+                   "unaryExpression", "prefixOperator", "minusOperator", 
+                   "negationOperator", "tildeOperator", "awaitExpression", 
+                   "postfixExpression", "postfixOperator", "selector", "incrementOperator", 
+                   "assignableExpression", "unconditionalAssignableSelector", 
+                   "assignableSelector", "identifier", "qualified", "typeTest", 
+                   "isOperator", "typeCast", "asOperator", "statements", 
+                   "statement", "nonLabledStatment", "expressionStatement", 
+                   "localVariableDeclaration", "localFunctionDeclaration", 
+                   "ifStatement", "forStatement", "forLoopParts", "forInitializerStatement", 
+                   "whileStatement", "doStatement", "switchStatement", "switchCase", 
+                   "defaultCase", "rethrowStatment", "tryStatement", "onPart", 
+                   "catchPart", "finallyPart", "returnStatement", "label", 
+                   "breakStatement", "continueStatement", "yieldStatement", 
+                   "yieldEachStatement", "assertStatement", "assertion", 
+                   "topLevelDefinition", "getOrSet", "libraryDefinition", 
+                   "scriptTag", "libraryName", "importOrExport", "dottedIdentifierList", 
+                   "libraryimport", "importSpecification", "combinator", 
+                   "identifierList", "libraryExport", "partDirective", "partHeader", 
+                   "partDeclaration", "uri", "configurableUri", "configurationUri", 
+                   "uriTest", "dtype", "typeName", "typeArguments", "typeList", 
                    "typeAlias", "typeAliasBody", "functionTypeAlias", "functionPrefix" ]
 
     EOF = Token.EOF
@@ -1394,13 +1397,15 @@ class Dart2Parser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.7.1")
+        self.checkVersion("4.9.3")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
 
 
+
     class CompilationUnitContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1463,7 +1468,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class VariableDeclarationContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1529,7 +1536,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class DeclaredIdentifierContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1587,7 +1596,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class FinalConstVarOrTypeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1671,7 +1682,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class VarOrTypeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1730,7 +1743,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class InitializedVariableDeclarationContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1810,7 +1825,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class InitializedIdentifierContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1871,7 +1888,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class InitializedIdentifierListContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -1933,7 +1952,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class FunctionSignatureContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2003,7 +2024,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class FormalParameterPartContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2062,7 +2085,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ReturnTypeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2121,7 +2146,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class FunctionBodyContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2210,7 +2237,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class BlockContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2260,7 +2289,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class FormalParameterListContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2360,7 +2391,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class NormalFormalParametersContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2409,7 +2442,7 @@ class Dart2Parser ( Parser ):
                     self.state = 456
                     self.match(Dart2Parser.T__0)
                     self.state = 457
-                    self.normalFormalParameter()
+                    self.normalFormalParameter() 
                 self.state = 462
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,18,self._ctx)
@@ -2422,7 +2455,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class OptionalFormalParametersContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2485,7 +2520,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class OptionalPositionalFormalParametersContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2537,7 +2574,7 @@ class Dart2Parser ( Parser ):
                     self.state = 469
                     self.match(Dart2Parser.T__0)
                     self.state = 470
-                    self.defaultFormalParameter()
+                    self.defaultFormalParameter() 
                 self.state = 475
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,20,self._ctx)
@@ -2560,7 +2597,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class NamedFormalParametersContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2612,7 +2651,7 @@ class Dart2Parser ( Parser ):
                     self.state = 483
                     self.match(Dart2Parser.T__0)
                     self.state = 484
-                    self.defaultNamedParameter()
+                    self.defaultNamedParameter() 
                 self.state = 489
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,22,self._ctx)
@@ -2635,7 +2674,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class NormalFormalParameterContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2708,7 +2749,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class FunctionFormalParameterContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2787,7 +2830,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class SimpleFormalParameterContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2865,7 +2910,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class FieldFormalParameterContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -2946,7 +2993,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class DefaultFormalParameterContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3007,7 +3056,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class DefaultNamedParameterContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3091,7 +3142,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ClassDefinitionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3257,7 +3310,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class MixinsContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3305,7 +3360,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ClassMemberDefinitionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3376,7 +3433,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class MethodSignatureContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3516,7 +3575,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class DeclarationContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3808,7 +3869,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class StaticFinalDeclarationListContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3870,7 +3933,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class StaticFinalDeclarationContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -3924,14 +3989,16 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class OperatorSignatureContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def operator(self):
-            return self.getTypedRuleContext(Dart2Parser.OperatorContext,0)
+        def operator_(self):
+            return self.getTypedRuleContext(Dart2Parser.Operator_Context,0)
 
 
         def formalParameterList(self):
@@ -3980,7 +4047,7 @@ class Dart2Parser ( Parser ):
             self.state = 690
             self.match(Dart2Parser.T__26)
             self.state = 691
-            self.operator()
+            self.operator_()
             self.state = 692
             self.formalParameterList()
         except RecognitionException as re:
@@ -3991,7 +4058,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
-    class OperatorContext(ParserRuleContext):
+
+    class Operator_Context(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4002,29 +4071,29 @@ class Dart2Parser ( Parser ):
 
 
         def getRuleIndex(self):
-            return Dart2Parser.RULE_operator
+            return Dart2Parser.RULE_operator_
 
         def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOperator" ):
-                listener.enterOperator(self)
+            if hasattr( listener, "enterOperator_" ):
+                listener.enterOperator_(self)
 
         def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOperator" ):
-                listener.exitOperator(self)
+            if hasattr( listener, "exitOperator_" ):
+                listener.exitOperator_(self)
 
         def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitOperator" ):
-                return visitor.visitOperator(self)
+            if hasattr( visitor, "visitOperator_" ):
+                return visitor.visitOperator_(self)
             else:
                 return visitor.visitChildren(self)
 
 
 
 
-    def operator(self):
+    def operator_(self):
 
-        localctx = Dart2Parser.OperatorContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 64, self.RULE_operator)
+        localctx = Dart2Parser.Operator_Context(self, self._ctx, self.state)
+        self.enterRule(localctx, 64, self.RULE_operator_)
         try:
             self.state = 698
             self._errHandler.sync(self)
@@ -4060,7 +4129,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class BinaryOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4155,7 +4226,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class GetterSignatureContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4216,7 +4289,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class SetterSignatureContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4283,7 +4358,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ConstructorSignatureContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4349,7 +4426,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class RedirectionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4414,7 +4493,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class InitializersContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4478,7 +4559,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class InitializerListEntryContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4569,7 +4652,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class FieldInitializerContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4651,7 +4736,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class FactoryConstructorSignatureContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4719,7 +4806,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class RedirectingFactoryConstructorSignatureContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4813,7 +4902,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ConstantConstructorSignatureContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4867,7 +4958,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class SuperclassContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4915,7 +5008,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class InterfacesContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -4963,7 +5058,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class MixinApplicationClassContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5032,7 +5129,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class MixinApplicationContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5097,7 +5196,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class EnumTypeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5163,7 +5264,7 @@ class Dart2Parser ( Parser ):
                     self.state = 821
                     self.match(Dart2Parser.T__0)
                     self.state = 822
-                    self.enumEntry()
+                    self.enumEntry() 
                 self.state = 827
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,81,self._ctx)
@@ -5186,7 +5287,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class EnumEntryContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5238,7 +5341,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class TypeParameterContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5305,7 +5410,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class TypeParametersContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5371,7 +5478,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class MetadataContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5451,7 +5560,7 @@ class Dart2Parser ( Parser ):
                         self.state = 859
                         self.arguments()
 
-
+             
                 self.state = 866
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,87,self._ctx)
@@ -5464,7 +5573,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5567,7 +5678,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ExpressionWithoutCascadeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5652,7 +5765,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ExpressionListContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5701,7 +5816,7 @@ class Dart2Parser ( Parser ):
                     self.state = 890
                     self.match(Dart2Parser.T__0)
                     self.state = 891
-                    self.expression()
+                    self.expression() 
                 self.state = 896
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,91,self._ctx)
@@ -5714,7 +5829,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class PrimaryContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5843,7 +5960,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class LiteralContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5956,7 +6075,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class NullLiteralContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -5999,7 +6120,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class NumericLiteralContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -6053,7 +6176,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class BooleanLiteralContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -6102,7 +6227,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class StringLiteralContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -6147,7 +6274,7 @@ class Dart2Parser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 927
+            self.state = 927 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
@@ -6158,7 +6285,7 @@ class Dart2Parser ( Parser ):
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 929
+                self.state = 929 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (_la==Dart2Parser.SingleLineString or _la==Dart2Parser.MultiLineString):
@@ -6172,7 +6299,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class StringInterpolationContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -6241,14 +6370,16 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class SymbolLiteralContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def operator(self):
-            return self.getTypedRuleContext(Dart2Parser.OperatorContext,0)
+        def operator_(self):
+            return self.getTypedRuleContext(Dart2Parser.Operator_Context,0)
 
 
         def identifier(self, i:int=None):
@@ -6291,7 +6422,7 @@ class Dart2Parser ( Parser ):
             token = self._input.LA(1)
             if token in [Dart2Parser.T__27, Dart2Parser.T__28, Dart2Parser.T__29, Dart2Parser.T__30, Dart2Parser.T__38, Dart2Parser.T__39, Dart2Parser.T__67, Dart2Parser.T__68, Dart2Parser.T__69, Dart2Parser.T__70, Dart2Parser.T__71, Dart2Parser.T__72, Dart2Parser.T__73, Dart2Parser.T__74, Dart2Parser.T__75, Dart2Parser.T__76, Dart2Parser.T__77, Dart2Parser.T__78, Dart2Parser.T__79, Dart2Parser.T__80]:
                 self.state = 940
-                self.operator()
+                self.operator_()
                 pass
             elif token in [Dart2Parser.IDENTIFIER]:
                 self.state = 941
@@ -6304,7 +6435,7 @@ class Dart2Parser ( Parser ):
                         self.state = 942
                         self.match(Dart2Parser.T__0)
                         self.state = 943
-                        self.identifier()
+                        self.identifier() 
                     self.state = 948
                     self._errHandler.sync(self)
                     _alt = self._interp.adaptivePredict(self._input,96,self._ctx)
@@ -6321,7 +6452,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ListLiteralContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -6406,7 +6539,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class MapLiteralContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -6482,7 +6617,7 @@ class Dart2Parser ( Parser ):
                         self.state = 974
                         self.match(Dart2Parser.T__0)
                         self.state = 975
-                        self.mapLiteralEntry()
+                        self.mapLiteralEntry() 
                     self.state = 980
                     self._errHandler.sync(self)
                     _alt = self._interp.adaptivePredict(self._input,104,self._ctx)
@@ -6507,7 +6642,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class MapLiteralEntryContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -6560,7 +6697,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ThrowExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -6608,7 +6747,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ThrowExpressionWithoutCascadeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -6656,7 +6797,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class FunctionExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -6708,7 +6851,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ThisExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -6751,7 +6896,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class NayaExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -6820,7 +6967,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ConstObjectExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -6889,7 +7038,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ArgumentsContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -6954,7 +7105,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ArgumentListContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -7011,7 +7164,7 @@ class Dart2Parser ( Parser ):
                         self.state = 1029
                         self.match(Dart2Parser.T__0)
                         self.state = 1030
-                        self.namedArgument()
+                        self.namedArgument() 
                     self.state = 1035
                     self._errHandler.sync(self)
                     _alt = self._interp.adaptivePredict(self._input,111,self._ctx)
@@ -7030,7 +7183,7 @@ class Dart2Parser ( Parser ):
                         self.state = 1037
                         self.match(Dart2Parser.T__0)
                         self.state = 1038
-                        self.namedArgument()
+                        self.namedArgument() 
                     self.state = 1043
                     self._errHandler.sync(self)
                     _alt = self._interp.adaptivePredict(self._input,112,self._ctx)
@@ -7046,7 +7199,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class NamedArgumentContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -7098,7 +7253,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class CascadeSectionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -7210,7 +7367,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class CascadeSelectorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -7277,7 +7436,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ArgumentPartContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -7336,7 +7497,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class AssignmentOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -7395,7 +7558,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class CompoundAssignmentOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -7444,7 +7609,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ConditionalExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -7512,7 +7679,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class IfNullExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -7574,7 +7743,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class LogicalOrExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -7636,7 +7807,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class LogicalAndExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -7698,7 +7871,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class EqualityExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -7779,7 +7954,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class EqualityOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -7828,7 +8005,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class RelationalExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -7927,16 +8106,14 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class RelationalOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def TOKEN(self):
-            for child in self.getChildren():
-                return child
-            return None
 
         def getRuleIndex(self):
             return Dart2Parser.RULE_relationalOperator
@@ -7980,7 +8157,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class BitwiseOrExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -8040,7 +8219,7 @@ class Dart2Parser ( Parser ):
                         self.state = 1155
                         self.match(Dart2Parser.T__69)
                         self.state = 1156
-                        self.bitwiseXorExpression()
+                        self.bitwiseXorExpression() 
                     self.state = 1161
                     self._errHandler.sync(self)
                     _alt = self._interp.adaptivePredict(self._input,129,self._ctx)
@@ -8051,7 +8230,7 @@ class Dart2Parser ( Parser ):
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1162
                 self.match(Dart2Parser.T__33)
-                self.state = 1165
+                self.state = 1165 
                 self._errHandler.sync(self)
                 _alt = 1
                 while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -8063,7 +8242,7 @@ class Dart2Parser ( Parser ):
 
                     else:
                         raise NoViableAltException(self)
-                    self.state = 1167
+                    self.state = 1167 
                     self._errHandler.sync(self)
                     _alt = self._interp.adaptivePredict(self._input,130,self._ctx)
 
@@ -8078,7 +8257,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class BitwiseXorExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -8142,7 +8323,7 @@ class Dart2Parser ( Parser ):
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1179
                 self.match(Dart2Parser.T__33)
-                self.state = 1182
+                self.state = 1182 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while True:
@@ -8150,7 +8331,7 @@ class Dart2Parser ( Parser ):
                     self.match(Dart2Parser.T__70)
                     self.state = 1181
                     self.bitwiseAndExpression()
-                    self.state = 1184
+                    self.state = 1184 
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if not (_la==Dart2Parser.T__70):
@@ -8167,7 +8348,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class BitwiseAndExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -8231,7 +8414,7 @@ class Dart2Parser ( Parser ):
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1196
                 self.match(Dart2Parser.T__33)
-                self.state = 1199
+                self.state = 1199 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while True:
@@ -8239,7 +8422,7 @@ class Dart2Parser ( Parser ):
                     self.match(Dart2Parser.T__71)
                     self.state = 1198
                     self.shiftExpression()
-                    self.state = 1201
+                    self.state = 1201 
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if not (_la==Dart2Parser.T__71):
@@ -8256,7 +8439,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class BitwiseOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -8305,7 +8490,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ShiftExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -8376,7 +8563,7 @@ class Dart2Parser ( Parser ):
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1216
                 self.match(Dart2Parser.T__33)
-                self.state = 1220
+                self.state = 1220 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while True:
@@ -8384,7 +8571,7 @@ class Dart2Parser ( Parser ):
                     self.shiftOperator()
                     self.state = 1218
                     self.additiveExpression()
-                    self.state = 1222
+                    self.state = 1222 
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if not (((((_la - 73)) & ~0x3f) == 0 and ((1 << (_la - 73)) & ((1 << (Dart2Parser.T__72 - 73)) | (1 << (Dart2Parser.T__73 - 73)) | (1 << (Dart2Parser.T__74 - 73)))) != 0)):
@@ -8401,7 +8588,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ShiftOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -8450,7 +8639,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class AdditiveExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -8521,7 +8712,7 @@ class Dart2Parser ( Parser ):
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1237
                 self.match(Dart2Parser.T__33)
-                self.state = 1241
+                self.state = 1241 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while True:
@@ -8529,7 +8720,7 @@ class Dart2Parser ( Parser ):
                     self.additiveOperator()
                     self.state = 1239
                     self.multiplicativeExpression()
-                    self.state = 1243
+                    self.state = 1243 
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if not (_la==Dart2Parser.T__75 or _la==Dart2Parser.T__76):
@@ -8546,16 +8737,14 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class AdditiveOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def TOKEN(self):
-            for child in self.getChildren():
-                return child
-            return None
 
         def getRuleIndex(self):
             return Dart2Parser.RULE_additiveOperator
@@ -8599,7 +8788,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class MultiplicativeExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -8670,7 +8861,7 @@ class Dart2Parser ( Parser ):
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1258
                 self.match(Dart2Parser.T__33)
-                self.state = 1262
+                self.state = 1262 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while True:
@@ -8678,7 +8869,7 @@ class Dart2Parser ( Parser ):
                     self.multiplicativeOperator()
                     self.state = 1260
                     self.unaryExpression()
-                    self.state = 1264
+                    self.state = 1264 
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if not (((((_la - 78)) & ~0x3f) == 0 and ((1 << (_la - 78)) & ((1 << (Dart2Parser.T__77 - 78)) | (1 << (Dart2Parser.T__78 - 78)) | (1 << (Dart2Parser.T__79 - 78)) | (1 << (Dart2Parser.T__80 - 78)))) != 0)):
@@ -8695,7 +8886,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class MultiplicativeOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -8744,7 +8937,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class UnaryExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -8867,7 +9062,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class PrefixOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -8939,7 +9136,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class MinusOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -8982,7 +9181,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class NegationOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9025,7 +9226,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class TildeOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9068,7 +9271,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class AwaitExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9116,7 +9321,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class PostfixExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9187,7 +9394,7 @@ class Dart2Parser ( Parser ):
                 while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                     if _alt==1:
                         self.state = 1304
-                        self.selector()
+                        self.selector() 
                     self.state = 1309
                     self._errHandler.sync(self)
                     _alt = self._interp.adaptivePredict(self._input,150,self._ctx)
@@ -9203,7 +9410,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class PostfixOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9249,7 +9458,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class SelectorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9312,16 +9523,14 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class IncrementOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def TOKEN(self):
-            for child in self.getChildren():
-                return child
-            return None
 
         def getRuleIndex(self):
             return Dart2Parser.RULE_incrementOperator
@@ -9365,7 +9574,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class AssignableExpressionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9466,7 +9677,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class UnconditionalAssignableSelectorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9535,7 +9748,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class AssignableSelectorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9600,7 +9815,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class IdentifierContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9645,7 +9862,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class QualifiedContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9704,7 +9923,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class TypeTestContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9756,7 +9977,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class IsOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9808,7 +10031,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class TypeCastContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9860,7 +10085,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class AsOperatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9903,7 +10130,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class StatementsContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -9948,7 +10177,7 @@ class Dart2Parser ( Parser ):
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     self.state = 1368
-                    self.statement()
+                    self.statement() 
                 self.state = 1373
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,160,self._ctx)
@@ -9961,7 +10190,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class StatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -10010,7 +10241,7 @@ class Dart2Parser ( Parser ):
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     self.state = 1374
-                    self.label()
+                    self.label() 
                 self.state = 1379
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,161,self._ctx)
@@ -10025,7 +10256,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class NonLabledStatmentContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -10238,7 +10471,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ExpressionStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -10293,7 +10528,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class LocalVariableDeclarationContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -10341,7 +10578,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class LocalFunctionDeclarationContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -10393,7 +10632,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class IfStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -10464,7 +10705,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ForStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -10531,7 +10774,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ForLoopPartsContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -10639,7 +10884,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ForInitializerStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -10711,7 +10958,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class WhileStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -10769,7 +11018,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class DoStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -10831,7 +11082,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class SwitchStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -10895,7 +11148,7 @@ class Dart2Parser ( Parser ):
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     self.state = 1474
-                    self.switchCase()
+                    self.switchCase() 
                 self.state = 1479
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,171,self._ctx)
@@ -10918,7 +11171,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class SwitchCaseContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -10992,7 +11247,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class DefaultCaseContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -11060,7 +11317,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class RethrowStatmentContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -11105,7 +11364,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class TryStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -11161,13 +11422,13 @@ class Dart2Parser ( Parser ):
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [Dart2Parser.T__99, Dart2Parser.T__100]:
-                self.state = 1512
+                self.state = 1512 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while True:
                     self.state = 1511
                     self.onPart()
-                    self.state = 1514
+                    self.state = 1514 
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if not (_la==Dart2Parser.T__99 or _la==Dart2Parser.T__100):
@@ -11197,7 +11458,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class OnPartContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -11279,7 +11542,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class CatchPartContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -11345,7 +11610,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class FinallyPartContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -11393,7 +11660,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ReturnStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -11450,7 +11719,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class LabelContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -11498,7 +11769,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class BreakStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -11555,7 +11828,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ContinueStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -11612,7 +11887,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class YieldStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -11662,7 +11939,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class YieldEachStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -11712,7 +11991,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class AssertStatementContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -11760,7 +12041,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class AssertionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -11834,7 +12117,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class TopLevelDefinitionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -12073,7 +12358,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class GetOrSetContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -12122,7 +12409,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class LibraryDefinitionContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -12206,7 +12495,7 @@ class Dart2Parser ( Parser ):
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     self.state = 1649
-                    self.importOrExport()
+                    self.importOrExport() 
                 self.state = 1654
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,195,self._ctx)
@@ -12217,7 +12506,7 @@ class Dart2Parser ( Parser ):
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     self.state = 1655
-                    self.partDirective()
+                    self.partDirective() 
                 self.state = 1660
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,196,self._ctx)
@@ -12240,7 +12529,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ScriptTagContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -12306,7 +12597,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class LibraryNameContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -12362,7 +12655,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ImportOrExportContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -12425,7 +12720,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class DottedIdentifierListContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -12487,7 +12784,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class LibraryimportContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -12539,7 +12838,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ImportSpecificationContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -12621,7 +12922,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class CombinatorContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -12684,7 +12987,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class IdentifierListContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -12746,7 +13051,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class LibraryExportContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -12820,7 +13127,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class PartDirectiveContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -12876,7 +13185,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class PartHeaderContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -12950,7 +13261,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class PartDeclarationContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -13019,7 +13332,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class UriContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -13065,7 +13380,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ConfigurableUriContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -13129,7 +13446,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ConfigurationUriContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -13187,7 +13506,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class UriTestContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -13248,7 +13569,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class DtypeContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -13293,9 +13616,17 @@ class Dart2Parser ( Parser ):
             self.typeName()
             self.state = 1784
             self._errHandler.sync(self)
+            la_ = self._interp.adaptivePredict(self._input,210,self._ctx)
+            if la_ == 1:
+                self.state = 1783
+                self.match(Dart2Parser.T__62)
+
+
+            self.state = 1787
+            self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==Dart2Parser.T__38:
-                self.state = 1783
+                self.state = 1786
                 self.typeArguments()
 
 
@@ -13307,7 +13638,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class TypeNameContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -13342,17 +13675,17 @@ class Dart2Parser ( Parser ):
         localctx = Dart2Parser.TypeNameContext(self, self._ctx, self.state)
         self.enterRule(localctx, 332, self.RULE_typeName)
         try:
-            self.state = 1788
+            self.state = 1791
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [Dart2Parser.IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 1786
+                self.state = 1789
                 self.qualified()
                 pass
             elif token in [Dart2Parser.T__5]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 1787
+                self.state = 1790
                 self.match(Dart2Parser.T__5)
                 pass
             else:
@@ -13366,7 +13699,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class TypeArgumentsContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -13402,11 +13737,11 @@ class Dart2Parser ( Parser ):
         self.enterRule(localctx, 334, self.RULE_typeArguments)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 1790
+            self.state = 1793
             self.match(Dart2Parser.T__38)
-            self.state = 1791
+            self.state = 1794
             self.typeList()
-            self.state = 1792
+            self.state = 1795
             self.match(Dart2Parser.T__39)
         except RecognitionException as re:
             localctx.exception = re
@@ -13416,7 +13751,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class TypeListContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -13456,17 +13793,17 @@ class Dart2Parser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 1794
+            self.state = 1797
             self.dtype()
-            self.state = 1799
+            self.state = 1802
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==Dart2Parser.T__0:
-                self.state = 1795
+                self.state = 1798
                 self.match(Dart2Parser.T__0)
-                self.state = 1796
+                self.state = 1799
                 self.dtype()
-                self.state = 1801
+                self.state = 1804
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -13478,7 +13815,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class TypeAliasContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -13518,11 +13857,11 @@ class Dart2Parser ( Parser ):
         self.enterRule(localctx, 338, self.RULE_typeAlias)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 1802
+            self.state = 1805
             self.metadata()
-            self.state = 1803
+            self.state = 1806
             self.match(Dart2Parser.T__116)
-            self.state = 1804
+            self.state = 1807
             self.typeAliasBody()
         except RecognitionException as re:
             localctx.exception = re
@@ -13532,7 +13871,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class TypeAliasBodyContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -13568,7 +13909,7 @@ class Dart2Parser ( Parser ):
         self.enterRule(localctx, 340, self.RULE_typeAliasBody)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 1806
+            self.state = 1809
             self.functionTypeAlias()
         except RecognitionException as re:
             localctx.exception = re
@@ -13578,7 +13919,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class FunctionTypeAliasContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -13623,19 +13966,19 @@ class Dart2Parser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 1808
+            self.state = 1811
             self.functionPrefix()
-            self.state = 1810
+            self.state = 1813
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==Dart2Parser.T__38:
-                self.state = 1809
+                self.state = 1812
                 self.typeParameters()
 
 
-            self.state = 1812
+            self.state = 1815
             self.formalParameterList()
-            self.state = 1813
+            self.state = 1816
             self.match(Dart2Parser.T__8)
         except RecognitionException as re:
             localctx.exception = re
@@ -13645,7 +13988,9 @@ class Dart2Parser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class FunctionPrefixContext(ParserRuleContext):
+        __slots__ = 'parser'
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
@@ -13685,15 +14030,15 @@ class Dart2Parser ( Parser ):
         self.enterRule(localctx, 344, self.RULE_functionPrefix)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 1816
+            self.state = 1819
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,214,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,215,self._ctx)
             if la_ == 1:
-                self.state = 1815
+                self.state = 1818
                 self.returnType()
 
 
-            self.state = 1818
+            self.state = 1821
             self.identifier()
         except RecognitionException as re:
             localctx.exception = re

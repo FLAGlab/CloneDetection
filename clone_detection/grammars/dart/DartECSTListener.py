@@ -403,11 +403,11 @@ class DartECSTListener(ParseTreeListener):
         pass
 
     # Enter a parse tree produced by Dart2Parser#operator.
-    def enterOperator(self, ctx: Dart2Parser.OperatorContext):
+    def enterOperator(self, ctx: Dart2Parser.Operator_Context):
         pass
 
     # Exit a parse tree produced by Dart2Parser#operator.
-    def exitOperator(self, ctx: Dart2Parser.OperatorContext):
+    def exitOperator(self, ctx: Dart2Parser.Operator_Context):
         pass
 
     # Enter a parse tree produced by Dart2Parser#binaryOperator.
@@ -1321,11 +1321,14 @@ class DartECSTListener(ParseTreeListener):
 
     # Enter a parse tree produced by Dart2Parser#identifier.
     def enterIdentifier(self, ctx: Dart2Parser.IdentifierContext):
-        token = ctx.IDENTIFIER().symbol
-        act_token = ShortToken(token.text, token.line, token.column)
+        try:
+            token = ctx.IDENTIFIER().symbol
+            act_token = ShortToken(token.text, token.line, token.column)
+        except AttributeError:
+            act_token = ShortToken('', -1, -1)
         file_node = ECSTNode(
-            str(uuid.uuid4()), self.current_node, act_token,
-            'LITERAL')
+                str(uuid.uuid4()), self.current_node, act_token,
+                'LITERAL')
         self.current_node.add_child(file_node)
         self.current_node = file_node
 

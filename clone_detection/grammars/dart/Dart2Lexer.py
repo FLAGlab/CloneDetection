@@ -1,8 +1,11 @@
-# Generated from ../clone_detection/grammars/dart/Dart2.g4 by ANTLR 4.7.1
-import sys
+# Generated from ./clone_detection/grammars/dart/Dart2.g4 by ANTLR 4.9.3
 from antlr4 import *
 from io import StringIO
-from typing.io import TextIO
+import sys
+if sys.version_info[1] > 5:
+    from typing import TextIO
+else:
+    from typing.io import TextIO
 
 from clone_detection.grammars.grammars_registry import LEXERS
 
@@ -485,7 +488,6 @@ def serializedATN():
         buf.write("\u03fa\u03fd\u0407\u0412\3\b\2\2")
         return buf.getvalue()
 
-
 @LEXERS.register('dart')
 class Dart2Lexer(Lexer):
 
@@ -625,60 +627,60 @@ class Dart2Lexer(Lexer):
     modeNames = [ "DEFAULT_MODE" ]
 
     literalNames = [ "<INVALID>",
-            "','", "'final'", "'const'", "'var'", "'='", "'void'", "'async'",
-            "'=>'", "';'", "'async*'", "'sync*'", "'{'", "'}'", "'('", "')'",
-            "'['", "']'", "'covariant'", "'this'", "'.'", "':'", "'abstract'",
-            "'class'", "'with'", "'static'", "'external'", "'operator'",
-            "'~'", "'[]'", "'[]='", "'=='", "'get'", "'set'", "'super'",
-            "'factory'", "'extends'", "'implements'", "'enum'", "'<'", "'>'",
-            "'@'", "'null'", "'true'", "'false'", "'$'", "'${'", "'#'",
-            "'throw'", "'new'", "'..'", "'*='", "'/='", "'~/='", "'%='",
-            "'+='", "'<<='", "'>>='", "'>>>='", "'&='", "'^='", "'|='",
-            "'??='", "'?'", "'??'", "'||'", "'&&'", "'!='", "'>='", "'<='",
-            "'|'", "'^'", "'&'", "'<<'", "'>>'", "'>>>'", "'+'", "'-'",
-            "'*'", "'/'", "'%'", "'~/'", "'!'", "'await'", "'++'", "'--'",
-            "'?.'", "'is'", "'as'", "'if'", "'else'", "'for'", "'in'", "'while'",
-            "'do'", "'switch'", "'case'", "'default'", "'rethrow'", "'try'",
-            "'on'", "'catch'", "'finally'", "'return'", "'break'", "'continue'",
-            "'yield'", "'yield*'", "'assert'", "'#!'", "'library'", "'import'",
+            "','", "'final'", "'const'", "'var'", "'='", "'void'", "'async'", 
+            "'=>'", "';'", "'async*'", "'sync*'", "'{'", "'}'", "'('", "')'", 
+            "'['", "']'", "'covariant'", "'this'", "'.'", "':'", "'abstract'", 
+            "'class'", "'with'", "'static'", "'external'", "'operator'", 
+            "'~'", "'[]'", "'[]='", "'=='", "'get'", "'set'", "'super'", 
+            "'factory'", "'extends'", "'implements'", "'enum'", "'<'", "'>'", 
+            "'@'", "'null'", "'true'", "'false'", "'$'", "'${'", "'#'", 
+            "'throw'", "'new'", "'..'", "'*='", "'/='", "'~/='", "'%='", 
+            "'+='", "'<<='", "'>>='", "'>>>='", "'&='", "'^='", "'|='", 
+            "'??='", "'?'", "'??'", "'||'", "'&&'", "'!='", "'>='", "'<='", 
+            "'|'", "'^'", "'&'", "'<<'", "'>>'", "'>>>'", "'+'", "'-'", 
+            "'*'", "'/'", "'%'", "'~/'", "'!'", "'await'", "'++'", "'--'", 
+            "'?.'", "'is'", "'as'", "'if'", "'else'", "'for'", "'in'", "'while'", 
+            "'do'", "'switch'", "'case'", "'default'", "'rethrow'", "'try'", 
+            "'on'", "'catch'", "'finally'", "'return'", "'break'", "'continue'", 
+            "'yield'", "'yield*'", "'assert'", "'#!'", "'library'", "'import'", 
             "'show'", "'hide'", "'export'", "'part'", "'of'", "'typedef'" ]
 
     symbolicNames = [ "<INVALID>",
-            "WHITESPACE", "NUMBER", "HEX_NUMBER", "SingleLineString", "MultiLineString",
+            "WHITESPACE", "NUMBER", "HEX_NUMBER", "SingleLineString", "MultiLineString", 
             "NEWLINE", "IDENTIFIER", "SINGLE_LINE_COMMENT", "MULTI_LINE_COMMENT" ]
 
-    ruleNames = [ "T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6",
-                  "T__7", "T__8", "T__9", "T__10", "T__11", "T__12", "T__13",
-                  "T__14", "T__15", "T__16", "T__17", "T__18", "T__19",
-                  "T__20", "T__21", "T__22", "T__23", "T__24", "T__25",
-                  "T__26", "T__27", "T__28", "T__29", "T__30", "T__31",
-                  "T__32", "T__33", "T__34", "T__35", "T__36", "T__37",
-                  "T__38", "T__39", "T__40", "T__41", "T__42", "T__43",
-                  "T__44", "T__45", "T__46", "T__47", "T__48", "T__49",
-                  "T__50", "T__51", "T__52", "T__53", "T__54", "T__55",
-                  "T__56", "T__57", "T__58", "T__59", "T__60", "T__61",
-                  "T__62", "T__63", "T__64", "T__65", "T__66", "T__67",
-                  "T__68", "T__69", "T__70", "T__71", "T__72", "T__73",
-                  "T__74", "T__75", "T__76", "T__77", "T__78", "T__79",
-                  "T__80", "T__81", "T__82", "T__83", "T__84", "T__85",
-                  "T__86", "T__87", "T__88", "T__89", "T__90", "T__91",
-                  "T__92", "T__93", "T__94", "T__95", "T__96", "T__97",
-                  "T__98", "T__99", "T__100", "T__101", "T__102", "T__103",
-                  "T__104", "T__105", "T__106", "T__107", "T__108", "T__109",
-                  "T__110", "T__111", "T__112", "T__113", "T__114", "T__115",
-                  "T__116", "WHITESPACE", "NUMBER", "EXPONENT", "HEX_NUMBER",
-                  "HEX_DIGIT", "SingleLineString", "StringContentDQ", "StringContentSQ",
-                  "MultiLineString", "StringContentTDQ", "StringContentTSQ",
-                  "NEWLINE", "IDENTIFIER_NO_DOLLAR", "IDENTIFIER", "IDENTIFIER_START",
-                  "IDENTIFIER_START_NO_DOLLAR", "IDENTIFIER_PART_NO_DOLLAR",
-                  "IDENTIFIER_PART", "LETTER", "DIGIT", "SINGLE_LINE_COMMENT",
+    ruleNames = [ "T__0", "T__1", "T__2", "T__3", "T__4", "T__5", "T__6", 
+                  "T__7", "T__8", "T__9", "T__10", "T__11", "T__12", "T__13", 
+                  "T__14", "T__15", "T__16", "T__17", "T__18", "T__19", 
+                  "T__20", "T__21", "T__22", "T__23", "T__24", "T__25", 
+                  "T__26", "T__27", "T__28", "T__29", "T__30", "T__31", 
+                  "T__32", "T__33", "T__34", "T__35", "T__36", "T__37", 
+                  "T__38", "T__39", "T__40", "T__41", "T__42", "T__43", 
+                  "T__44", "T__45", "T__46", "T__47", "T__48", "T__49", 
+                  "T__50", "T__51", "T__52", "T__53", "T__54", "T__55", 
+                  "T__56", "T__57", "T__58", "T__59", "T__60", "T__61", 
+                  "T__62", "T__63", "T__64", "T__65", "T__66", "T__67", 
+                  "T__68", "T__69", "T__70", "T__71", "T__72", "T__73", 
+                  "T__74", "T__75", "T__76", "T__77", "T__78", "T__79", 
+                  "T__80", "T__81", "T__82", "T__83", "T__84", "T__85", 
+                  "T__86", "T__87", "T__88", "T__89", "T__90", "T__91", 
+                  "T__92", "T__93", "T__94", "T__95", "T__96", "T__97", 
+                  "T__98", "T__99", "T__100", "T__101", "T__102", "T__103", 
+                  "T__104", "T__105", "T__106", "T__107", "T__108", "T__109", 
+                  "T__110", "T__111", "T__112", "T__113", "T__114", "T__115", 
+                  "T__116", "WHITESPACE", "NUMBER", "EXPONENT", "HEX_NUMBER", 
+                  "HEX_DIGIT", "SingleLineString", "StringContentDQ", "StringContentSQ", 
+                  "MultiLineString", "StringContentTDQ", "StringContentTSQ", 
+                  "NEWLINE", "IDENTIFIER_NO_DOLLAR", "IDENTIFIER", "IDENTIFIER_START", 
+                  "IDENTIFIER_START_NO_DOLLAR", "IDENTIFIER_PART_NO_DOLLAR", 
+                  "IDENTIFIER_PART", "LETTER", "DIGIT", "SINGLE_LINE_COMMENT", 
                   "MULTI_LINE_COMMENT" ]
 
     grammarFileName = "Dart2.g4"
 
     def __init__(self, input=None, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.7.1")
+        self.checkVersion("4.9.3")
         self._interp = LexerATNSimulator(self, self.atn, self.decisionsToDFA, PredictionContextCache())
         self._actions = None
         self._predicates = None

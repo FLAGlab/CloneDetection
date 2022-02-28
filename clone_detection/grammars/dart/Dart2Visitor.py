@@ -1,4 +1,4 @@
-# Generated from ../clone_detection/grammars/dart/Dart2.g4 by ANTLR 4.7.1
+# Generated from ./clone_detection/grammars/dart/Dart2.g4 by ANTLR 4.9.3
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .Dart2Parser import Dart2Parser
@@ -169,8 +169,8 @@ class Dart2Visitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by Dart2Parser#operator.
-    def visitOperator(self, ctx:Dart2Parser.OperatorContext):
+    # Visit a parse tree produced by Dart2Parser#operator_.
+    def visitOperator_(self, ctx:Dart2Parser.Operator_Context):
         return self.visitChildren(ctx)
 
 
