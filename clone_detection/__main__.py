@@ -11,13 +11,13 @@ from clone_detection.grammars.grammars_registry import (PARSERS, LEXERS,
 
 START_RULE = {
     'java': 'compilationUnit',
-    'swift': 'top_level', #check start rule
+    #'swift': 'top_level', #check start rule
     'kt': 'kotlinFile',
     'cpp': 'translationUnit',
     'dart': 'compilationUnit',
 }
 
-SUPPORTED_LANGUAGES = {'kt', 'dart', 'swift'}
+SUPPORTED_LANGUAGES = {'kt', 'dart'}#, 'swift'}
 
 SIMILAR_NODES = {
     'IDENTIFIER': ['LITERAL', 'IDENTIFIER'],
@@ -113,14 +113,15 @@ def load_grammar(f):
     listener = LISTENERS[ext]()
     walker = ParseTreeWalker()
     walker.walk(listener, tree)
-    print(repr(listener.tree.children)) #tree in console
+    #print(repr(listener.tree.children)) #tree in console
     return listener.tree
 
 
 def compare_block(tree_1, tree_2):
     """Compare a function declaration statement among the given trees."""
     count_type_1 = 0
-    count_type_2_3 = 0
+    count_type_2 = 0
+    count_type_3 = 0
     clones = []
     tree_1 = tree_1.dfs_subtree()
     tree_2 = tree_2.dfs_subtree()
@@ -132,6 +133,8 @@ def compare_block(tree_1, tree_2):
             break
         act_1 = tree_1[i]
         act_2 = tree_2[j]
+        print(f't1: {act_1}')
+        print(f't2: {act_2}')
         if act_2.type in ADVANCE_NODES:
             j += 1
             continue
@@ -144,17 +147,28 @@ def compare_block(tree_1, tree_2):
                 act_1.type in SIMILAR_NODES[act_2.type]):
             token_1 = act_1.token
             token_2 = act_2.token
-            if token_1.text == token_2.text and token_1 != '':
-                # Type 1 clone
-                clones.append((token_1, token_2))
+            if token_1.text == token_2.text and token_1 != ' ' and len(act_1.children) == len(act_2.children):
+                # Type 1 clone - exact clones
+                print("type 1")
+                print(token_1)
+                print(token_2)
+                clones.append(("type1", token_1, token_2))
                 count_type_1 += 1
+            elif token_1 != ' ' and len(act_1.children) == len(act_2.children): 
+                #Type 2 clone - variable rename
+                print("type 2")
+                clones.append(("type2", token_1, token_2))
+                count_type_2 += 1
             else:
-                # Type 2/3 clone
-                clones.append((token_1, token_2))
-                count_type_2_3 += 1
+                # Type 3 clone - statement changes
+                print("type 3")
+                print(token_1)
+                print(token_2)
+                clones.append(("type3", token_1, token_2))
+                count_type_3 += 1
         i += 1
         j += 1
-    return clones, count_type_1, count_type_2_3
+    return clones, count_type_1, count_type_2, count_type_3
 
 
 def compare_ecst(trees, return_all=False):
@@ -162,6 +176,9 @@ def compare_ecst(trees, return_all=False):
     blocks = {}
     block_keys = set()
     final_clones = []
+    type1 = 0
+    type2 = 0
+    type3 = 0
     for i, tree in enumerate(trees):
         act_blocks = tree.dfs_split_blocks()
         blocks[i] = act_blocks
@@ -170,7 +187,8 @@ def compare_ecst(trees, return_all=False):
         pairs = list(itertools.combinations(range(0, len(trees)), 2))
         act_clones = []
         max_type_1 = 0
-        max_type_2_3 = 0
+        max_type_2 = 0
+        max_type_3 = 0
         for i, j in pairs:
             try:
                 first_subtrees = blocks[i][key]
@@ -179,26 +197,31 @@ def compare_ecst(trees, return_all=False):
                 for first_tree in first_subtrees:
                     for second_tree in second_subtrees:
                         res = compare_block(first_tree, second_tree)
-                        clones, count_type_1, count_type_2_3 = res
-                        total = count_type_1 + count_type_2_3
+                        clones, count_type_1, count_type_2, count_type_3 = res
+                        type1 += count_type_1
+                        type2 += count_type_2
+                        type3 += count_type_3
+                        total = count_type_1 + count_type_2 + count_type_3
                         if return_all:
                             max_clones = max_clones + clones
                         else:
-                            if total > max_type_1 + max_type_2_3:
+                            if total > max_type_1 + max_type_2 + max_type_3:
                                 # Has more clones than the other blocks
                                 max_type_1 += count_type_1
-                                max_type_2_3 += count_type_2_3
+                                max_type_2 += count_type_2
+                                max_type_3 += count_type_3
                                 max_clones = clones
-                            elif total == max_type_1 + max_type_2_3:
-                                if max_type_1 > max_type_2_3:
+                            elif total == max_type_1 + max_type_2 + max_type_3:
+                                if max_type_1 > max_type_2 + max_type_3:
                                     max_type_1 += count_type_1
-                                    max_type_2_3 += count_type_2_3
+                                    max_type_2 += count_type_2
+                                    max_type_3 += count_type_3
                                     max_clones = clones
                 act_clones = act_clones + max_clones
             except KeyError:
                 pass
         final_clones = final_clones + act_clones
-    return final_clones
+    return [final_clones, type1, type2, type3]#final_clones
 
 
 def discover_files(directory):
@@ -211,6 +234,18 @@ def discover_files(directory):
                 res.append(osp.join(root, f))
     return res
 
+def print_clones(clone_list):
+    i = 1
+    for _id, token_1, token_2 in clone_list:
+        print(f'- clone {i}')
+        i += 1
+        if (token_1.line == 0 and token_1.column == 0 or
+                token_2.line == 0 and token_2.column == 0):
+            print(token_1.type, token_2.type)
+        else:
+            print(token_1.text, token_2.text)
+            print(token_1.line, token_2.line)
+            print(token_1.column, token_2.column)
 
 if __name__ == "__main__":
     args = get_args()
@@ -226,14 +261,17 @@ if __name__ == "__main__":
         tree = load_grammar(f)
         ecst_trees.append(tree)
 
-    clones = compare_ecst(ecst_trees, return_all=True)
-    for token_1, token_2 in clones:
-        if (token_1.line == 0 and token_1.column == 0 or
-                token_2.line == 0 and token_2.column == 0):
-            print(token_1.type, token_2.type)
-        else:
-            print(token_1.text, token_2.text)
-            print(token_1.line, token_2.line)
-            print(token_1.column, token_2.column)
-
-    print(len(clones))
+    result = compare_ecst(ecst_trees, return_all=True)
+    type1clones = filter(lambda tup: tup[0] == "type1", result[0])
+    type2clones = filter(lambda tup: tup[0] == "type2", result[0])
+    type3clones = filter(lambda tup: tup[0] == "type3", result[0])
+    print("===== TYPE 1 CLONES ======")
+    print_clones(type1clones)
+    print("===== TYPE 2 CLONES ======")
+    print_clones(type2clones)
+    print("===== TYPE 3 CLONES ======")
+    print_clones(type3clones)
+    print(f'Total clones {len(result[0])}')
+    print(f'Total type 1 clones {result[1]}')
+    print(f'Total type 2 clones {result[2]}')
+    print(f'Total type 3 clones {result[3]}')

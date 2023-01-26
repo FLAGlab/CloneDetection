@@ -137,3 +137,8 @@ class ShortToken():
     def set_type(self, _type):
         """Set the type of the token."""
         self.type = _type
+
+    def __str__(self):
+        """Method to convert the node to string."""
+        return f'[{self.text}, {self.line}, {self.column}, {self.type}, {self.clone_type}]'
+        

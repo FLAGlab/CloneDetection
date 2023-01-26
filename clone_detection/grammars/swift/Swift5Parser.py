@@ -2376,12 +2376,9 @@ class Swift5Parser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.9")
+        #self.checkVersion("4.9")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
-
-
-
 
     class Top_levelContext(ParserRuleContext):
 
@@ -2580,9 +2577,7 @@ class Swift5Parser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class StatementsContext(ParserRuleContext):
-
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
@@ -2593,7 +2588,6 @@ class Swift5Parser ( Parser ):
                 return self.getTypedRuleContexts(Swift5Parser.StatementContext)
             else:
                 return self.getTypedRuleContext(Swift5Parser.StatementContext,i)
-
 
         def getRuleIndex(self):
             return Swift5Parser.RULE_statements
@@ -2612,11 +2606,7 @@ class Swift5Parser ( Parser ):
             else:
                 return visitor.visitChildren(self)
 
-
-
-
     def statements(self):
-
         localctx = Swift5Parser.StatementsContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_statements)
         try:
@@ -2627,6 +2617,8 @@ class Swift5Parser ( Parser ):
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt == 1:
                     self.state = 649
+                    print(localctx)
+                    print(localctx.)
                     print(localctx.indexBefore)
                     if not SwiftSupport.isSeparatedStatement(localctx, localctx.indexBefore):
                         from antlr4.error.Errors import FailedPredicateException

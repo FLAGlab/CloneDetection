@@ -3201,7 +3201,6 @@ class KotlinParser ( Parser ):
         def expression(self):
             return self.getTypedRuleContext(KotlinParser.ExpressionContext,0)
 
-
         def VAL(self):
             return self.getToken(KotlinParser.VAL, 0)
 
