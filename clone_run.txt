@@ -1,4 +1,4 @@
-clones rune
+clones run
 
 conda create -n clones python=3.8
 conda activate clones
@@ -8,13 +8,18 @@ pip install antlr4-python3-runtime==4.7.2
 -m clonedetection 
 
 TEST
+python -m clone_detection --f examples/sum/sum_numbers.dart examples/sum/sum_numbers.kt
+
+UI TEST
+python -m clone_detection --f examples/ui/helloworld.dart examples/ui/helloworld_t1.dart
+
 python -m clone_detection --f examples/samples/bubble_sort/bubble_sort.kt examples/samples/bubble_sort/bubble_sort.dart
 -f : run files
 -d : run directories
 
 
-line column - start
-line column - finish
+line line - start
+column column - start
 i array
 7 10
 31 16
