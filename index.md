@@ -69,9 +69,17 @@ The final set in our evaluation uses full fletch mobile apps of mid and large si
 
 ### Data set description
 
-Our evalution data set consists of 52 mobile apps mined from GitHub and collected from student projects from a mobile app development (capstone) course.
+Our evalution data set consists of 116 mobile apps mined from GitHub and collected from student projects from a mobile app development (capstone) course. The following table shows the app distribution across language pairs.
+
+**type** | **quantity** | **source of the repositories**
+---- | ---- | ----
+kotlin-dart | 50 | GitHub (4 Dart, 4 Kotlin), Students (21 Dart, 21 Kotlin)
+kotlin-swift | 52 | GitHub (12 Kotlin, 12 Swift), Students (14 Kotlin, 14 Swift)
+dart-swift | 14 | GitHub (3 Dart, 3 Swift), Students (4 Dart, 4 Swift)
+
+We focus the evaluation on the 50 apps for Dart and Kotlin, as shown in the following table.
 
 App | Dart | Kotlin | Swift
 ------ | -------------- | -------------- | --------------
 
-Evaluation [results](./mobile_apps)
+Evaluation [results](./mobile_apps.md) for Dart and Kotlin repositories.
