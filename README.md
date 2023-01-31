@@ -1,5 +1,9 @@
-# CloneDetection
-Detect clones in a cross-language setting
+# Out of Step
+Out of Step is a clone detection tool for cross-language settings focused on modern programming languages (e.g., Dart, Kotlin, Swift) and new application domains (i.e., mobile apps).
+
+The documentation about Out of Step, its features, and node description is available on the project's wiki pages
+
+## Quick Usage
 
 To generate the Parser, Lexer and Visitor classes please use ANTLR4,
 ```
