@@ -2,10 +2,8 @@
 
 [back to main results](./index.md)
 
-App Type |  Avg. LOC |  # of Files |  Total |  Type 1 |  Type 2 and 3
----- | ---- | ---- | ---- | ---- | ----
-     |  Dart |  Kotlin |  Dar |  Kotlin 
----- | ---- | ---- | ---- | ---- | ----  
+App Type |  Avg. LOC Dart |  Avg. LOC Kotlin | # of Files Dart  | # of Files Kotlin |  Total |  Type 1 |  Type 2 and 3
+---- | ---- | ---- |  ---- |  ---- | ---- | ---- | ----
 Shopping |  1220 |  3180 |  6 |  51 |  192395 |  66566 |  125829
 Health |  5463 |  4776 |  46 |  48 |  733716 |  167673 |  566043
 Health |  2956 |  2236 |  29 |  21 |  110573 |  27768 |  82805
@@ -26,10 +24,9 @@ Discounts |  2380 |  1781 |  37 |  27 |  120956 |  30090 |  90866
 Pets |  5754 |  2615 |  41 |  51 |  250769 |  70000 |  180769
 Pets |  3039 |  1724 |  23 |  26 |  96517 |  24828 |  71689
 Bookings |  5490 |  2538 |  58 |  81 |  564947 |  150226 |  415011
-
 Productivity |  136 |  104 |  1 |  1 |  149 |  23 |  126
 Productivity |  144 |  104 |  1 |  1 |  149 |  23 |  126
-Productivity |  57} |  23} |  1} |  1} |  90} |  25} |  65}
+Productivity |  57 |  23 |  1 |  1 |  90 |  25 |  65
 Information |  367 |  2383 |  6 |  47 |  60215 |  25139 |  35076
 Lifestyle |  510 |  1831 |  14 |  59 |  55591 |  18471 |  37120
 SmartHome |  759 |  3248 |  9 |  33 |  111810 |  28052 |  83758

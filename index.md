@@ -77,9 +77,6 @@ kotlin-dart | 50 | GitHub (4 Dart, 4 Kotlin), Students (21 Dart, 21 Kotlin)
 kotlin-swift | 52 | GitHub (12 Kotlin, 12 Swift), Students (14 Kotlin, 14 Swift)
 dart-swift | 14 | GitHub (3 Dart, 3 Swift), Students (4 Dart, 4 Swift)
 
-We focus the evaluation on the 50 apps for Dart and Kotlin, as shown in the following table.
-
-App | Dart | Kotlin | Swift
------- | -------------- | -------------- | --------------
+We focus the evaluation on the 50 apps for Dart and Kotlin, as shown in the results section.
 
 Evaluation [results](./mobile_apps.md) for Dart and Kotlin repositories.
