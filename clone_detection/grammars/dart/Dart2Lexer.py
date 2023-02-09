@@ -1,4 +1,4 @@
-# Generated from ./clone_detection/grammars/dart/Dart2.g4 by ANTLR 4.9.3
+# Generated from Dart2.g4 by ANTLR 4.9.3
 from antlr4 import *
 from io import StringIO
 import sys
@@ -488,7 +488,7 @@ def serializedATN():
         buf.write("\u03fa\u03fd\u0407\u0412\3\b\2\2")
         return buf.getvalue()
 
-@LEXERS.register('dart')
+
 class Dart2Lexer(Lexer):
 
     atn = ATNDeserializer().deserialize(serializedATN())
@@ -680,7 +680,7 @@ class Dart2Lexer(Lexer):
 
     def __init__(self, input=None, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.9.3")
+        self.checkVersion("4.7.2")
         self._interp = LexerATNSimulator(self, self.atn, self.decisionsToDFA, PredictionContextCache())
         self._actions = None
         self._predicates = None

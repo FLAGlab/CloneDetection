@@ -403,11 +403,11 @@ class DartECSTListener(ParseTreeListener):
         pass
 
     # Enter a parse tree produced by Dart2Parser#operator.
-    def enterOperator(self, ctx: Dart2Parser.Operator_Context):
+    def enterOperator(self, ctx: Dart2Parser.OperatorContext):
         pass
 
     # Exit a parse tree produced by Dart2Parser#operator.
-    def exitOperator(self, ctx: Dart2Parser.Operator_Context):
+    def exitOperator(self, ctx: Dart2Parser.OperatorContext):
         pass
 
     # Enter a parse tree produced by Dart2Parser#binaryOperator.

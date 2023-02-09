@@ -114,6 +114,7 @@ def load_grammar(f):
     walker = ParseTreeWalker()
     walker.walk(listener, tree)
     #print(repr(listener.tree.children)) #tree in console
+    print("------------ Loaded tree")
     return listener.tree
 
 
