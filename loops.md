@@ -44,31 +44,11 @@ The cross-language comparison between code versions A and B is also successful i
 
 In the loop analysis, Out of Step finds a couple of Type 2 false positives, due to the two assignments that are present in versions B of the code. In this case, the detection algorithm points to the body of the `for` and `while` statements to be clones. This happens because the intermediate type node for both of them is the same. The exact same behavior takes place with the assignment before the `loop` statement in both cases.
 
-**Snippet 2.** Bubble sort in Kotlin.
-```
-fun bubbleSort(arr){
-    var swap = true
-    var len = arr.size
-    while(swap){
-        swap = false;
-        for(i in 0 until len-1){
-            if(arr[i]>arr[i+1]){
-                val temp = arr[i]
-                arr[i] = arr[i+1]
-                arr[i+1] = temp
-                swap = true
-            }
-        }
-    }
-    return arr
-}
-```
-
-**Algorithm** | **Total** | **Type 1** | **Type-2** | **Type 3** | **FPs** | **Precision**
----- | ---- | ---- | ---- | ---- | ---- | ---- 
-Dart-A v. Dart-B|  |  |  |  | 
-Kotlin-A v. Kotlin-B|  |  |  |  | 
-Dart-A v. Kotlin-A|  |  |  |  | 
-Dart-B v. Kotlin-B|  |  |  |  | 
-Dart-A v. Kotlin-B|  |  |  |  | 
-Dart-B v. Kotlin-A|  |  |  |  | 
+**Algorithm** | **Total** | **Type 1** | **Type 2** | **Type 3** | **FP** | **FN** | **Precision** | **Recall**|
+---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----
+Dart-A v. Dart-B|  |  |  |  |  |  |  |  |
+Kotlin-A v. Kotlin-B| 8 | 3 | 5 | 0 | 0 | 1 | 1 | 0.89
+Dart-A v. Kotlin-A|  |  |  |  |  |  |  |  |
+Dart-B v. Kotlin-B|  |  |  |  |  |  |  |  |
+Dart-A v. Kotlin-B|  |  |  |  |  |  |  |  |
+Dart-B v. Kotlin-A|  |  |  |  |  |  |  |  |
