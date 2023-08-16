@@ -488,7 +488,7 @@ def serializedATN():
         buf.write("\u03fa\u03fd\u0407\u0412\3\b\2\2")
         return buf.getvalue()
 
-
+@LEXERS.register('dart')
 class Dart2Lexer(Lexer):
 
     atn = ATNDeserializer().deserialize(serializedATN())

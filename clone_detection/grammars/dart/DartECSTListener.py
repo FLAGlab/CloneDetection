@@ -1054,8 +1054,8 @@ class DartECSTListener(ParseTreeListener):
     # Enter a parse tree produced by Dart2Parser#relationalOperator.
     def enterRelationalOperator(
             self, ctx: Dart2Parser.RelationalOperatorContext):
-        if ctx.TOKEN():
-            token = ctx.TOKEN().symbol
+        if ctx.start:
+            token = ctx.start
             act_token = ShortToken(token.text, token.line, token.column)
             file_node = ECSTNode(
                 str(uuid.uuid4()), self.current_node, act_token,
@@ -1066,7 +1066,7 @@ class DartECSTListener(ParseTreeListener):
     # Exit a parse tree produced by Dart2Parser#relationalOperator.
     def exitRelationalOperator(
             self, ctx: Dart2Parser.RelationalOperatorContext):
-        if ctx.TOKEN():
+        if ctx.start:
             self.current_node = self.current_node.parent
 
     # Enter a parse tree produced by Dart2Parser#bitwiseOrExpression.
@@ -1135,8 +1135,8 @@ class DartECSTListener(ParseTreeListener):
 
     # Enter a parse tree produced by Dart2Parser#additiveOperator.
     def enterAdditiveOperator(self, ctx: Dart2Parser.AdditiveOperatorContext):
-        if ctx.TOKEN():
-            token = ctx.TOKEN().symbol
+        if ctx.start:
+            token = ctx.start
             act_token = ShortToken(token.text, token.line, token.column)
             file_node = ECSTNode(
                 str(uuid.uuid4()), self.current_node, act_token,
@@ -1146,7 +1146,7 @@ class DartECSTListener(ParseTreeListener):
 
     # Exit a parse tree produced by Dart2Parser#additiveOperator.
     def exitAdditiveOperator(self, ctx: Dart2Parser.AdditiveOperatorContext):
-        if ctx.TOKEN():
+        if ctx.start:
             self.current_node = self.current_node.parent
 
     # Enter a parse tree produced by Dart2Parser#multiplicativeExpression.
@@ -1263,8 +1263,8 @@ class DartECSTListener(ParseTreeListener):
     # Enter a parse tree produced by Dart2Parser#incrementOperator.
     def enterIncrementOperator(
             self, ctx: Dart2Parser.IncrementOperatorContext):
-        if ctx.TOKEN():
-            token = ctx.TOKEN().symbol
+        if ctx.start:
+            token = ctx.start
             act_token = ShortToken(token.text, token.line, token.column)
             file_node = ECSTNode(
                 str(uuid.uuid4()), self.current_node, act_token,
@@ -1274,7 +1274,7 @@ class DartECSTListener(ParseTreeListener):
 
     # Exit a parse tree produced by Dart2Parser#incrementOperator.
     def exitIncrementOperator(self, ctx: Dart2Parser.IncrementOperatorContext):
-        if ctx.TOKEN():
+        if ctx.start:
             self.current_node = self.current_node.parent
 
     # Enter a parse tree produced by Dart2Parser#assignableExpression.
@@ -1321,14 +1321,11 @@ class DartECSTListener(ParseTreeListener):
 
     # Enter a parse tree produced by Dart2Parser#identifier.
     def enterIdentifier(self, ctx: Dart2Parser.IdentifierContext):
-        try:
-            token = ctx.IDENTIFIER().symbol
-            act_token = ShortToken(token.text, token.line, token.column)
-        except AttributeError:
-            act_token = ShortToken('', -1, -1)
+        token = ctx.IDENTIFIER().symbol
+        act_token = ShortToken(token.text, token.line, token.column)
         file_node = ECSTNode(
-                str(uuid.uuid4()), self.current_node, act_token,
-                'LITERAL')
+            str(uuid.uuid4()), self.current_node, act_token,
+            'LITERAL')
         self.current_node.add_child(file_node)
         self.current_node = file_node
 

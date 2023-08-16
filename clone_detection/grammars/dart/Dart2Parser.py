@@ -971,7 +971,7 @@ def serializedATN():
         buf.write("\u06df\u06ea\u06f6\u06fa\u06fe\u0709\u0714\u071a")
         return buf.getvalue()
 
-
+@PARSERS.register('dart')
 class Dart2Parser ( Parser ):
 
     grammarFileName = "Dart2.g4"
@@ -1395,7 +1395,7 @@ class Dart2Parser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.9.3")
+        self.checkVersion("4.7.2")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -7327,11 +7327,7 @@ class Dart2Parser ( Parser ):
             if hasattr( listener, "exitLogicalAndExpression" ):
                 listener.exitLogicalAndExpression(self)
 
-
-
-
     def logicalAndExpression(self):
-
         localctx = Dart2Parser.LogicalAndExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 168, self.RULE_logicalAndExpression)
         self._la = 0 # Token type
@@ -7390,10 +7386,7 @@ class Dart2Parser ( Parser ):
                 listener.exitEqualityExpression(self)
 
 
-
-
     def equalityExpression(self):
-
         localctx = Dart2Parser.EqualityExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 170, self.RULE_equalityExpression)
         self._la = 0 # Token type
@@ -7413,10 +7406,7 @@ class Dart2Parser ( Parser ):
                     self.equalityOperator()
                     self.state = 1126
                     self.relationalExpression()
-
-
                 pass
-
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1130
@@ -7426,8 +7416,6 @@ class Dart2Parser ( Parser ):
                 self.state = 1132
                 self.relationalExpression()
                 pass
-
-
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -7443,7 +7431,6 @@ class Dart2Parser ( Parser ):
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-
 
         def getRuleIndex(self):
             return Dart2Parser.RULE_equalityOperator
@@ -7584,7 +7571,6 @@ class Dart2Parser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-
         def getRuleIndex(self):
             return Dart2Parser.RULE_relationalOperator
 
@@ -7597,10 +7583,7 @@ class Dart2Parser ( Parser ):
                 listener.exitRelationalOperator(self)
 
 
-
-
     def relationalOperator(self):
-
         localctx = Dart2Parser.RelationalOperatorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 176, self.RULE_relationalOperator)
         self._la = 0 # Token type
