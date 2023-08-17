@@ -46,7 +46,9 @@ void main() {
 
 **Snippet 2.** Kotlin multiple function definitions and calls
 ```
-fun calculateStatistics(scores: Array<Int>) : Triple(Int, Int, Int) {
+package codeforces
+
+fun calculateStatistics(scores: Array<Int>) : Triple<Int, Int, Int> {
     var min = scores[0]
     var max = scores[0]
     var sum = 0
@@ -63,7 +65,7 @@ fun calculateStatistics(scores: Array<Int>) : Triple(Int, Int, Int) {
     return Triple(min, max, sum)
 }
 
-fun hasAnyMatches(list: List<Int>, condition: (Int) -> Bool) : Bool {
+fun hasAnyMatches(list: List<Int>, condition: (Int) -> Boolean) : Boolean {
     for (item in list) {
         if (condition(item)) {
             return true
@@ -71,16 +73,16 @@ fun hasAnyMatches(list: List<Int>, condition: (Int) -> Bool) : Bool {
     }
     return false
 }
-func lessThanTen(number: Int) : Bool {
-    return number < 10
+fun lessThanTen(number : Int) : Boolean {
+   return number < 10
 }
 
 fun main() {
-	var numbers = listOf(20, 19, 7, 12)
-	hasAnyMatches(numbers, lessThanTen)
-	val statistics = calculateStatistics(arrayOf(5, 3, 100, 3, 9))
-	println(statistics.sum)
-	println(statistics.2)
+    var numbers = listOf(20, 19, 7, 12)
+    hasAnyMatches(numbers, ::lessThanTen)
+    val statistics = calculateStatistics(arrayOf(5, 3, 100, 3, 9))
+    println(statistics.first)
+    println(statistics.second)
 }
 ```
 ## Same-language evaluation
