@@ -23,8 +23,8 @@ In this case we have a single version of the application for each language, effe
 
 **Language** | **Total** | **Type 1** | **Type 2** | **Type 3** | **FP** | **FN** | **Precision** | **Recall**|
 ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----
-Kotlin| 7 | 7 | 0 | 0 | - | - | - | - |
-Dart|  |  |  |  | - | - | - | - |
+Kotlin| 7 | 7 | 0 | 0 | 0 | 0 | 1 | 1 |
+Dart| 7 | 7 | 0 | 0 | 0 | 0 | 1 | 1 |
 
 ## Cross-language evaluation
 
