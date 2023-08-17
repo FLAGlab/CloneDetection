@@ -25,11 +25,11 @@ Note that, while we define the programs for different programming languages, we 
 Feature | Cases | Evaluation | Languages
 ------ | -------------- | -------------- | --------------
 [Variable declaration](./vars.md) | 1 | integer variable declaration | C++, Dart, Java, kotlin, Swift
-Function declaration | 1 | Stats calculation | C++, Dart, Java, Kotlin, Swift
+[Function declaration](./funcs.md) | 1 | Stats calculation | C++, Dart, Java, Kotlin, Swift
 [Conditionals](./conditionals.md) | 1 | Test variable and return | C++, Dart, Java, Kotlin, Swift
 [Loops](./loops.md) | 2 | `for` loop <br><br> `while` loop | C++, Dart, Java, Kotlin, Swift
-Structures | 2 | Structures <br> Enumerations | C++ Swift <br> C++, Dart, Java, Kotlin, Swift
-Classes | 2 | 1-to-1 definition <br> Crossed definition | C++, Dart, Java, Kotlin, Swift <br> C++, Dart, Java, Kotlin, Swift
+[Structures](./structs.md) | 2 | Structures <br> Enumerations | C++ Swift <br> C++, Dart, Java, Kotlin, Swift
+[Classes](./classes.md) | 2 | 1-to-1 definition <br> Crossed definition | C++, Dart, Java, Kotlin, Swift <br> C++, Dart, Java, Kotlin, Swift
 
 ## Clone detection: Sorting Algorithms
 
