@@ -95,11 +95,11 @@ Kotlin | 195 | 135 | 50 | 10 | - | - | - | - |
 Dart| 156 | 114 | 36 | 6 | 5 | 0 | 0.96 | 1 |
 
 
-Two things come to mind when evaluating the single language cases for Dart.
-First, the amount of detected clones is far larger than that of Kotlin; this is due to two main reasons. On the one hand the comparison in Dart is more fine-grained, detecting the clone type for each pair of code elements twice, yielding the double of clones than those present. For example, the function identifier `calculateStatistics` is detected as a clone of Type 1 with the identifier of function `lessThanTen`. However, when evaluating the identifier of function `lessThanTen`, this will be detected as a clone of identifier `calculateStatistics`, even though they are technically the same clone.
-On the other hand, the clone evaluation occurs for every node on teh generated eCST, which for example, processes a clone for each element of the declaration of the `func lessThanTen(number: Int) : Bool ...` statement, but also for each of its parts, the parameters (variable types, and identifiers) for the function itself, yielding a larger nnumber of identified clones.
+Two things come to mind when evaluating the single language cases.
+First, the amount of detected clones is quite large; this is due to two main reasons. On the one hand, the comparison is two-by-two, detecting the clone type for each pair of code elements twice, yielding the double of clones than those present. For example, the function identifier `calculateStatistics` is detected as a clone of Type 1 with the identifier of function `lessThanTen`. However, when evaluating the identifier of function `lessThanTen`, this will be detected as a clone of identifier `calculateStatistics`, even though they are technically the same clone.
+On the other hand, the clone evaluation is fine-grained, taking place for every node on teh generated eCST, which for example, processes a clone for each element of the declaration of the `func lessThanTen(number: Int) : Bool ...` statement, but also for each of its parts, the parameters (variable types, and identifiers) for the function itself, yielding a larger nnumber of identified clones.
 
-Second, the dart code detects a larger number of False Positives (FP). These occur by the miss classification of Type 3 clones, for example detecting 
+Second, the presence of False Positives (FP). These occur by the miss classification of Type 3 clones, for example detecting teh sets of `PARAMETER_LIST` as clones of each other
 
 
 ## Cross-language evaluation
