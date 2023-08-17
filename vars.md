@@ -17,11 +17,21 @@ We start the evaluation of languages features with a simple variable declaration
     val lengthOfArray = 10
  }
 ```
+## Same-language evaluation
+
+In this case we have a single version of the application for each language, effectively generating a Type 1 clone between the applications. The table beelow hows the summay of theobtain results fort each language, comparing the program ith itself.
+
+**Language** | **Total** | **Type 1** | **Type 2** | **Type 3** | **FP** | **FN** | **Precision** | **Recall**|
+---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----
+Kotlin| 7 | 7 | 0 | 0 | - | - | - | - |
+Dart|  |  |  |  | - | - | - | - |
+
+## Cross-language evaluation
 
 The analysis for Dart and Kotlin results in 4 correct Type 1 clones identifying the variables `main` function name, the number literal, and the `main` functions' parameter lists. A Type 2 clone is detected between the type declaration of the Dart code and the val declaration in the Kotlin case. FInally, a Type 3 clone is detected between . However, this clone is not of Type 3 as, contituing a False Positive.
 
 The table below shows the summary of the results.
 
-**Algorithm** | **Total** | **Type 1** | **Type 2** | **Type 3** | **FP** | **FN** | **Precision** | **Recall**|
+**Language** | **Total** | **Type 1** | **Type 2** | **Type 3** | **FP** | **FN** | **Precision** | **Recall**|
 ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----
 Dart v. Kotlin| 6 | 4 | 1 | 1 | 1 | 0 | 0.83 | 1 |
