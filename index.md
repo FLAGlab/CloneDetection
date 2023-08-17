@@ -12,7 +12,9 @@ The experiment evaluation is structured in three parts.
 
 ## Clone detection: Language Features
 
-Teh first part of our evaluation consists on assuring Out of Step is able to detect clones effectively across the different language features and abstractions. To demonstrate this, we provide implementations demonstrating each of the features and manually translate them to the other languages, generating a high rate of Type-1 and Type-2 clones.
+The first part of our evaluation consists on assuring Out of Step is able to detect clones effectively across the different language features and abstractions. To demonstrate this, we provide implementations demonstrating each of the features and manually translate them to the other languages, generating a high rate of Type-1 and Type-2 clones.
+
+The first part of the evaluation in all cases conisders the comparison of programs using the same languagee base (comparing two versions of a program, or a version with itself) to evaluate the correctness of the algorithm in detecting clones for the specific language feature at hand.
 
 ### Data set description
 
