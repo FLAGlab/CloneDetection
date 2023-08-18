@@ -46,8 +46,6 @@ void main() {
 
 **Snippet 2.** Kotlin multiple function definitions and calls
 ```
-package codeforces
-
 fun calculateStatistics(scores: Array<Int>) : Triple<Int, Int, Int> {
     var min = scores[0]
     var max = scores[0]
@@ -91,7 +89,7 @@ In this case we have a single version of the application for each language, effe
 
 **Language** | **Total** | **Type 1** | **Type 2** | **Type 3** | **FP** | **FN** | **Precision** | **Recall**|
 ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----
-Kotlin | 195 | 135 | 50 | 10 | - | - | - | - |
+Kotlin | 195 | 135 | 50 | 10 | 33 | 0 | 0.83 | 1 |
 Dart| 156 | 114 | 36 | 6 | 5 | 0 | 0.96 | 1 |
 
 
@@ -99,7 +97,9 @@ Two things come to mind when evaluating the single language cases.
 First, the amount of detected clones is quite large; this is due to two main reasons. On the one hand, the comparison is two-by-two, detecting the clone type for each pair of code elements twice, yielding the double of clones than those present. For example, the function identifier `calculateStatistics` is detected as a clone of Type 1 with the identifier of function `lessThanTen`. However, when evaluating the identifier of function `lessThanTen`, this will be detected as a clone of identifier `calculateStatistics`, even though they are technically the same clone.
 On the other hand, the clone evaluation is fine-grained, taking place for every node on teh generated eCST, which for example, processes a clone for each element of the declaration of the `func lessThanTen(number: Int) : Bool ...` statement, but also for each of its parts, the parameters (variable types, and identifiers) for the function itself, yielding a larger nnumber of identified clones.
 
-Second, the presence of False Positives (FP). These occur by the miss classification of Type 3 clones, for example detecting teh sets of `PARAMETER_LIST` as clones of each other
+Second, the presence of False Positives (FP). These occur by the miss classification of Type 3 clones, for example detecting the sets of `PARAMETER_LIST` as Type 3 clones of each other, while theyr should be Type 2 clones, given that the node types are of the same type.
+
+Note that in our manual inspection of the code (and detected nodes) there is no clone-pair that is not detected by the algorithm. The problems detected correspond to clone type misclassifications.
 
 
 ## Cross-language evaluation
@@ -110,4 +110,6 @@ The table below shows the summary of the results.
 
 **Language** | **Total** | **Type 1** | **Type 2** | **Type 3** | **FP** | **FN** | **Precision** | **Recall**|
 ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----
-Dart v. Kotlin| 6 | 4 | 1 | 1 | 1 | 0 | 0.83 | 1 |
+Dart v. Kotlin| 79 | 28 | 38 | 13 | 5 + 10 + 5 | 0 | 0.86 | 1 |
+
+From the cross language analysis we observe a similar behavior to that in the single case analysis, where there is a larger class of False Positivies. We clasiffied these as FPs as the clones identified are indeed clones, but are missclassified to the incorrect type. One source of imprecission is the inclusion of a node's type in its similarity set. This causes OOS to sometimes classify the same node types as Type 3 clones (they should be Type 2). Another problem is the detection of LITERAL nodes (e.g., `42` or `true`) as IDENTIFIER nodes (i.e., var names). These nodes are detected as the same type and therefore detected as Type 1 or Type 2 clones, while indeed they should be Type 3 clones.
