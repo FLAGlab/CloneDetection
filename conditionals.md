@@ -76,7 +76,9 @@ The table below shows the summary of the results.
 
 **Language** | **Total** | **Type 1** | **Type 2** | **Type 3** | **FP** | **FN** | **Precision** | **Recall**|
 ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----
-Dart v. Kotlin A |  |  |  |  |  |  |  |  |
-Dart v. Kotlin A |  |  |  |  |  |  |  |  |
-Dart A v. Kotlin B |  |  |  |  |  |  |  |  |
-Dart B v. Kotlin a |  |  |  |  |  |  |  |  |
+Dart v. Kotlin A | 5 | 3 | 2 | 0 | 1 | 0 | 0.8 | 1 |
+Dart v. Kotlin B | 5 | 3 | 2 | 0 | 1 | 0 | 0.8 | 1 |
+Dart A v. Kotlin B | 5 | 2 | 3 | 0 | 1 | 0 | 0.8 | 1 |
+Dart B v. Kotlin A | 5 | 2 | 3 | 0 | 1 | 0 | 0.8 | 1 |
+
+The FP obtained in the last two cases comes from the mis classification of LITERALS AND IDENTIFIERS as Type 2 clones (they should be Type 3 clones). The algorithm correcly captures teh Type 2 clone in the variable declarations for the A v. B comparison, while detecting a Type 1 clone in the same version of the programs.
