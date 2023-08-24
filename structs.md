@@ -61,10 +61,35 @@ A similar situation takes place in the analysis of Kotlin code. All Type clones 
 Dart | 178 | 110 | 50 | 18 | 39 | 0 | 0.78 | 1 |
 Kotlin | 156 | 102 | 36 | 18 | 16 | 0 | 0.89 | 1 |
 
-## Cross-language evaluation
+### Cross-language evaluation
 
+In the cross-language case, comparing the Dart and Kotlin versions of the program we identify a larger set of Type 2 and Type 3 clones. Type 1 clones correspond to teh correct identification of the functions defined to manage the enums, the enum definitions and their use, as well as the identification of most of the enum literals, although some appear missing explicitly (12 FNs). The large number of Type 2 clones corresponds to the crossing between the functions. However, many of the identify clones, 26, are missclasified as they are detecting the enum literal to be a clone of other literals (e.g., suit names, vars, that do not correspond). Type 3 clones, identify many (21) of the same universal nodes as clones, which could be Type 1 clones, though no information about their content is provided so is not possible to verify.
 
 
 **Language** | **Total** | **Type 1** | **Type 2** | **Type 3** | **FP** | **FN** | **Precision** | **Recall**|
 ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----
-Dart v. Kotlin|  |  |  |  |  |  |  |  |
+Dart v. Kotlin| 103 | 22 | 53 | 28 | 47 | 12 | 0.49 | 0.79 |
+
+
+## Structure evalluation
+
+With respect to the definition of structures, we take into account the language that do provide an explicit definition of structures as C++ or Swift. The following snippet shows the structure definition example in Swift for a `Card`, using the enumerations from the previous section.
+
+**Snippet 3.** Swift definition of structures
+```
+struct Card {
+    var rank: Rank
+    var suit: Suit
+    func simpleDescription() -> String {
+        return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+    }
+}
+let threeOfSpades = Card(rank: .three, suit: .spades)
+let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+```
+
+### Single language evaluation
+
+As structures are not presente in every language, and in particular not present in Dart or Kotlin. We omit the results for this language feature.
+
+
