@@ -110,6 +110,6 @@ The table below shows the summary of the results.
 
 **Language** | **Total** | **Type 1** | **Type 2** | **Type 3** | **FP** | **FN** | **Precision** | **Recall**|
 ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ----
-Dart v. Kotlin| 79 | 28 | 38 | 13 | 5 + 10 + 5 | 0 | 0.86 | 1 |
+Dart v. Kotlin| 79 | 28 | 38 | 13 | 20 | 0 | 0.86 | 1 |
 
-From the cross language analysis we observe a similar behavior to that in the single case analysis, where there is a larger class of False Positivies. We clasiffied these as FPs as the clones identified are indeed clones, but are missclassified to the incorrect type. One source of imprecission is the inclusion of a node's type in its similarity set. This causes OOS to sometimes classify the same node types as Type 3 clones (they should be Type 2). Another problem is the detection of LITERAL nodes (e.g., `42` or `true`) as IDENTIFIER nodes (i.e., var names). These nodes are detected as the same type and therefore detected as Type 1 or Type 2 clones, while indeed they should be Type 3 clones.
+From the cross language analysis we observe a similar behavior to that in the single case analysis, where there is a larger class of False Positivies. We classified these as FPs as the clones identified are indeed clones, but are misclassified to the incorrect type. One source of imprecision is the inclusion of a node's type in its similarity set. This causes OOS to sometimes classify the same node types as Type 3 clones (they should be Type 2). Another problem is the detection of LITERAL nodes (e.g., `42` or `true`) as `IDENTIFIER` nodes (i.e., variable names). These nodes are detected as the same type and therefore detected as Type 1 or Type 2 clones, while indeed they should be Type 3 clones.
