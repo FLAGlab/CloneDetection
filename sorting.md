@@ -92,9 +92,9 @@ Bubble | 23 | 3 | 18 | 2 | 2 | 0.91
 Insertion | 20 | 6 | 12 | 2 | 1 | 0.95
 Heap | 129 | 33 | 39 | 16 | 41 | 0.68
 Selection | 3 | 1 | 2 | 0 | 1 | 0.67
-Quick | 25 | 1 | 10 | 4 | 10 | 0.6
-Merge | 25 | 10 | 4 | 7 | 4 | 0.84
-Shell |  |  |  |  |  | 
+Quick | 1 | 0 | 1 | 0 | 0 | 1
+Merge | 15 | 4 | 9 | 2 | 1 | 0.93
+Shell | 12 | 4 | 8 | 0 | 1 | 0.92
 
 From the table, we can also note two interesting examples. The first relates to the two implementations of quick sort provided in Kotlin. The first implementation uses a recursive approach based on the pivot element, similar to the idea in the implementation in Dart. In this case we are able to identify the sort functions as Type 1, and find Type 2 and 3 clones in the implementation for the pivot definition and the recursive calls. However, when comparing the same Dart implementation to a Kotlin implementation that relies heavily on functional programming and higher-order functions, we note that only a Type 3 clone is found for the complete quick sort function. The other interesting case is that of the heap sort algorithm. In this case, we note Out of Step detects almost four times more clones than for the other sorting algorithms. This is due to two main reasons. First, the code base of the algorithm is at least twice as large of any of the other algorithms, opening the possibility to detect more clones. Additionally the code of the heap sort for both the Kotlin and Dart codebases is structured in 3 different functions (clones of each other). This causes Out of Step to analyze all 9 combinations between the defined functions, generating more clones between the two code versions. %of the sorting algorithm.
 
