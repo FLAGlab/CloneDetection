@@ -2,7 +2,7 @@
 
 [back to main results](./index.md)
 
-As an example of the different situations that may take place, we show the detailed results for bubble sort (Snippets \ref{lst:kotlin-bubblea} and \ref{lst:dart-bubblea} for Kotlin and Dart respectively), and insertion sort (Snippets \ref{lst:kotlin-insertionb} and 2 for Dart and Kotlin respectively). All clone types are present for these two algorithms.
+As an example of the different situations that may take place, we show the detailed results for bubble sort (Snippets 1 and 2 for Kotlin and Dart respectively), and insertion sort (Snippets 3 and 4 for Kotlin and Dart respectively). All clone types are present for these two algorithms.
 
 **Snippet 1.** Bubble sort in Dart.
 ```
