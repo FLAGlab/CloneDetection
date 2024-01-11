@@ -1,6 +1,7 @@
 import os
 import os.path as osp
 import itertools
+import time
 
 from antlr4 import FileStream, CommonTokenStream, ParseTreeWalker
 from clone_detection.utils.arguments import get_args
@@ -10,10 +11,10 @@ from clone_detection.grammars.grammars_registry import (PARSERS, LEXERS,
 
 
 START_RULE = {
-    'java': 'compilationUnit',
+    #'java': 'compilationUnit',
     #'swift': 'top_level', #check start rule
     'kt': 'kotlinFile',
-    'cpp': 'translationUnit',
+    #'cpp': 'translationUnit',
     'dart': 'compilationUnit',
 }
 
@@ -105,7 +106,7 @@ def load_grammar(f):
     ext = ext[1:]
     if ext not in LISTENERS:
         raise ValueError('The program does not support the file extension')
-    input_stream = FileStream(f)
+    input_stream = FileStream(f, 'utf-8')
     lexer = LEXERS[ext](input_stream)
     stream = CommonTokenStream(lexer)
     parser = PARSERS[ext](stream)
@@ -134,8 +135,8 @@ def compare_block(tree_1, tree_2):
             break
         act_1 = tree_1[i]
         act_2 = tree_2[j]
-        print(f't1: {act_1}')
-        print(f't2: {act_2}')
+        #print(f't1: {act_1}')
+        #print(f't2: {act_2}')
         if act_2.type in ADVANCE_NODES:
             j += 1
             continue
@@ -150,21 +151,21 @@ def compare_block(tree_1, tree_2):
             token_2 = act_2.token
             if token_1.text == token_2.text and token_1 != ' ' and len(act_1.children) == len(act_2.children):
                 # Type 1 clone - exact clones
-                print("type 1")
-                print(token_1)
-                print(token_2)
+                #print("type 1")
+                #print(token_1)
+                #print(token_2)
                 clones.append(("type1", token_1, token_2))
                 count_type_1 += 1
             elif token_1 != ' ' and len(act_1.children) == len(act_2.children): 
                 #Type 2 clone - variable rename
-                print("type 2")
+                #print("type 2")
                 clones.append(("type2", token_1, token_2))
                 count_type_2 += 1
             else:
                 # Type 3 clone - statement changes
-                print("type 3")
-                print(token_1)
-                print(token_2)
+                #print("type 3")
+                #print(token_1)
+                #print(token_2)
                 clones.append(("type3", token_1, token_2))
                 count_type_3 += 1
         i += 1
@@ -249,6 +250,7 @@ def print_clones(clone_list):
             print(token_1.column, token_2.column)
 
 if __name__ == "__main__":
+    start = time.time()
     args = get_args()
     dir_files = [] if args.d == '' else sum(
         [discover_files(d) for d in args.d], [])
@@ -266,13 +268,15 @@ if __name__ == "__main__":
     type1clones = filter(lambda tup: tup[0] == "type1", result[0])
     type2clones = filter(lambda tup: tup[0] == "type2", result[0])
     type3clones = filter(lambda tup: tup[0] == "type3", result[0])
-    print("===== TYPE 1 CLONES ======")
-    print_clones(type1clones)
-    print("===== TYPE 2 CLONES ======")
-    print_clones(type2clones)
-    print("===== TYPE 3 CLONES ======")
-    print_clones(type3clones)
+    end = time.time()
+   # print("===== TYPE 1 CLONES ======")
+   # print_clones(type1clones)
+   # print("===== TYPE 2 CLONES ======")
+   # print_clones(type2clones)
+   # print("===== TYPE 3 CLONES ======")
+   # print_clones(type3clones)
     print(f'Total clones {len(result[0])}')
     print(f'Total type 1 clones {result[1]}')
     print(f'Total type 2 clones {result[2]}')
     print(f'Total type 3 clones {result[3]}')
+    print(end - start)

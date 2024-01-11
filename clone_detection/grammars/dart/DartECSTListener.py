@@ -1321,8 +1321,12 @@ class DartECSTListener(ParseTreeListener):
 
     # Enter a parse tree produced by Dart2Parser#identifier.
     def enterIdentifier(self, ctx: Dart2Parser.IdentifierContext):
-        token = ctx.IDENTIFIER().symbol
-        act_token = ShortToken(token.text, token.line, token.column)
+        try:
+            token = (ctx.IDENTIFIER())
+            token = token.symbol
+            act_token = ShortToken(token.text, token.line, token.column)
+        except AttributeError:
+            act_token = ShortToken('', -1, -1)
         file_node = ECSTNode(
             str(uuid.uuid4()), self.current_node, act_token,
             'LITERAL')
