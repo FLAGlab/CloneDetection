@@ -1093,7 +1093,6 @@ class KotlinECSTListener(KotlinParserListener):
             self, ctx: KotlinParser.MultiLineStringContentContext):
         try:
             token = (ctx.MultiLineStrRef() or ctx.MultiLineStrText() or ctx.MultiLineStrEscapedChar())
-            print(token)
             token = token.symbol
             act_token = ShortToken(token.text, token.line, token.column)
         except AttributeError:

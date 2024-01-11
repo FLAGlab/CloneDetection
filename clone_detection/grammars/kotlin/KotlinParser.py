@@ -1433,7 +1433,7 @@ def serializedATN():
 
 
 @PARSERS.register('kt')
-class KotlinParser ( Parser ):
+class KotlinParser (Parser):
 
     grammarFileName = "KotlinParser.g4"
 
@@ -2237,9 +2237,6 @@ class KotlinParser ( Parser ):
                 return visitor.visitFileAnnotations(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def fileAnnotations(self):
 
@@ -10588,11 +10585,7 @@ class KotlinParser ( Parser ):
             else:
                 return visitor.visitChildren(self)
 
-
-
-
     def lineStringContent(self):
-
         localctx = KotlinParser.LineStringContentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 172, self.RULE_lineStringContent)
         self._la = 0 # Token type
@@ -10645,9 +10638,6 @@ class KotlinParser ( Parser ):
                 return visitor.visitLineStringExpression(self)
             else:
                 return visitor.visitChildren(self)
-
-
-
 
     def lineStringExpression(self):
 
