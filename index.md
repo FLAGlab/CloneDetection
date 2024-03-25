@@ -82,3 +82,7 @@ dart-swift | 14 | GitHub (3 Dart, 3 Swift), Students (4 Dart, 4 Swift)
 We focus the evaluation on the 50 apps for Dart and Kotlin, as shown in the results section.
 
 Evaluation [results](./mobile_apps.md) for Dart and Kotlin repositories.
+
+### Performance Evaluation
+
+We evaluate the [performance](./performance.md) in detecting clones for the complete applications in our CloneCorp
