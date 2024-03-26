@@ -10,4 +10,4 @@ Here we show the details of the performance evaluation for our two mobile app da
 
 ## Github apps dataset
 
-![GitHub](img/git-performance.png){width: 1920px;}
+<img src="img/git-performance.png" alt="GitHub" width="1920"/>
