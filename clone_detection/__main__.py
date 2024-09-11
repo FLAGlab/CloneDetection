@@ -6,19 +6,22 @@ import time
 from antlr4 import FileStream, CommonTokenStream, ParseTreeWalker
 from clone_detection.utils.arguments import get_args
 
-from clone_detection.grammars.grammars_registry import (PARSERS, LEXERS,
-                                                        LISTENERS)
+#from clone_detection.grammars.grammars_registry import (PARSERS, LEXERS, LISTENERS)
+from clone_detection.grammars.c import CLexer
+from clone_detection.grammars.c.CLexer import *
+from clone_detection.grammars.c import CParser
+from clone_detection.grammars.c import CECSTListener
 
-
-START_RULE = {
+#START_RULE = {
     #'java': 'compilationUnit',
     #'swift': 'top_level', #check start rule
-    'kt': 'kotlinFile',
+#    'kt': 'kotlinFile',
     #'cpp': 'translationUnit',
-    'dart': 'compilationUnit',
-}
+    #'dart': 'compilationUnit',
+    #  'c': 'compilationUnit',
+#}
 
-SUPPORTED_LANGUAGES = {'kt', 'dart'}#, 'swift'}
+#SUPPORTED_LANGUAGES = {'kt'}#}, 'dart'}#, 'swift'}
 
 SIMILAR_NODES = {
     'IDENTIFIER': ['LITERAL', 'IDENTIFIER'],
@@ -104,14 +107,12 @@ def load_grammar(f):
     """Load grammar given the file."""
     _name, ext = os.path.splitext(f)
     ext = ext[1:]
-    if ext not in LISTENERS:
-        raise ValueError('The program does not support the file extension')
     input_stream = FileStream(f, 'utf-8')
-    lexer = LEXERS[ext](input_stream)
+    lexer = CLexer(input_stream)
     stream = CommonTokenStream(lexer)
-    parser = PARSERS[ext](stream)
-    tree = getattr(parser, START_RULE[ext])()
-    listener = LISTENERS[ext]()
+    parser = CParser.CParser(stream)
+    tree = getattr(parser, "translationUnit")()
+    listener = CECSTListener.CListener()
     walker = ParseTreeWalker()
     walker.walk(listener, tree)
     #print(repr(listener.tree.children)) #tree in console
@@ -252,31 +253,27 @@ def print_clones(clone_list):
 if __name__ == "__main__":
     start = time.time()
     args = get_args()
-    dir_files = [] if args.d == '' else sum(
-        [discover_files(d) for d in args.d], [])
-    files = args.f + dir_files
+    files = args.f 
     print('Files loaded: ', files)
-    if len(files) < 2:
-        raise ValueError('Not enough files provided for comparison')
-
     ecst_trees = []
     for f in files:
         tree = load_grammar(f)
         ecst_trees.append(tree)
-
-    result = compare_ecst(ecst_trees, return_all=True)
+    for t in ecst_trees:
+        print(t)
+    """ result = compare_ecst(ecst_trees, return_all=True)
     type1clones = filter(lambda tup: tup[0] == "type1", result[0])
     type2clones = filter(lambda tup: tup[0] == "type2", result[0])
     type3clones = filter(lambda tup: tup[0] == "type3", result[0])
     end = time.time()
-   # print("===== TYPE 1 CLONES ======")
-   # print_clones(type1clones)
-   # print("===== TYPE 2 CLONES ======")
-   # print_clones(type2clones)
-   # print("===== TYPE 3 CLONES ======")
-   # print_clones(type3clones)
+    print("===== TYPE 1 CLONES ======")
+    print_clones(type1clones)
+    print("===== TYPE 2 CLONES ======")
+    print_clones(type2clones)
+    print("===== TYPE 3 CLONES ======")
+    print_clones(type3clones)
     print(f'Total clones {len(result[0])}')
     print(f'Total type 1 clones {result[1]}')
     print(f'Total type 2 clones {result[2]}')
     print(f'Total type 3 clones {result[3]}')
-    print(end - start)
+    print(end - start) """
