@@ -1,0 +1,103 @@
+[
+('', None)
+	[
+	('', 'FILE')
+		[
+		('fun', 'FUNCTION_DECL')
+			[
+			('sum', 'IDENTIFIER')
+			],
+
+			[
+			('', 'PARAMETER_LIST')
+			],
+
+			[
+			('', 'FUNCTION_BODY')
+				[
+				('var', 'ATTRIBUTE_DECL')
+					[
+					('=', 'ASSIGNMENT_OPERATOR')
+						[
+						('', 'VARIABLE_DECL')
+							[
+							('sum', 'IDENTIFIER')
+							],
+
+						],
+
+						[
+						('', 'EXPRESSION')
+							[
+							('0', 'LITERAL')
+							],
+
+						],
+
+					],
+
+				],
+
+				[
+				('', 'EXPRESSION')
+					[
+					('', 'LOOP_STATEMENT')
+						[
+						('', 'VARIABLE_DECL')
+							[
+							('i', 'IDENTIFIER')
+							],
+
+						],
+
+						[
+						('', 'EXPRESSION')
+							[
+							('1', 'LITERAL')
+							],
+
+							[
+							('100', 'LITERAL')
+							],
+
+						],
+
+						[
+						('', 'BODY')
+							[
+							('', 'EXPRESSION')
+								[
+								('sum', 'IDENTIFIER')
+								],
+
+								[
+								('=', 'ASSIGNMENT_OPERATOR')
+								],
+
+								[
+								('sum', 'IDENTIFIER')
+								],
+
+								[
+								('+', 'ADDITIVE_OPERATOR')
+								],
+
+								[
+								('i', 'IDENTIFIER')
+								],
+
+							],
+
+						],
+
+					],
+
+				],
+
+			],
+
+		],
+
+	],
+
+],

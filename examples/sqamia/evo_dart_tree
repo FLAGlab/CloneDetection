@@ -1,0 +1,195 @@
+[
+('', None)
+	[
+	('', 'FILE')
+		[
+		('', 'FUNCTION_DECL')
+			[
+			('sum', 'LITERAL')
+			],
+
+			[
+			('', 'VALUE_ARGUMENT_LIST')
+			],
+
+		],
+
+		[
+		('', 'FUNCTION_BODY')
+			[
+			('', 'BODY')
+				[
+				('', 'EXPRESSION')
+					[
+					('', 'ATTRIBUTE_DECL')
+						[
+						('', 'ASSIGNMENT_OPERATOR')
+							[
+							('int', 'LITERAL')
+							],
+
+							[
+							('sum', 'LITERAL')
+							],
+
+							[
+							('0', 'LITERAL')
+							],
+
+						],
+
+					],
+
+				],
+
+				[
+				('', 'EXPRESSION')
+					[
+					('', 'ATTRIBUTE_DECL')
+						[
+						('', 'ASSIGNMENT_OPERATOR')
+							[
+							('int', 'LITERAL')
+							],
+
+							[
+							('i', 'LITERAL')
+							],
+
+							[
+							('1', 'LITERAL')
+							],
+
+						],
+
+					],
+
+				],
+
+				[
+				('', 'EXPRESSION')
+					[
+					('', 'LOOP_STATEMENT')
+						[
+						('i', 'LITERAL')
+						],
+
+						[
+						('<=', 'COMPARISON_OPERATOR')
+						],
+
+						[
+						('100', 'LITERAL')
+						],
+
+						[
+						('', 'EXPRESSION')
+							[
+							('', 'BODY')
+								[
+								('', 'EXPRESSION')
+									[
+									('', 'CONDITION')
+										[
+										('i', 'LITERAL')
+										],
+
+										[
+										('', 'MULTIPLICATIVE_OPERATOR')
+										],
+
+										[
+										('2', 'LITERAL')
+										],
+
+										[
+										('', 'EQUALITY_OPERATOR')
+										],
+
+										[
+										('0', 'LITERAL')
+										],
+
+										[
+										('', 'EXPRESSION')
+											[
+											('', 'EXPRESSION')
+												[
+												('', 'ASSIGNMENT_OPERATOR')
+													[
+													('sum', 'LITERAL')
+													],
+
+												],
+
+												[
+												('', 'ASSIGNMENT_OPERATOR')
+												],
+
+												[
+												('sum', 'LITERAL')
+												],
+
+												[
+												('+', 'ADDITIVE_OPERATOR')
+												],
+
+												[
+												('i', 'LITERAL')
+												],
+
+											],
+
+										],
+
+									],
+
+								],
+
+								[
+								('', 'EXPRESSION')
+									[
+									('', 'EXPRESSION')
+										[
+										('', 'ASSIGNMENT_OPERATOR')
+											[
+											('i', 'LITERAL')
+											],
+
+										],
+
+										[
+										('', 'ASSIGNMENT_OPERATOR')
+										],
+
+										[
+										('i', 'LITERAL')
+										],
+
+										[
+										('+', 'ADDITIVE_OPERATOR')
+										],
+
+										[
+										('1', 'LITERAL')
+										],
+
+									],
+
+								],
+
+							],
+
+						],
+
+					],
+
+				],
+
+			],
+
+		],
+
+	],
+
+],
