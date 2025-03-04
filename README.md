@@ -3,7 +3,7 @@ Out of Step is a clone detection tool for cross-language settings focused on mod
 
 The documentation about Out of Step, its features, and node description is available on the project's wiki pages
 
-The web API of the project is at: [pages](https://flaglab.github.io/CloneDetection/)
+The web API of the project is at the online [appendix](https://flaglab.github.io/CloneDetection/)
 
 ## Quick Usage
 
